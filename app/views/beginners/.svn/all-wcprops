@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/views/beginners
+END
+_regulation.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21254/network_marketing/qd_college/trunk/app/views/beginners/_regulation.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/views/beginners/index.html.erb
+END
+show.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21261/network_marketing/qd_college/trunk/app/views/beginners/show.js.erb
+END

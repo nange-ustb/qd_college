@@ -1,0 +1,7 @@
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  = f.hidden_field :code , :value => SecureRandom.hex(8)
+  = f.hidden_field :game_id
+  - attributes.each do |attr|
+    = f.input attr
+  = f.submit :class => 'btn btn-primary'
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path(:game_id=>resource.game_id)

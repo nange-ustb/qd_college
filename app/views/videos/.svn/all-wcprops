@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos
+END
+_video_node_lists.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos/_video_node_lists.html.erb
+END
+broadcast.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos/broadcast.js.erb
+END
+_video_box.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos/_video_box.html.erb
+END
+index.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos/index.js.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/views/videos/show.html.erb
+END

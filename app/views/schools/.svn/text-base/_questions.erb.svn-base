@@ -1,0 +1,21 @@
+<% index = 0 %>
+<%= simple_form_for @exam,:url=>schools_path,:html=>{:method => :post,:id=>"answer_form"} do |f| %>
+  <%= f.fields_for :questions,@questions do |q| %>
+    <div class="control-group">
+      <label class="control-label"><%= index += 1 %>.<%= q.object.title %></label>
+      <div class="controls">
+        <% attrs = %w(a b c d e f);attrs_tmp = [] %>
+        <% attrs.each do |attr| %>
+          <% if (value = q.object.send(attr.to_sym)).present? %>
+            <%= attr.upcase %>、<%= value %><br>
+            <% attrs_tmp << attr %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="controls">
+        <%= q.input_field :answer, :collection => [attrs_tmp.map(&:upcase),attrs_tmp].transpose, :as => :radio_buttons,:checked=>false  %>
+      </div>
+    </div>
+  <% end %>
+  <%= f.submit '',:class=>:test_but %>
+<% end %>

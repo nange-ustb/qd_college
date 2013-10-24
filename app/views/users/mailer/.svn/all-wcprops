@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/GIM/Rails/!svn/ver/21323/network_marketing/qd_college/trunk/app/views/users/mailer
+END
+reset_password_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/GIM/Rails/!svn/ver/21323/network_marketing/qd_college/trunk/app/views/users/mailer/reset_password_instructions.html.erb
+END
+confirmation_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/GIM/Rails/!svn/ver/21323/network_marketing/qd_college/trunk/app/views/users/mailer/confirmation_instructions.html.erb
+END
+unlock_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/views/users/mailer/unlock_instructions.html.erb
+END

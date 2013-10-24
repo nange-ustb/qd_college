@@ -1,0 +1,14 @@
+/* CSS Document */
+body{font-family:'Microsoft YaHei'; font-size:14px;text-align:center;margin:0 auto;padding:0;line-height:22px; background:url(/assets/images/bodybj.jpg) repeat-x;}
+body > div{text-align:left;margin-right:auto;margin-left:auto;} 
+div,form,ul,ol,li,span,dl,dt,dd{margin:0;padding:0;border:0;text-align:left;}
+img,a img,p{border:0;margin:0;padding:0;}
+h1,h2,h3,h4{margin:0;padding:0;}
+ul,ol,li{list-style:none;text-align:left;}
+table,td,input{font-size:12px}
+img{vertical-align:middle;}
+a{outline-style:none;color:#2B2B2B;text-decoration:none}
+a:hover{color:#333}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;font-size:1px;width:1px;visibility:hidden;margin-top:0px!important;*margin-top:-1px;height:0;line-height:0}/*ie and firefox1.5 updata */

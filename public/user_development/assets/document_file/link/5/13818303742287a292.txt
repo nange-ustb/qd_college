@@ -1,0 +1,321 @@
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  username               :string(255)
+#  real_name              :string(255)
+#  mobile                 :string(255)
+#  global_id              :integer          default(0), not null
+#  deleted_at             :datetime
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  failed_attempts        :integer          default(0)
+#  unlock_token           :string(255)
+#  locked_at              :datetime
+#  authentication_token   :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  third_party            :boolean          default(FALSE)
+#  gender                 :boolean          default(TRUE)
+#  nickname               :string(255)
+#  date_of_birth          :date
+#  from                   :string(255)      default("sso")
+#  zone_id                :integer
+#  address                :string(255)
+#
+
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  username               :string(255)
+#  real_name              :string(255)
+#  mobile                 :string(255)
+#  global_id              :integer          default(0), not null
+#  deleted_at             :datetime
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  failed_attempts        :integer          default(0)
+#  unlock_token           :string(255)
+#  locked_at              :datetime
+#  authentication_token   :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  third_party            :boolean          default(FALSE)
+#  gender                 :boolean          default(TRUE)
+#  nickname               :string(255)
+#
+  # sample of extra_attributes:
+  # {"email_is_validate"=>"0",
+  # "global_id"=>"2197257",
+  # "mobile_is_checked"=>nil,
+  # "authentication_token"=>"qDaMIMp8EIj90dn4Yz3p",
+  # "mobile_phone"=>"13621369916",
+  # "location_code"=>"1101",
+  # "email"=>"issaclau3@gmail.com",
+  # "loginname"=>"gld_user_11222211",
+  # "user_type"=>"3",
+  # "nickname"=>nil}
+
+# -*- encoding : utf-8 -*-
+class User < ActiveRecord::Base
+  extend Enumerize
+  enumerize :gender, in:[:true, :false], default: :true
+  enumerize :from, in:[:sso, :qq,:shop], default: :sso,scope: true
+  devise :cas_authenticatable, :registerable, :recoverable, :rememberable, :trackable,:database_authenticatable
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :global_id, :mobile,:nickname,:agreeable,
+  :gender,:account_type,:addition,:code,:date_of_birth,:user_header_attributes,:real_name,:zone_id,:address
+  attr_accessor :qq,:addition,:account_type,:code,:code_confirmation,:mobile_confirmation
+  
+  has_many :favorites, :dependent => :destroy
+  has_many :orders
+  has_many :addresses, :dependent => :destroy
+  has_one :authentication, :dependent => :destroy
+  has_one :user_header, as: :viewable,class_name: UserHeader,dependent: :destroy
+  has_many :vat_invoices
+  has_many :refundments
+  belongs_to :zone
+
+  validates :username, :presence => true , :allow_blank => false
+  validates :email , :presence => true , :allow_blank => false,:if=> :is_email?,:unless=> :third_party?,:on=>:create
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i },:if=>:is_email?,:unless=> :third_party?,:on=>:create
+  validates :mobile, :presence => true , :allow_blank => false,:if=>:is_mobile?,:unless=> :third_party?,:on=>:create
+  validates :mobile, format: { with: /^1[0-9]{10}/ },:if=>:is_mobile?,:unless=> :third_party?,:on=>:create
+  validates :password, :presence => true , :allow_blank => false,confirmation: true, :length => 6..20,:unless=> :third_party?
+  validates :password_confirmation, :presence => true , :allow_blank => false,:unless=> :third_party?
+  validates :addition, :presence => true , :allow_blank => false,:if=> :is_email?,:unless=> :third_party?,:on=>:create
+  validates :code, :presence => true, :allow_blank => false,:on=>:create,:unless=>:third_party?,:if=>:is_mobile?
+  validates :code_confirmation, :presence => true , :allow_blank => false,:unless=> :third_party?,:on=>:create,:if=>:is_mobile?
+  validate  :check_register_uniq ,:on=>:create,:unless=>:third_party?
+  validate  :check_confirmation_code ,:on=>:create,:unless=>:third_party?,:if=>:is_mobile?
+
+  before_create :syn_info_to_sso,:unless=>:third_party?
+
+  accepts_nested_attributes_for  :user_header, :allow_destroy => true
+
+  scope :search , lambda{|params|
+    puts params.inspect
+    where{
+        conds = []
+        conds << ( email =~ "%#{params[:email]}%" ) if params[:email].present?
+        conds << ( mobile =~ "%#{params[:mobile]}%" ) if params[:mobile].present?
+        conds << ( username =~ "%#{params[:username]}%" ) if params[:username].present?
+        conds << ( real_name =~ "%#{params[:real_name]}%" ) if params[:real_name].present?
+        conds << ( nickname =~ "%#{params[:nickname]}%" ) if params[:nickname].present?
+        conds << ( zone_id.in params[:zone_id] ) if params[:zone_id].present?
+        conds.inject{| conds_total , con |  conds_total &= con }
+      }.order("created_at desc")
+    }
+
+  def last_incomplete_order
+    orders.where(:user_id => self.id, :run_state => 'cart',).order('created_at DESC').first
+  end
+
+  def cas_extra_attributes=(extra_attributes)
+    self.username = extra_attributes['loginname']
+    self.mobile = extra_attributes['mobile_phone']
+    self.email = extra_attributes['email']
+    self.global_id = extra_attributes['global_id']
+    build_user_header(:remote_url_url=>fwxgx_user_header(username))
+  end
+
+  def fwxgx_user_header(loginname)
+    begin
+      uri = "#{Setting.dyjh_url}/sessions/get_userbrief?loginname=#{Rack::Utils.escape(loginname)}"
+      user_info = MultiJson.decode( Faraday.post(uri).body )
+      if user_info.class == Hash and  user_info["userbrief"].class == Hash
+        userbrief = user_info["userbrief"]
+        return image_src = Setting.fwxgx_image_url + "/downfile/UserFace/" + userbrief["UIN"].to_s + "_" + userbrief["IconUrl"].to_s
+      else
+        return nil
+      end
+    rescue Exception => e
+      return nil
+    end
+  end
+
+  def qq=(qq)
+    self.nickname = "glodon_" + qq["nickname"]
+    self.gender = qq["gender"] == '男' ? true : false
+    self.username = "glodon_" + qq["nickname"]
+    self.from ='qq'
+    # self.email = SecureRandom.hex(6) + "@163.com"
+    build_user_header(:remote_url_url=>qq["figureurl_qq_1"])
+  end
+
+  def account_type=(value)
+    value = %(email mobile).include?(value.to_s) ? value : "email"
+    @account_type = value
+  end
+
+  def account_type
+    return 'email' if is_email?
+    return 'mobile' if is_mobile?
+    return @account_type || 'email'
+  end
+
+  def third_party?
+    qq_user? or sso_user?
+  end
+
+  def shop_user?
+    from == 'shop'
+  end
+
+  def qq_user?
+    from == 'qq'
+  end
+
+  def sso_user?
+    from == 'sso'
+  end
+
+  def is_email?
+    self.email.try(:match, /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
+  end
+
+  def is_mobile?
+    self.mobile.try(:match,/^1[0-9]{10}/)  and self.mobile.to_s.size == 11
+  end
+
+  def password_invalid?
+    valid?
+    errors.delete(:username)
+    if errors[:password].present? or errors[:password_confirmation].present?
+      new_erros = ActiveModel::Errors.new({})
+      new_erros.add(:password,self.errors[:password])    if errors[:password].present?
+      new_erros.add(:password_confirmation,self.errors[:password_confirmation])    if errors[:password_confirmation].present?
+      instance_eval{@errors = new_erros}
+      return true
+    end
+    return false
+  end
+
+  def loginname
+    send account_type.to_sym
+  end
+
+  def check_confirmation_code
+    if mobile_confirmation != self.mobile or self.code != code_confirmation.to_s
+      errors.add(:code, :confirmation)
+    end
+  end
+
+  def check_register_uniq
+    begin
+      params = {email: email,mobile_phone: mobile}
+      uri = Setting.frontend_cas_base_url + "/bitaec_registers/check_register_info"
+      result = MultiJson.decode(Faraday.get(uri,params).body)["result"]
+      puts params.inspect
+      errors.add(account_type, :existing) unless result
+      puts result
+      
+    rescue
+      errors.add(account_type, :register_uniq)
+    end
+  end
+
+  def syn_info_to_sso
+    begin
+      params = {email: email, loginname: username, password: password,
+        come_from: "shop.fwxgx.com", mobile_phone: mobile, email_is_validate: false}
+      uri = Setting.frontend_cas_base_url + "sso_registers"
+      result = MultiJson.decode(Faraday.post(uri,params).body)
+      self.global_id = result["global_id"] if result["status"]
+    rescue
+      errors.add(account_type, :syn_info)
+      return false
+    end
+  end
+
+  def reset_password_to_sso
+    return  if password_invalid?
+    begin
+      params = {password: password }
+      uri = Setting.frontend_cas_base_url + "/sso_registers/#{global_id}/reset_password"
+      result = MultiJson.decode(Faraday.post(uri,params).body)
+      errors.add(account_type, :reset_password) unless result["status"]
+    rescue
+      self.instance_eval{@errors=ActiveModel::Errors.new(account_type=>:reset_password)}
+    end
+  end
+
+  def self.sms_valid_msg(code)
+    "尊敬的顾客您好！，您的验证码为#{code}，为了保护您的账户，请不要将此校验码告知他人，如有疑问请联系客服热线4000-166-166【广联达官方商城】"
+  end
+
+  def send_reset_password_instructions
+    generate_reset_password_token! if should_generate_reset_token?
+    if is_email?
+      send_devise_notification(:reset_password_instructions)
+    else
+      if is_mobile?
+        self.code = rand(100000..1000000).to_s
+        Fileservice.send_message(self.username,User.sms_valid_msg(self.code))
+        self.reset_password_token += self.code
+        save(:validate => false)
+      end
+    end
+  end
+
+  def reset_password!(new_password, new_password_confirmation)
+    u = User.new(password: new_password,password_confirmation: new_password_confirmation,global_id: self.global_id)
+    u.reset_password_to_sso
+    if u.errors.present?
+      self.instance_eval{@errors=u.errors}
+    else
+      clear_reset_password_token
+      after_password_reset
+    end
+
+    save(:validate=>false)  if changed?
+  end
+
+  def update_user(new_attributes)
+    user = UserBrother.find(self.id)
+    user.brother = self
+    unless user.update_attributes(new_attributes)
+      instance_eval{@errors=user.errors}
+      return false
+    else
+      header = user.set_header new_attributes[:user_header_attributes]
+      header.url = new_attributes[:user_header_attributes][:url]
+      unless header.save
+        instance_eval{@errors=ActiveModel::Errors.new({})}
+        instance_eval{@errors["user_header_url"]=header.errors[:url]}
+        return false
+      end
+    end
+    reload
+    return true
+  end
+end

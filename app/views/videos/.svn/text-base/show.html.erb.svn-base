@@ -1,0 +1,32 @@
+<!--footbox begin-->
+<div class="breadcrumb breadcrumb2">
+  当前位置：<a href="/">首页</a> > <span>中级课堂视频</span>
+</div>
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="zj_video">
+      <h2><%= @video.title.truncate(25) %><span>作者：<%= @video.author.truncate(25) %></span></h2>
+      <div class="zjvl left" id="video_box">
+        <!-- <img src="/assets/images/video.jpg" width="655" height="371" /> -->
+        <%= render("video_box",:video_box=>@video_nodes.first) %>
+
+      </div>
+      <div class="zjvr left" id="video_node_lists_box">
+        <%= render "video_node_lists" %>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footbox_border"></div>
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="say"></div>
+    <div class="weibo">
+      <!-- <img src="/assets/images/reading_online/weibo.jpg" width="921" height="527" /> -->
+      <iframe id="weiboiframe" width="921" scrolling="auto" height="600" frameborder="0" src="http://wall.v.t.qq.com/index.php?c=wall&a=index&ak=801175828&w=0&h=600&o=7&s=0&t=<%= CGI.escape(@video.topic.strip) %>" name="weiboiframe"></iframe>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="footbox_border"></div>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21250/network_marketing/qd_college/trunk/app/views/admin/regulations
+END
+_form.haml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21223/network_marketing/qd_college/trunk/app/views/admin/regulations/_form.haml
+END
+show.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21250/network_marketing/qd_college/trunk/app/views/admin/regulations/show.html.haml
+END
+_index.haml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21250/network_marketing/qd_college/trunk/app/views/admin/regulations/_index.haml
+END

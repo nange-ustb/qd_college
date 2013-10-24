@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui-mini
+ *= require jquery/jquery.alerts
+ *= require bootstrap_and_overrides.css.less
+ */
+ table.admin_table{
+  border-collapse: separate;
+ }
+.admin_table th {
+  font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  color: #4f6b72;
+  border-right: 1px solid #C1DAD7;
+  border-bottom: 1px solid #C1DAD7;
+  border-top: 1px solid #C1DAD7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 6px 6px 6px 12px;
+  background: #CAE8EA;
+}
+
+.admin_table td {
+  border-right: 1px solid #C1DAD7;
+  border-bottom: 1px solid #C1DAD7;
+  background: #fff;
+  padding: 6px 6px 6px 12px;
+  color: #4f6b72;
+}
+textarea { width: 300px;}
+.float_left{ float: left; margin: 5px;}
+.float{ width: 80px; }
+.boolean{ width: 30px; }
+
+.horizonal_list_header{
+  min-height: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.horizonal_list li{
+  display: block;
+  float: left;
+  width: 100px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  list-style: none; 
+}
+.horizonal_list .horizonal_list_end{
+  clear: right;
+}
+.display_true{
+  display: block;
+}
+.display_false{
+  display: none;
+}
+.required abbr{ color: #f00;}
+.list_ul{
+  margin-left: -10px;
+}
+.list_ul li{
+  float: left;
+  list-style: none;
+}
+
+.list_li{
+  float: left;
+  list-style: none;
+}
+tr.odd_tr td{ background-color: #eeeeee; }
+
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.clear{ clear: both; }

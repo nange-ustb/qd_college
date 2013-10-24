@@ -1,0 +1,14 @@
+%p
+- params[:search] ||= {}
+= simple_form_for( "search",:html=>{ :method => :get, :class => 'form-search' } ) do |f|
+  级别：
+  = f.select :level, Document.level.options,:input_html=>{:name=>"search[level]" }
+  资料名称：
+  = text_field_tag "search[title]" , params[:search][:title], :class => 'span2'
+  作者：
+  = text_field_tag "search[author]" , params[:search][:author], :class => 'span2'
+  = f.submit '搜索',:class => 'btn btn-primary'
+= render "index", :attributes => attributes - %w(position can_download can_view type)
+%p
+  = "总记录数：#{collection.total_count}" + " 总页数:#{collection.total_pages}"
+= render 'sortable',:type=>resource_class,:id=>:banners_list

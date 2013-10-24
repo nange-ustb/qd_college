@@ -1,0 +1,46 @@
+= form_tag( collection_path , { :method => :get }) do
+  %p
+    用户名:
+    = text_field_tag "search[user_name]" , params[:search].nil? ? "" : params[:search][:user_name]
+    权限组:
+    =collection_select(:search, :role, Role.all, :id, :name, :prompt => true ,
+        :selected => params[:search].nil? ? "" : params[:search][:role].to_i)
+    = submit_tag t("#{resource_class.name.underscore}.search")
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - (attributes+["roles","affiliates"]).each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody
+    - collection.each do |resource|
+      %tr[resource]
+        - (attributes+["roles","affiliates"]).each do |attr|
+          - if respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td 是
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td 否
+          - elsif attr == "roles"
+            %td
+              - resource.roles.each{|r|r.name = r.name+"(#{ Role::BASE_LEVEL.invert[r.level]  })" }.each do|r|
+                %span.nav= r.name
+          - elsif attr == "affiliates"
+            %td 
+              - resource.affiliates.each do |a|
+                %span.nav= a.name
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate collection
+= link_to t("#{resource_class.name.underscore}.new"), new_resource_path

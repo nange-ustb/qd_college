@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/GIM/Rails/!svn/ver/21307/network_marketing/qd_college/trunk/app/views/users/passwords
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21307/network_marketing/qd_college/trunk/app/views/users/passwords/edit.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21307/network_marketing/qd_college/trunk/app/views/users/passwords/new.html.erb
+END
+create.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21307/network_marketing/qd_college/trunk/app/views/users/passwords/create.js.erb
+END

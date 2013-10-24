@@ -1,0 +1,31 @@
+<ul class="videolist">
+  <% @video_nodes and @video_nodes.each do |v_n| %>
+  <li class="<%#= "lihover" if v_n==@video_nodes.first %>" sign="<%= v_n.id %>" >
+    <a href="<%= broadcast_video_path(v_n) %>" data-remote="true" title="<%= v_n.title %>" class="video_choser">
+      <img src="<%= @video.logo.link_url(:small) %>" />
+      <span>
+        <!-- <strong>第一讲</strong> -->
+        <%= v_n.title.truncate(25) %>
+      </span>
+    </a>
+  </li>
+  <% end  %>
+</ul>
+<!--pagination begin-->
+<div class="pagination2">
+  <%= paginate @video_nodes , :window=> 1, :params => {:controller => 'videos', :action => 'index'}, :remote => true %>
+</div>
+
+<!--pagination end-->
+<script>
+  $(function(){
+    $('.videolist li').each(function(){
+      if($('#cur_video').val()==$(this).attr('sign'))
+        $(this).addClass('lihover');
+    })
+    $('.video_choser').click(function(){
+      $(this).parent('li').addClass('lihover').siblings('li').removeClass('lihover');
+    }) 
+  })
+  
+</script>

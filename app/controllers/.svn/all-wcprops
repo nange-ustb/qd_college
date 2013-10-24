@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/GIM/Rails/!svn/ver/21357/network_marketing/qd_college/trunk/app/controllers
+END
+admin_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21112/network_marketing/qd_college/trunk/app/controllers/admin_controller.rb
+END
+home_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21329/network_marketing/qd_college/trunk/app/controllers/home_controller.rb
+END
+advanceds_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21300/network_marketing/qd_college/trunk/app/controllers/advanceds_controller.rb
+END
+videos_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21296/network_marketing/qd_college/trunk/app/controllers/videos_controller.rb
+END
+schools_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/GIM/Rails/!svn/ver/21348/network_marketing/qd_college/trunk/app/controllers/schools_controller.rb
+END
+beginners_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/controllers/beginners_controller.rb
+END
+readings_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21330/network_marketing/qd_college/trunk/app/controllers/readings_controller.rb
+END
+games_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/controllers/games_controller.rb
+END
+intermediates_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/21300/network_marketing/qd_college/trunk/app/controllers/intermediates_controller.rb
+END
+exams_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21290/network_marketing/qd_college/trunk/app/controllers/exams_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21356/network_marketing/qd_college/trunk/app/controllers/application_controller.rb
+END

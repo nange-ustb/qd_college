@@ -1,0 +1,19 @@
+= render "info_message"
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  - attributes.each do |attr|
+    -if attr == "category"
+      = f.input attr , :as => :select , :collection => {"网站信息管理类" => "site_manager"} , :prompt => false
+    - else
+      = f.input attr
+  - events = Event.all
+  - event_ids = resource.event_ids
+  - index = 0
+  - Event.pluck("model_name").uniq.each do |model_name|
+    .alert.alert-info= t("#{model_name}相关权限")
+    %div
+      - events.select{|e| e.model_name == model_name}.each do |e|
+        = check_box_tag "permission[permission_events_attributes][#{index}][event_id]", e.id,event_ids.include?(e.id)
+        = e.desc
+        - index += 1
+  = f.submit :class => 'btn btn-primary'
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path

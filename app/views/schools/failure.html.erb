@@ -1,0 +1,22 @@
+<!--nav end-->
+<% level_text = @exam.level_text %>
+<div class="breadcrumb breadcrumb2">当前位置：<a href="/">首页</a> > <span><%= level_text %>课堂视频</span></div>
+<!--footbox begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="title">
+      <div class="title_left left"><%= level_text %>专业测试</div>
+      <div class="title_right right">本次测试已结束！</div>
+    </div>
+    <div class="cpsb"><strong>测试完毕！</strong>
+      <p>本次测试您一共<span>答对<%= @exam.correct%></span>道题，<span>答错<%= @exam.incorrect%></span>道题。继续努力呀！</p><br />
+      <span>
+        <%= link_to '查看正确答案',school_path(@exam),:class=>"ck" %>
+        <a href="/schools/<%= @exam.level%>" class="cx">重新测试</a> 
+        <a href="/<%= @exam.level %>s" class="fh">返回<%= level_text %>课堂</a>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="footbox_border"></div>
+<%= link_to'快来抽奖，试试手气！',new_game_path,:remote=>true %>

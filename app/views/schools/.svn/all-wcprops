@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools
+END
+_questions.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21298/network_marketing/qd_college/trunk/app/views/schools/_questions.erb
+END
+failure.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/failure.html.erb
+END
+success.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/success.html.erb
+END
+beginner.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/views/schools/beginner.html.erb
+END
+_countdown.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21298/network_marketing/qd_college/trunk/app/views/schools/_countdown.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/show.html.erb
+END
+new.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/new.js.erb
+END

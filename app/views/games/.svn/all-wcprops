@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/views/games
+END
+new.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/games/new.js.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21344/network_marketing/qd_college/trunk/app/views/games/index.html.erb
+END
+_award.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/games/_award.html.erb
+END
+index.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/views/games/index.html.haml
+END

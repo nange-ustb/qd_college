@@ -1,0 +1,25 @@
+= link_to t("#{resource_class.name.underscore}.new"), new_resource_path(:video_id=>params[:video_id]),:class => 'btn btn-primary'
+%br
+%strong
+  = "当前添加的视频：" + @video.title
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      %th= "排序"
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody#banners_list
+    - @videos.each do |resource|
+      %tr(id="setname_#{resource.id}")
+        %td
+          %span.ui-icon.ui-icon-arrowthick-2-n-s
+        - attributes.each do |attr|
+          %td= resource.send(attr).to_s.truncate(60)
+        %td
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource,:video_id=>params[:video_id])
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource,:video_id=>params[:video_id]), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate @videos
+=link_to t("#{resource_class.name.underscore}.back_list") , admin_videos_path(:video_id=>params[:video_id]),:class => 'btn btn-primary'
+

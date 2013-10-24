@@ -1,0 +1,38 @@
+.countdown_dashboard {
+ /* height: 110px;*/
+}
+
+.dash {
+  width: 53px;_width: 50px;
+  height: 26px;
+  background: transparent url('/assets/dash1.png') 0 0 no-repeat;
+  float: left;
+  margin-left: 3px;
+  position: relative;
+}
+
+.dash .digit {
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  width: 17px;_width: 16px;
+  text-align: center;
+  font-family: Times;
+  color: #555;
+  position: relative;
+  margin-left: 2px;_margin-left: 1px;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.listcenter_h60 span.dash_title ,.listcenter span.dash_title , .dash_title{
+  float:left;
+  color: #555;
+  margin-left:2px;_margin-left:2px;
+  font-size: 11px;
+  padding: 0;
+  margin-top: 5px;
+}
+.cxContent .dash .digit {
+  margin-top: 3px;
+}

@@ -1,0 +1,135 @@
+<%= javascript_include_tag 'jquery/jquery.marquee' %>
+<script type="text/javascript">
+    $(function(){
+        $('#video_lists').marquee({auto: true, interval: 2000, showNum: 6, direction:'forward', stepLen: 1, speed: 1000, prevBtnId: 'prev', nextBtnId: 'next'});
+        $('.video_img_selector').click(function(){
+          $(this).parent('div').addClass('video_small_checked').siblings('div').removeClass('video_small_checked');
+          $("#video_box_index img").attr('src',$(this).attr('bak'));
+          $("#video_box_index a").attr('href',$(this).attr('href'));
+          return false;
+        })
+    })
+</script>
+
+<div class="breadcrumb breadcrumb2">当前位置：<a href="/">首页</a> > <span>中级课堂视频</span></div>
+<div class="clear"></div>
+<!--wrapleft begin-->
+<div class="wl_zxcp left">
+  <div class="rim_main">
+    <div class="bordertop">
+      <div class="video_top" id="video_box_index">
+        <% current_video= @videos.try(:first) %>
+        <% unless @videos.present? %>
+          <img src="/assets/images/middle_class/video.jpg" width="674" height="381" />
+        <% else %>
+          <a href="<%= video_path(current_video) %>">
+            <img src="<%= @videos.first.logo.link_url(:large) %>" width="674" height="381" border="0"/>
+          </a>
+        <% end %>
+      </div>
+      <div class="video_down">
+
+        <div class="video_down_left_button left">
+          <a href="javascript:void(0)" id="prev"></a>
+        </div>
+      
+        <div class="left" id="video_lists">
+          <div class="ul">
+            <!-- <div class="video_small li left video_small_checked"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div>
+            <div class="video_small li left"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div>
+            <div class="video_small li left"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div>
+            <div class="video_small li left"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div>
+            <div class="video_small li left"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div>
+            <div class="video_small li left"><img src="/assets/images/middle_class/video_small.jpg" width="86" height="49" /></div> -->
+
+            <% @videos.present? and @videos.each do |video| %>
+              <div class="video_small left <%= "video_small_checked" if video==current_video %>">
+                <a href="<%= video_path(video) %>" class="video_img_selector" bak="<%= video.logo.link_url(:large) %>">
+                  <img src="<%= video.logo.link_url(:small) %>" width="86" height="49" />
+                </a>
+              </div>
+            <% end  %>
+
+          </div>
+        </div>
+      
+        <div class="video_down_right_button right">
+          <a href="javascript:void(0)" id="next"></a>
+        </div>
+
+      <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="rim_bottom"></div>
+</div>
+<!--wrapleft end-->
+<!--wrapright begin-->
+<div class="wr_zxcp right">
+  <div class="zxcp">
+    <a href="<%=mediate_schools_path %>"></a>
+  </div>
+</div>
+<!--wrapright end-->
+<div class="clear"></div>
+<!--testbody begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="title">
+      <div class="title_left left">在线阅读与下载</div>
+    </div>
+    <% @documents.present? and @documents.each do |document| %>
+    <div class="readbox">
+      <div class="readbox_left_1 left">
+        <img src="<%= document.logo.link_url(:file_small)  %>" width="123" height="90" />
+      </div>
+      <div class="readbox_right right">
+        <div class="readbox_title left">
+          <%= document.title.truncate(20) %>
+        </div>
+        <div class="readbox_zz left">
+          <div class="readbox_zz_left left">
+            <div class="readbox_author left">作者：
+              <span style="color:#0095ba;"><%= document.author %></span>
+            </div>
+            <!-- <div class="readbox_author left">页数：<span style="color:#0095ba;">123456</span></div> -->
+          </div>
+          <div class="readbox_zz_right right">
+            <div class="readbox_read left">在线阅读：
+              <span style="color:#9b9b9b;"><%= document.view_count %></span>
+            </div>
+            <div class="readbox_download right">下载：
+              <span style="color:#9b9b9b;"><%= document.download_count %></span>
+            </div>
+          </div>
+        </div>
+        <div class="readbox_text right">
+          <%= document.body %>
+        </div>
+      </div>
+      <div class="readbutton right">
+        <div class="read_button left">
+          <%= link_to_if(document.can_view?, "在线阅读" , reading_path(document) ){
+              link_to "在线阅读","javascript:alert('当前资料不允许阅读,请阅读其他本站资料!')"
+          } %>
+        </div>
+        <div class="download_button left">
+          <!-- <a href="<%#= download_reading_path(document) %>">下载</a> -->
+          <%= link_to_if(document.can_download?, "下载" , download_reading_path(document) ){
+              link_to "下载","javascript:alert('当前资料不允许下载,请下载其他本站资料!')"
+          } %>
+        </div>
+      </div>
+    </div>
+    <% end  %>
+    <div class="clear"></div>
+</div>
+<!--paging begin-->
+<div class=" pagination3 right">
+  <%= paginate @documents %>
+</div>
+
+<!--paging end-->
+</div>
+<div class="footbox_border"></div>
+<!--testbody end-->

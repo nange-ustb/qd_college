@@ -1,0 +1,6 @@
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  = f.input :taxon_id do
+    = f.select :taxon_id, options_for_select(nested_set_options(Taxon) {|i| "#{'-' * i.level} #{i.name}" } )
+  = f.input :description , as: :kindeditor, input_html: { simple_mode: true,width: 100, height: 3, allowFileManager: false }
+  = f.submit :class => 'btn btn-primary'
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path

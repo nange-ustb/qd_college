@@ -1,0 +1,19 @@
+%dl
+  - (attributes - %w(position can_download can_view type view_count download_count)).each do |attr|
+    %dt= resource_class.human_attribute_name(attr)
+    - if resource.respond_to?( "#{attr}_text".to_sym )
+      %td= resource.send( "#{attr}_text".to_sym )
+    - elsif resource.send(attr).is_a? Time
+      %td= l resource.send(attr)
+    - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+      %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+    - else
+      %td= resource.send(attr).to_s.truncate(20)
+  %dt= DocumentLogo.human_attribute_name(:link)
+  %td= image_tag( resource.logo.send( :link_url ) )
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path
+
+
+
+
+

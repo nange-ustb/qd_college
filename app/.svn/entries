@@ -1,0 +1,61 @@
+10
+
+dir
+21357
+http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app
+http://server-code.grandsoft.com.cn/GIM/Rails
+
+
+
+2013-10-23T10:32:10.769608Z
+21357
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c74a76da-cd3e-5145-a8d1-4a383b865423
+
+uploaders
+dir
+
+service
+dir
+
+assets
+dir
+
+helpers
+dir
+
+inputs
+dir
+
+models
+dir
+
+decorators
+dir
+
+controllers
+dir
+
+mailers
+dir
+
+workers
+dir
+
+views
+dir
+

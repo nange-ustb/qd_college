@@ -1,0 +1,23 @@
+<%
+   [:success, :error, :notice, :warning].each do |flash_type|
+     if flash[flash_type].present?
+%>
+
+        <div id="message-<%=flash_type.to_s%>" class="message message-<%=flash_type.to_s%>"  style="margin-top: -20px;">
+          <div class="image">
+            <img src="/assets/admin/icons/<%=flash_type.to_s%>.png" alt="<%=flash_type.to_s%>" height="32" />
+          </div>
+          <div class="text">
+            <h6><%=t("#{flash_type.to_s}_message")%></h6>
+            <span><%= flash[flash_type] %></span>
+          </div>
+          <div class="dismiss">
+            <a href="#message-<%=flash_type.to_s%>"></a>
+          </div>
+        </div>
+<%
+     end
+   end
+%>
+
+

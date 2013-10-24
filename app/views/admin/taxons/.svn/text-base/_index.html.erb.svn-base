@@ -1,0 +1,187 @@
+<div id="ajax_error"></div>
+<div id="mmenu" style="height: auto; overflow:auto;">
+  <input type="button" id="add_folder" value="新增" style="display:block; float:left;" class="btn"/>
+  <!--<input type="button" id="add_default" value="增加文件" style="display:block; float:left;" class="btn"/>-->
+  <input type="button" id="rename" value="修改" style="display:block; float:left;" class="btn"/>
+  <input type="button" id="remove" value="删除" style="display:block; float:left;" class="btn"/>
+  <input type="button" id="cut" value="剪切" style="display:block; float:left;" class="btn"/>
+  <!--<input type="button" id="copy" value="拷贝" style="display:block; float:left;" class="btn"/>-->
+  <input type="button" id="paste" value="粘贴" style="display:block; float:left;" class="btn"/>
+  <!--<input type="button" id="clear_search" value="清空" style="display:block; float:right;" class="btn"/>-->
+  <input type="button" id="search" value="搜索" style="display:block; float:right;" class="btn"/>
+  <input type="text" id="text" value="" style="display:block; float:right;" class="form-control" placeholder="输入内容进行查询"/>
+</div>
+
+<div id="demo" class="demo jstree jstree-0 jstree-default jstree-focused" style="height: auto; ">
+</div>
+
+<!--<div id="demo1" class="demo jstree jstree-0 jstree-default jstree-focused" style="height: 198px; ">-->
+<!--</div>-->
+
+<script>
+    var taxon_base_url = "<%= admin_taxons_path %>";
+    function handle_ajax_error(XMLHttpRequest, textStatus, errorThrown){
+        $.jstree.rollback(last_rollback)
+        $("#ajax_error").show().html("<strong>服务器错误</strong><br />")
+    }
+
+
+    function handle_move(e, data){
+        last_rollback = data.rlbk;
+        position = data.rslt.cp;
+        node = data.rslt.o;
+        new_parent = data.rslt.np;
+        parent_id = data.rslt.cr === -1 ? null : new_parent.attr("id");
+        url = taxon_base_url + '/' + node.attr("id");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url.toString(),
+            data: ({_method: "put", method: "put", "taxon[parent_id]": parent_id, "taxon[position]": position }),
+            error: handle_ajax_error
+
+        });
+        true
+    }
+
+    function handle_create(e, data){
+        last_rollback = data.rlbk
+        node = data.rslt.obj
+        name = data.rslt.name
+        position = data.rslt.position
+        new_parent = data.rslt.parent
+        parent_id = new_parent === -1 ? null : new_parent.attr("id");
+        url = taxon_base_url;
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: ({"taxon[name]": name, "taxon[parent_id]": parent_id, "taxon[position]": position }),
+            error: handle_ajax_error,
+            success: function(data,result){
+                node.attr('id', data.id)
+            }
+        });
+    }
+
+
+    function handle_rename(e, data){
+        last_rollback = data.rlbk;
+        node = data.rslt.obj;
+        name = data.rslt.new_name;
+        url = taxon_base_url + '/' + node.attr("id");
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: {_method: "put", method: "put", "taxon[name]": name },
+            error: handle_ajax_error
+        });
+    }
+
+    function handle_delete(e, data){
+        last_rollback = data.rlbk;
+        node = data.rslt.obj;
+        url = taxon_base_url + '/' + node.attr("id");
+        jConfirm("<%= t('action_lables.are_you_sure')%>", "<%= t('action_lables.confirm_destroy')%>", function(r){
+            if(r){
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: url,
+                    data: {_method: "delete", method: "delete"},
+                    error: handle_ajax_error});
+            }else{
+                $.jstree.rollback(last_rollback)
+                last_rollback = null
+            }
+        });
+    }
+
+    conf = {
+        // List of active plugins
+        "plugins" : ["themes","json_data","ui","crrm","cookies","dnd","search","hotkeys","contextmenu"],
+        // I usually configure the plugin that handles the data first
+        // This example uses JSON as it is most common
+        "json_data" : {
+            // This tree is ajax enabled - as this is most common, and maybe a bit more complex
+            // All the options are almost the same as jQuery's AJAX (read the docs)
+            "ajax" : {
+                // the URL to fetch the data
+                "url" : taxon_base_url,
+                "dataType": "json",
+                // the `data` function is executed in the instance's scope
+                // the parameter is the node being loaded
+                // (may be -1, 0, or undefined when loading the root nodes)
+                "data" : function (n) {
+                    // the result is fed to the AJAX request `data` option
+                    return {
+                        "id" : n.attr ? n.attr("id").replace("node_","") : ''
+                    };
+                }
+            }
+        },
+        // Configuring the search plugin
+        "search" : {
+            // As this has been a common question - async search
+            // Same as above - the `ajax` config option is actually jQuery's AJAX object
+            "ajax" : {
+                "url" : "<%= search_admin_taxons_path %>",
+                "dataType": "json",
+                // You get the search string as a parameter
+                "data" : function (str) {
+                    return {
+                        "search_str" : str
+                    };
+                }
+            }
+        },
+        // UI & core - the nodes to initially select and open will be overwritten by the cookie plugin
+        // the UI plugin - it handles selecting/deselecting/hovering nodes
+        "ui" : {
+            // this makes the node with ID node_4 selected onload
+            "initially_select" : [ "node_4" ]
+        },
+        // the core plugin - not many options here
+        "core" : {
+            // just open those two nodes up
+            // as this is an AJAX enabled tree, both will be downloaded from the server
+            "initially_open" : [ "node_2" , "node_3" ]
+        }
+    }
+
+
+
+    $(function(){
+        $.jstree._themes = "/assets/jquery/themes/";
+        $("#demo")
+                .bind("before.jstree", function (e, data) {
+                    $("#alog").append(data.func + "<br />");
+                })
+                .jstree(conf)
+                .bind("create.jstree", handle_create)
+                .bind("remove.jstree", handle_delete)
+                .bind("rename.jstree", handle_rename)
+                .bind("move_node.jstree", handle_move);
+        $(function () {
+            $("#mmenu input").click(function () {
+                switch(this.id) {
+                    case "add_default":
+                    case "add_folder":
+                        $("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+                        break;
+                    case "search":
+                        $("#demo").jstree("search", document.getElementById("text").value);
+                        break;
+                    case "text": break;
+                    default:
+                        $("#demo").jstree(this.id);
+                        break;
+                }
+            });
+        });
+
+    })
+</script>

@@ -1,0 +1,75 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+#development:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: shop
+#  username: postgres
+#  port: 5432
+#  host: localhost
+#  password: 123qwe!@#
+
+
+#production:
+#  adapter: sqlite3
+#  database: db/development.sqlite3
+#  pool: 5
+#  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: list_school
+  username: postgres
+  port: 5432
+  host: 192.168.130.53
+  password: 123456
+
+fwxgx_development:
+  adapter: sqlserver
+  mode: dblib
+  host: 192.168.2.74
+  database: gim
+  username: gim
+  password: 123qwe!@#4
+  encoding: UTF-8
+
+fwxgx_production:
+  adapter: sqlserver
+  mode: dblib
+  host: 192.168.2.74
+  database: gim
+  username: gim
+  password: 123qwe!@#4
+  encoding: UTF-8
+
+
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: dasai_staging
+  username: dasai
+  port: 9999
+  host: 192.168.10.127
+  password: www.dasai.c0m
+
+#production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: dasai_production
+#   username: dasai
+#   port: 9999
+#   host: 192.168.10.127
+#   password: www.dasai.c0m
+

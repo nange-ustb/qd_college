@@ -1,0 +1,21 @@
+
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="title">
+      <div class="title_left left"><%= @student.prev_level_text %>专业测试</div>
+      <div class="title_right right">本次测试已结束！</div>
+    </div>
+    <!--ceping_end begin-->
+    <dl class="ceping">
+      <dt> <img src="/assets/images/cpend.jpg" width="240" height="192" /></dt>
+      <dd>
+        <strong>恭喜您!</strong>
+        本次测试您一共<span>答对<%= @exam.correct %></span>道题，<span>答错<%= @exam.incorrect%></span>道题，
+        您已经成功解锁<%= @student.level_text %>课程权限！！
+        <p><%= link_to'快来抽奖，试试手气！',new_game_path,:remote=>true %></p>
+        <span><a href="/<%= @student.level%>s" class="jr">进入高级课堂</a> <a href="/<%= @student.prev_level %>s" class="fh">返回中级课堂</a></span>
+      </dd>
+    </dl>
+  </div>
+</div>
+<div class="footbox_border"></div>

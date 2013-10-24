@@ -1,0 +1,6 @@
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  = f.hidden_field 'video_id',:value=>params[:video_id]
+  - (attributes - %w(video_id position)).each do |attr|
+    = f.input attr
+  = f.submit :class => 'btn btn-primary'
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path(:video_id=>params[:video_id])

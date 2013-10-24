@@ -1,0 +1,1 @@
+$("#video_node_lists_box").html(<%=raw render( "video_node_lists" ).inspect %>)

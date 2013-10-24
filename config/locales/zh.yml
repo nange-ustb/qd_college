@@ -1,0 +1,201 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh:
+  enumerize:
+    gender:
+      male: 男
+      female: 女
+    level_lables: &level_lables
+      beginner: "初级"
+      mediate: "中级"
+      advanced: "高级"
+    level:
+      <<: *level_lables
+    question_online:
+      category:
+        <<: *level_lables
+    question_stand:
+      category:
+        zaojia: "造价"
+        tuxing: "图形"
+        gangjin: "钢筋"
+    user:
+      status: 
+        off: "禁闭"
+        on: "开启"
+    question_file:
+      question_type:
+        QuestionOnline: "在线评测题库"
+        QuestionStand: "一战到底题库"
+  manage_homepage_title: 清单学院后台管理
+  action_lables: &action_lables
+    new: 新建
+    edit: 编辑
+    destroy: 删除
+    confirm_destroy: 确认删除
+    show: 查看详细
+    export: 导出数据
+    search: 搜索
+    list: 全部列表
+    back_list: 返回
+    back: 返回
+    cancel: 取消
+    are_you_sure: "您确定删除这条数据吗？"
+    are_you_sure_forbidden: "啊？您确定不让这个用户参加清单学院？？？"
+  game:
+    <<: *action_lables
+  award:
+    <<: *action_lables
+  administrator:
+    <<: *action_lables
+  user:
+    <<: *action_lables
+    reset_password: 重置密码
+    turn_off: 禁闭
+    turn_on: 开启
+  role:
+    <<: *action_lables
+    permission_manager: 权限管理
+  administrator_role:
+    <<: *action_lables
+    permission_manager: 权限管理
+  permission:
+    <<: *action_lables
+  video_node:
+    <<: *action_lables
+  document:
+    <<: *action_lables
+  video:
+    <<: *action_lables
+  question_stand:
+    <<: *action_lables
+    new: 新建试题 
+    inport: 一键导入
+  question_online:
+    <<: *action_lables
+    new: 新建试题 
+    inport: 一键导入
+  question_file:
+    <<: *action_lables
+    inport: 一键导入
+  regulation:
+    <<: *action_lables
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 格式不正确
+              existing: 该用户已经存在
+              not_found: 该邮箱不存在
+              syn_failure: 注册同步信息失败
+            zone_id:
+              blank: 请选择所属地区
+
+    models:
+      game: 活动
+      award: 奖品
+      administrator: 管理员
+      role: 角色
+      permission: 权限
+      document: 资料
+      document_file: 文件
+      document_logo: 缩略图
+      question_stand: 一战到底题库
+      question_online: 在线评测题库 
+      question_file: 题库导入 
+      video: 视频
+      video_node: 视频章节
+      regulation: 清单规则
+      user: 用户
+    attributes:
+      administrator:
+        user_name: 用户名
+        nick_name: 昵称
+        real_name: 真实姓名
+        email: 邮箱
+        encrypted_password: 密码
+        affiliates: 关联分支
+        roles: 角色
+      role:
+        name: 角色名称
+        level: 级别
+        permissions: 权限
+      permission:
+        name: 权限名
+        category: 分类
+      document:
+        title: 名称
+        body:  简介 
+        author: 作者
+        level: 级别
+        topic: 互动话题
+        can_download: 下载?
+        can_view: 阅读?
+        download_count: 下载次数
+        view_count: 浏览次数
+      document_file: 
+        link: 文件
+      document_logo: 
+        link: 缩略图
+      question_stand:
+        title: 标题 
+        context: 描述
+        a: 选项A
+        b: 选项B
+        c: 选项C
+        d: 选项D
+        e: 选项E
+        f: 选项F
+        answer: 正确答案
+        category: 题库类别
+        created_at: 创建时间
+      question_online:
+        title: 标题 
+        context: 描述
+        a: 选项A
+        b: 选项B
+        c: 选项C
+        d: 选项D
+        e: 选项E
+        f: 选项F
+        answer: 正确答案
+        category: 题库类别
+        created_at: 创建时间
+      question_file:
+        question_type: 试题大类
+        question_category: 试题分类
+        title: 标注
+        file_url: 文件地址
+        is_inport: 是否导入
+        created_at: 创建时间
+      video_node:
+        title: 章节名称
+        link: CC地址
+      regulation:
+        taxon_id: 章节
+        description: 内容
+        description: 内容
+      user:
+        username: 用户名
+        email: 邮箱
+        password: 密码
+        password_confirmation: 确认密码
+        name: 姓名
+        zone_id: 地区
+        mobile: 电话
+        company: 公司
+        company_address: 公司地址
+        level: 等级
+      game:
+        level: 抽奖类型
+        code: 身份编码
+        title: 名称
+        count: 数量
+      award:
+        title: 名称
+        count: 数量
+        probability: 几率
+

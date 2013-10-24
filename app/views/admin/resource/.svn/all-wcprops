@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21280/network_marketing/qd_college/trunk/app/views/admin/resource
+END
+_info_message.haml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/views/admin/resource/_info_message.haml
+END
+_form.haml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21280/network_marketing/qd_college/trunk/app/views/admin/resource/_form.haml
+END
+show.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21123/network_marketing/qd_college/trunk/app/views/admin/resource/show.html.haml
+END
+_index.haml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21223/network_marketing/qd_college/trunk/app/views/admin/resource/_index.haml
+END
+edit.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/app/views/admin/resource/edit.html.haml
+END
+index.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/GIM/Rails/!svn/ver/21223/network_marketing/qd_college/trunk/app/views/admin/resource/index.html.haml
+END
+_sortable.haml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21135/network_marketing/qd_college/trunk/app/views/admin/resource/_sortable.haml
+END
+new.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/app/views/admin/resource/new.html.haml
+END

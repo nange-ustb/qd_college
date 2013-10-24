@@ -1,0 +1,39 @@
+%p
+  = link_to t("#{resource_class.name.underscore}.new"), new_resource_path , :class => 'btn btn-primary'
+= form_tag( collection_path , { :method => :get }) do
+  %p
+    角色名称:
+    = text_field_tag "search[name]" , params[:search].nil? ? "" : params[:search][:name]
+    = submit_tag t("#{resource_class.name.underscore}.search")
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody
+    - collection.each do |resource|
+      %tr[resource]
+        - attributes.each do |attr|
+          - if respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= 是
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= 否
+          - elsif attr == "level"
+            %td= Role::BASE_LEVEL.invert[resource.level]
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.permission_manager"), edit_resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate collection
+

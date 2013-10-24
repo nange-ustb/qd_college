@@ -1,0 +1,21 @@
+<!--footbox begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="breadcrumb">当前位置：<a href="/">首页</a> > <span>找回密码</span></div>
+    <div class="register">
+      <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :validate => true, :remote => true) do |f| %>
+          <%= f.input :email, :label => "用户帐号：", :placeholder => "请输入正确的账户号码", :input_html => {:class => "inp"} %>
+          <div class="control-group">
+            <label class="control-label">&nbsp;</label>
+            <div class="controls">
+              <%= f.button :submit, "发送重置密码邮件", :class => "zhmmbtn", :disable_with => "发送中..." %>
+              <!--<span class="help-inline"> <img src="/assets/images/zc_03.jpg" width="7" height="19" /> 重置的密码将发送到您的电子邮箱中，请去邮箱中查找！</span>-->
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<div class="footbox_border"></div>
+<!--footbox begin-->

@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/db/migrate
+END
+20130128013325_create_administrator_affiliates.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130128013325_create_administrator_affiliates.rb
+END
+20131018081009_create_students.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/GIM/Rails/!svn/ver/21299/network_marketing/qd_college/trunk/db/migrate/20131018081009_create_students.rb
+END
+20131015023441_add_question_file_id_to_questions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/GIM/Rails/!svn/ver/21121/network_marketing/qd_college/trunk/db/migrate/20131015023441_add_question_file_id_to_questions.rb
+END
+20130127030447_create_permission_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130127030447_create_permission_events.rb
+END
+20130127041503_create_administrator_roles.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130127041503_create_administrator_roles.rb
+END
+20130128102150_add_model_name_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130128102150_add_model_name_to_event.rb
+END
+20131022023006_create_games.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/db/migrate/20131022023006_create_games.rb
+END
+20130123013611_create_areas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130123013611_create_areas.rb
+END
+20131015023440_create_question_files.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/GIM/Rails/!svn/ver/21121/network_marketing/qd_college/trunk/db/migrate/20131015023440_create_question_files.rb
+END
+20131015023442_add_download_count_and_view_count_to_documnet.rb
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/GIM/Rails/!svn/ver/21151/network_marketing/qd_college/trunk/db/migrate/20131015023442_add_download_count_and_view_count_to_documnet.rb
+END
+20131016110207_create_regulations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/db/migrate/20131016110207_create_regulations.rb
+END
+20130125015243_create_role_permissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130125015243_create_role_permissions.rb
+END
+20131023054419_add_level_to_game_chance.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/db/migrate/20131023054419_add_level_to_game_chance.rb
+END
+20131015025522_create_video_nodes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21151/network_marketing/qd_college/trunk/db/migrate/20131015025522_create_video_nodes.rb
+END
+20131015023134_create_documents.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/GIM/Rails/!svn/ver/21124/network_marketing/qd_college/trunk/db/migrate/20131015023134_create_documents.rb
+END
+20131022014651_add_pass_to_student.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/db/migrate/20131022014651_add_pass_to_student.rb
+END
+20131018033259_devise_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/db/migrate/20131018033259_devise_create_users.rb
+END
+20131015023135_create_taxons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/db/migrate/20131015023135_create_taxons.rb
+END
+20131022023057_create_awards.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/db/migrate/20131022023057_create_awards.rb
+END
+20130125014726_create_permissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130125014726_create_permissions.rb
+END
+20131018092659_create_zones.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/db/migrate/20131018092659_create_zones.rb
+END
+20131023021619_create_award_records.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21339/network_marketing/qd_college/trunk/db/migrate/20131023021619_create_award_records.rb
+END
+20131018092652_create_affiliates.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/db/migrate/20131018092652_create_affiliates.rb
+END
+20130128011935_remove_code_and_uniq_id_from_permissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130128011935_remove_code_and_uniq_id_from_permissions.rb
+END
+20131023092953_add_column_status_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/db/migrate/20131023092953_add_column_status_to_users.rb
+END
+20131014011342_create_questions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/GIM/Rails/!svn/ver/21111/network_marketing/qd_college/trunk/db/migrate/20131014011342_create_questions.rb
+END
+20130124124552_create_roles.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130124124552_create_roles.rb
+END
+20131018081834_create_exams.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21291/network_marketing/qd_college/trunk/db/migrate/20131018081834_create_exams.rb
+END
+20131022064058_add_level_to_game.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/db/migrate/20131022064058_add_level_to_game.rb
+END
+20130127030041_create_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130127030041_create_events.rb
+END
+20131015022550_create_assets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21117/network_marketing/qd_college/trunk/db/migrate/20131015022550_create_assets.rb
+END
+20130123012705_create_administrators.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/db/migrate/20130123012705_create_administrators.rb
+END
+20131022083752_create_game_chances.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/db/migrate/20131022083752_create_game_chances.rb
+END
+20131018082818_create_papers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21282/network_marketing/qd_college/trunk/db/migrate/20131018082818_create_papers.rb
+END

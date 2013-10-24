@@ -1,0 +1,87 @@
+1、搜索表单例子
+    = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
+      产品名称：
+      = text_field_tag "search[name]" , params[:search][:name], :class => 'span2'
+      创建时间:
+      = datepicker_input("search", "created_at_s", :value =>params[:search][:created_at_s], :class => 'input-small')
+
+      = f.association :option_values, item_wrapper_class: 'inline', :collection => resource.product.option_types.first.option_values, as: :radio_buttons
+
+      = f.submit '搜索', :class => 'btn'
+
+2、表格例子
+    %table{:class => "table table-bordered table-striped table-hover"}
+      %thead
+        %tr
+          %th
+          %th
+          %th
+      %tbody
+        %tr
+          %td
+          %td
+          %td
+
+3、dialog iframe的使用方法
+    主要是dialog参数 还有width、height
+    = link_to "新建", new_admin_relation_type_path(:width => 928, :height => 473, :dialog => true), :class => "btn btn-primary"
+
+4、排序
+    1、%table{:class => "table table-bordered sortable", :"data-sortable-link" => update_positions_admin_option_types_url }
+      %thead
+        %tr
+          %th
+          - attributes.each do |attr|
+            %th= resource_class.human_attribute_name(attr)
+          %th= "操作"
+      %tbody
+        - collection.each do |resource|
+       2、   %tr{:id => shop_dom_id(resource)}
+            %td.center
+         3、     %i{:class => 'icon-random handle'}
+    4、routes.rb
+        resources :option_types do
+          collection do
+            post :update_positions
+          end
+        end
+
+5. 省市县三级联动
+       默认为当前layout 页头选中的省市
+    <p class='ChinaArea'>
+      <label for="contest_user_area_id"><ins>*</ins>分赛区：</label>
+      省
+      <select id="province_input" name="geo_location_id" style="width: 75px;" prompt = '请选择' ></select>
+      市
+      <select id="city_input" name="contest_user[geo_location_id]" style="width: 75px;" prompt = '请选择'></select>
+      县
+      <select id="county_input" name="contest_user[geo_location_id]" style="width: 75px;" prompt = '请选择'></select>
+    </p>
+    <script type="text/javascript">
+        $(function(){
+            $(".ChinaArea").jChinaArea({
+                s1: <%= raw @province.name.inspect  %>,
+                s2: <%= raw @city.name.inspect  %>,
+                s3: ''
+            });
+        });
+    </script>
+
+6. 加入购物车
+    <%= link_to "加入购物车", populate_orders_path(:variants => {pa.master_variant.id => 1}), :method => :post, :remote => true %>
+
+    <%= link_to "加入购物车", populate_orders_path(:variants => {pa.master_variant.id => 1}), :method => :post %>
+
+7. 前台日期款的写法
+    <%= f.input :remitted_date, :as => :datepicker, :label => "汇款日期：", :input_html => { :class => "addinput2" } do%>
+         <%= datepicker_input :payment, :remitted_date, :dateFormat => "yy-mm-dd" %>
+    <%end%>
+
+8. 重建图片
+   ProductThumbnail.all.each{|_| _.url.recreate_versions!}
+
+9. 截取中文字符
+truncate_chinese(rt_pa.product_name, :length => 16)
+
+10. 
+put rfxview.swf and DocumentConverter.py in the dir ~

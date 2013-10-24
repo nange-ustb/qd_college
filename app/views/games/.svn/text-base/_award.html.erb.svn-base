@@ -1,0 +1,8 @@
+<% if award_record %>
+"恭喜您获得'<%= award_record.title %>'!!,礼品将于10天内按照您填写的邮寄地址及联系方式发送到您手上!"<br>
+<%= link_to "查看获奖名单",'/'%><br>
+<% else %>
+	<%= flash[:notice] %><br>
+<% end %>
+<%= link_to "更多获奖机会请单击",'http://2013ds.fwxgx.com/instructions',:target=>'_blank'%>
+

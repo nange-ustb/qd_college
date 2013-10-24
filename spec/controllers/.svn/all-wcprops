@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/spec/controllers
+END
+home_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/spec/controllers/home_controller_spec.rb
+END
+beginners_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/spec/controllers/beginners_controller_spec.rb
+END
+games_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/spec/controllers/games_controller_spec.rb
+END

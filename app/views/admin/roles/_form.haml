@@ -1,0 +1,27 @@
+= render "info_message"
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  - (attributes).each do |attr|
+    - if attr == "level"
+      = f.input attr , :as => :select , :collection => Role::BASE_LEVEL , :prompt => false
+    - else
+      = f.input attr
+  - permissions = Permission.all
+  - category = Permission::BASE_CATEGORY.invert
+  - category.keys.each do |pm|
+    .alert.alert-info= "#{category[pm]} 权限"
+    = f.association :permissions, :collection => permissions.select{ |p| p.category == pm }, :as => :check_boxes,:label => false,:item_wrapper_class => 'inline'
+  = f.submit :class => 'btn btn-primary' , :value => t("#{resource_class.name.underscore}.edit")
+  = link_to t("#{resource_class.name.underscore}.back") , collection_path , :class => 'btn btn-primary'
+  
+:javascript
+  $(function(){
+    $("#role_level").change(function(){
+      if($(this).val() == "superman"){
+        $(this).parent().parent('.control-group').nextAll('div').hide();
+      }else{
+        $(this).parent().parent('.control-group').nextAll('div').show();
+      }
+    })
+    $("#role_level").trigger("change");
+  })
+  

@@ -1,0 +1,7 @@
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="655" height="371" id="cc_B1A08CDD096A9F99">
+                  <param name="movie" value="<%= video_box.try(:link) %>" />
+                  <param name="allowFullScreen" value="true" />
+                  <param name="allowScriptAccess" value="always" />
+                  <embed src="<%= video_box.try(:link) %>" width="655" height="371" name="cc_B1A08CDD096A9F99" allowFullScreen="true" allowScriptAccess="always" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"/>
+</object>
+<input value="<%= video_box.try(:id) %>" id="cur_video" type="hidden"/>

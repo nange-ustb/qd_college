@@ -1,0 +1,48 @@
+%p
+  = link_to t("#{resource_class.name.underscore}.new"), new_resource_path,:class => 'btn btn-primary'
+  = link_to t("#{resource_class.name.underscore}.inport"), 
+    new_admin_question_file_path(:q=> "#{resource_class.name}" ),
+    :class => 'btn btn-primary'
+- params[:search] ||= {}
+.well
+  = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
+    类型：
+    = select_tag "search[category]" , options_for_select(resource_class.category.options,params[:search][:category]), :class => 'span2' ,:prompt => "请选择"
+    标题：
+    = text_field_tag "search[title]",params[:search][:title] , :class => 'span2'
+    = f.submit '搜索', :class => 'btn'
+    = link_to t("#{resource_class.name.underscore}.export"), collection_path( {:format => :xls}.reverse_merge! params ), :class => 'btn'
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody
+    - collection.each do |resource|
+      %tr[resource]
+        - attributes.each do |attr|
+          - if respond_to?( "#{attr}_text".to_sym )
+            %td= self.send( "#{attr}_text".to_sym )
+          - elsif respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= 是
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= 否
+          - elsif attr=="category" 
+            %td= resource.send( "#{attr}_text".to_sym )    
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
+          |
+          =# link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate collection
+=# link_to t("#{resource_class.name.underscore}.new"), new_resource_path

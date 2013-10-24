@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/config/environments
+END
+staging.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/environments/staging.rb
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/config/environments/production.rb
+END

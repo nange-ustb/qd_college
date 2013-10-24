@@ -1,0 +1,18 @@
+<%
+   if model_instance.present? and model_instance.errors.present?
+%>
+    <div id="message-error" class="message message-error" style="margin-top: -20px;">
+      <div class="image">
+        <img src="/assets/admin/icons/error.png" alt="error" height="32" />
+      </div>
+      <div class="text">
+        <h6><%=t('error_message')%></h6>
+        <% model_instance.errors.full_messages.each do |error_msg|%>
+        <span><%= error_msg %></span>
+        <% end %>
+      </div>
+      <div class="dismiss">
+        <a href="#message-error"></a>
+      </div>
+    </div>
+<% end %>

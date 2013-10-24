@@ -1,0 +1,44 @@
+<!--footbox begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="breadcrumb">当前位置：<a href="/">首页</a> > <span>修改密码</span></div>
+    <div class="register">
+      <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }, :validate => true) do |f| %>
+          <%= f.input :reset_password_token, :as => :hidden %>
+          <%= f.full_error :reset_password_token %>
+          <%= f.input :password, :label => "新密码：", :placeholder => "请输入新密码", :input_html => {:class => "inp"} %>
+          <%= f.input :password_confirmation, :label => "确认密码：", :placeholder => "请输入确认密码", :input_html => {:class => "inp"} %>
+          <div class="control-group">
+            <label class="control-label">&nbsp;</label>
+            <div class="controls">
+              <%= f.button :submit, "修改密码", :class => "zhmmbtn" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<div class="footbox_border"></div>
+<!--footbox begin-->
+
+
+<h2>Change your password</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, :as => :hidden %>
+  <%= f.full_error :reset_password_token %>
+
+  <div class="form-inputs">
+    <%= f.input :password, :label => "New password", :required => true %>
+    <%= f.input :password_confirmation, :label => "Confirm your new password", :required => true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Change my password" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

@@ -1,0 +1,43 @@
+<div class="cjkt">
+  <dl class="cjkttop">
+    <dt>课堂列表</dt>
+    <dd>
+        <%= form_tag(beginner_path(1), method: :get,remote: true,:id=>:search) do |f| %>
+          <p>
+            <input name="description" type="text" class="ktso" style='width:330px' />
+            <%= button_to_function "", "$('#search').submit()", class: "ktbtn" %>
+          </p>
+        <% end %>
+      <%=link_to "初级在线评测",beginner_schools_path%>
+    </dd>
+  </dl>
+  <div class="cjktborder">
+    <!--cjkt left begin-->
+    <div class="cjl left">
+   	  <% @taxons[nil].each do |first| %>
+      <ul>
+   	  	 <li class="ultit">
+   	  	 	<%= link_to first.name, beginner_url(first),:remote=>true %>
+   	  	 </li>
+   	  	 <span style='display:none'>
+   	  	 <%(@taxons[first.id] || []).each do |second| %>
+   	  	 	<li class='second'>
+   	  	 		<%= link_to second.name,beginner_url(second),:remote=>true %>
+   	  	 	</li>
+   	  	 	<span style='display:none'>
+   	  	 	<% (@taxons[second.id] ||[]).each do |third| %>
+   	  	 		<li  class="tree">
+   	  	 			<%= link_to third.name,beginner_url(third),:remote=>true %>
+   	  	 		</li>
+   	  	 	<% end %>
+   	  	 </span>
+   	  	 <% end %>
+   	  	 <span>
+        </ul>
+   	  <% end %>
+    </div>
+    <div class="cjr right" id='content'>
+    </div>
+  </div>
+</div>
+

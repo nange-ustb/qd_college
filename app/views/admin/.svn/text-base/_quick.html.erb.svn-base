@@ -1,0 +1,43 @@
+<ul id="quick">
+  <li>
+    <a href="#" title="前台管理"><span class="icon"><img src="/assets/admin/icons/application_double.png" alt="前台管理"/></span><span>前台管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+  <li>
+    <a href="#" title="下载专区管理"><span class="icon"><img src="/assets/admin/icons/tick.png" alt="下载专区管理"/></span><span>下载专区管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+
+  <li>
+    <a href="#" title="获奖达人管理"><span class="icon"><img src="/assets/admin/icons/page_white_copy.png" alt="获奖达人管理"/></span><span>获奖达人管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+
+  <li>
+    <a href="#" title="pk管理"><span class="icon"><img src="/assets/admin/icons/world_link.png" alt="pk管理"/></span><span>pk管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+
+  <li>
+    <a href="#" title="系统管理"><span class="icon"><img src="/assets/admin/icons/calendar.png" alt="系统管理"/></span><span>系统管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+
+  <li>
+    <a href="#" title="权限管理"><span class="icon"><img src="/assets/admin/icons/cog.png" alt="权限管理"></span><span>权限管理</span></a>
+    <ul>
+     
+    </ul>
+  </li>
+
+</ul>

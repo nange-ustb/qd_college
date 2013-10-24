@@ -1,0 +1,45 @@
+- params[:search] ||= {}
+= simple_form_for( collection_path, :method => :get, html: { class: 'form-search' } ) do |f|
+  产品类目:
+  = select_tag 'search[taxon_id]', options_for_select(nested_set_options(Taxon) {|i| "#{'-' * i.level} #{i.name}" }, params[:search][:taxon_id] ), :include_blank => true
+  规则内容:
+  = text_field_tag 'search[description]', params[:search][:description]
+  = f.submit '搜索', :class => 'btn'
+%hr
+
+
+%table{:class => "table table-bordered table-striped sortable ", :"data-sortable-link" => update_positions_admin_regulations_path}
+  %thead
+    %tr
+      %th
+      - (attributes-["position"]).each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody#banners_list
+    - collection.each do |resource|
+      %tr[resource]
+        %td
+          %i{:class => 'icon-random handle'}
+        - (attributes-["position"]).each do |attr|
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= "是"
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= "否"
+          - else
+            %td= nokogiri_strip_tags(resource.send(attr).to_s).truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate collection
+= link_to t("#{resource_class.name.underscore}.new"), new_resource_path, :class => "btn"

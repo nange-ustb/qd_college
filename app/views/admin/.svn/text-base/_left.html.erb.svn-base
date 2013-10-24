@@ -1,0 +1,60 @@
+<div id="menu">
+  <h6 id="h-menu-powers">
+    <a href="#powers"><span>权限管理</span></a>
+  </h6>
+  <ul id="menu-powers" class="closed">
+    <% if can? :read , Administrator %><li><%= link_to("管理员管理", admin_administrators_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , Role %><li><%= link_to("角色管理", admin_roles_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , Permission %><li><%= link_to("权限管理", admin_permissions_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+  <h6 id="h-menu-games">
+    <a href="#games"><span>抽奖管理</span></a>
+  </h6>
+  <ul id="menu-games" class="closed">
+    <% if can? :read , Game %><li><%= link_to("抽奖管理", admin_games_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+
+  <h6 id="h-menu-videos">
+    <a href="#videos"><span>视频管理</span></a>
+  </h6>
+  <ul id="menu-videos" class="closed">
+    <% if can? :read , Video %><li><%= link_to("视频管理", admin_videos_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+  <h6 id="h-menu-documents">
+    <a href="#documents"><span>资料管理</span></a>
+  </h6>
+  <ul id="menu-documents" class="closed">
+    <% if can? :read , Document %><li><%= link_to("资料管理", admin_documents_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+  <h6 id="h-menu-bills">
+    <a href="#bills"><span>清单规范管理</span></a>
+  </h6>
+  <ul id="menu-bills" class="closed">
+    <% if can? :read , Taxon %><li><%= link_to("清单目录管理", admin_taxons_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , Regulation %><li><%= link_to("清单规范管理", admin_regulations_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+
+
+  <h6 id="h-menu-question_onlines">
+    <a href="#question_onlines"><span>在线评测题库</span></a>
+  </h6>
+  <ul id="menu-question_onlines" class="closed">
+    <% if can? :read , QuestionOnline %><li><%= link_to("新建试题", admin_question_onlines_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", new_admin_question_file_path(:q=> "QuestionOnline" ), :target => 'contentfrm') -%></li><% end %>
+  </ul>
+
+  <h6 id="h-menu-question_stands">
+    <a href="#question_stands"><span>一战到底题库</span></a>
+  </h6>
+  <ul id="menu-question_stands" class="closed">
+    <% if can? :read , QuestionStand %><li><%= link_to("新建试题", admin_question_onlines_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", new_admin_question_file_path(:q=> "QuestionStand" ), :target => 'contentfrm') -%></li><% end %>
+  </ul>
+  <h6 id="h-menu-users">
+    <a href="#users"><span>用户管理</span></a>
+  </h6>
+  <ul id="menu-users" class="closed">
+    <% if can? :read , User %><li><%= link_to("用户管理", admin_users_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+</div>
+<!--<div id="date-picker"></div>-->

@@ -1,0 +1,319 @@
+# -*- encoding : utf-8 -*-
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20131023092953) do
+
+  create_table "administrator_affiliates", :force => true do |t|
+    t.integer  "administrator_id"
+    t.integer  "affiliate_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "administrator_affiliates", ["administrator_id"], :name => "index_administrator_affiliates_on_administrator_id"
+  add_index "administrator_affiliates", ["affiliate_id"], :name => "index_administrator_affiliates_on_affiliate_id"
+
+  create_table "administrator_roles", :force => true do |t|
+    t.integer  "administrator_id"
+    t.integer  "role_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "administrators", :force => true do |t|
+    t.string   "user_name",          :null => false
+    t.string   "real_name"
+    t.string   "nick_name"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "affiliates", :id => false, :force => true do |t|
+    t.string   "name"
+    t.integer  "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "areas", :id => false, :force => true do |t|
+    t.string   "name"
+    t.integer  "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "assets", :force => true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.text     "body"
+    t.string   "desc"
+    t.integer  "position",      :default => 0
+    t.string   "type"
+    t.string   "viewable_type"
+    t.integer  "viewable_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "assets", ["viewable_type", "viewable_id", "type"], :name => "index_assets_on_viewable_type_and_viewable_id_and_type", :unique => true
+
+  create_table "awards", :force => true do |t|
+    t.string   "code",        :null => false
+    t.string   "title",       :null => false
+    t.float    "probability", :null => false
+    t.integer  "count",       :null => false
+    t.integer  "game_id",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "awards", ["code"], :name => "index_awards_on_code"
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "author"
+    t.string   "level"
+    t.string   "topic"
+    t.boolean  "can_download",   :default => false
+    t.boolean  "can_view",       :default => false
+    t.integer  "position",       :default => 0
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "download_count", :default => 0
+    t.integer  "view_count",     :default => 0
+    t.string   "type",           :default => "Document"
+  end
+
+  add_index "documents", ["title"], :name => "index_documents_on_title"
+
+  create_table "events", :force => true do |t|
+    t.string   "action",     :limit => 50, :null => false
+    t.string   "subject",    :limit => 50, :null => false
+    t.string   "desc",       :limit => 50, :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "model_name"
+  end
+
+  create_table "exams", :force => true do |t|
+    t.string   "level"
+    t.integer  "student_id"
+    t.integer  "correct"
+    t.integer  "incorrect"
+    t.boolean  "pass"
+    t.boolean  "finished",   :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "exams", ["student_id", "level"], :name => "index_exams_on_student_id_and_level"
+  add_index "exams", ["student_id"], :name => "index_exams_on_student_id"
+
+  create_table "game_chances", :force => true do |t|
+    t.integer  "student_id",                    :null => false
+    t.integer  "game_id",                       :null => false
+    t.boolean  "used",       :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "game_chances", ["student_id"], :name => "index_game_chances_on_student_id"
+
+  create_table "games", :force => true do |t|
+    t.string   "code",       :null => false
+    t.string   "title",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "level"
+  end
+
+  add_index "games", ["code"], :name => "index_games_on_code"
+
+  create_table "papers", :force => true do |t|
+    t.integer  "exam_id"
+    t.integer  "question_id"
+    t.boolean  "finished",    :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "papers", ["exam_id", "question_id"], :name => "index_papers_on_exam_id_and_question_id"
+
+  create_table "permission_events", :force => true do |t|
+    t.integer  "permission_id"
+    t.integer  "event_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "permissions", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "question_files", :force => true do |t|
+    t.string   "question_type"
+    t.string   "title"
+    t.string   "file_url"
+    t.boolean  "is_inport",     :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "title"
+    t.text     "context"
+    t.string   "a"
+    t.string   "b"
+    t.string   "c"
+    t.string   "d"
+    t.string   "e"
+    t.string   "f"
+    t.string   "answer"
+    t.string   "type"
+    t.string   "category"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "question_file_id"
+  end
+
+  create_table "regulations", :force => true do |t|
+    t.integer  "taxon_id"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "role_permissions", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "permission_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "role_permissions", ["permission_id"], :name => "index_role_permissions_on_permission_id"
+  add_index "role_permissions", ["role_id"], :name => "index_role_permissions_on_role_id"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.string   "level"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "level",      :default => "beginner"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "pass",       :default => false
+  end
+
+  add_index "students", ["level"], :name => "index_students_on_level"
+  add_index "students", ["user_id"], :name => "index_students_on_user_id"
+
+  create_table "taxonomies", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taxons", :force => true do |t|
+    t.integer  "parent_id"
+    t.integer  "position",          :default => 0
+    t.string   "name",                             :null => false
+    t.string   "permalink"
+    t.integer  "taxonomy_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.text     "description"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                                :default => "",   :null => false
+    t.string   "encrypted_password",                   :default => "",   :null => false
+    t.string   "username"
+    t.string   "name"
+    t.boolean  "gender",                               :default => true
+    t.string   "id_card",                :limit => 18
+    t.string   "mobile",                 :limit => 11
+    t.string   "qq"
+    t.string   "zone_id"
+    t.string   "address"
+    t.string   "company"
+    t.string   "company_address"
+    t.string   "seniority"
+    t.integer  "global_id",                            :default => 0,    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                        :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",                      :default => 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.string   "authentication_token"
+    t.datetime "created_at",                                             :null => false
+    t.datetime "updated_at",                                             :null => false
+    t.string   "status",                               :default => "on"
+  end
+
+  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["global_id"], :name => "index_users_on_global_id"
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
+
+  create_table "video_nodes", :force => true do |t|
+    t.string   "link"
+    t.string   "title"
+    t.integer  "video_id"
+    t.integer  "position",   :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "zones", :id => false, :force => true do |t|
+    t.integer  "code"
+    t.string   "name"
+    t.integer  "parent_id",    :default => 0
+    t.integer  "affiliate_id"
+    t.integer  "area_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "zones", ["affiliate_id"], :name => "index_zones_on_affiliate_id"
+  add_index "zones", ["area_id"], :name => "index_zones_on_area_id"
+
+end

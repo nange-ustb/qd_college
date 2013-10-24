@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><%=t('manage_homepage_title')%></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <!-- stylesheets -->
+  <%= stylesheet_link_tag "admin/reset" %>
+  <%= stylesheet_link_tag "admin/style", :media => "screen" %>
+  <%= stylesheet_link_tag "admin/colors/blue", :media => "screen", :id => "color" %>
+  <%= javascript_include_tag 'admin.js' %>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          style_path = "/assets/admin/colors";
+          $("#date-picker").datepicker();
+          auto_height();
+          //注意：下面的代码是放在和iframe同一个页面调用
+          $("#contentfrm").load(function(){
+              //$(this).contents().find("body").width($("#contentfrm").width());
+              var mainheight = $(this).contents().find("body").height()+30;
+              auto_height(mainheight);
+          });
+      });
+  </script>
+
+</head>
+<body>
+<div id="colors-switcher" class="color">
+  <a href="" class="blue" title="Blue"></a>
+  <a href="" class="green" title="Green"></a>
+  <a href="" class="brown" title="Brown"></a>
+  <a href="" class="purple" title="Purple"></a>
+  <a href="" class="red" title="Red"></a>
+  <a href="" class="greyblue" title="GreyBlue"></a>
+</div>
+<!-- header -->
+<div id="header">
+  <!-- logo -->
+  <div id="logo">
+    <h1><a href="" title="<%=t('manage_homepage_title')%>"><img src="/assets/logo.png" alt="<%=t('manage_homepage_title')%>"/></a></h1>
+  </div>
+  <!-- end logo -->
+  <!-- user -->
+  <ul id="user">
+    <li class="first"><span style="color: #4e4e4e;font-weight: bold;text-decoration: none;" >您好,<%= current_administrator.user_name %>(<%= current_administrator.user_name %>)</span></li>
+    <li><%= link_to "注销", "/admin/logout", :id => 'logout' %></li>
+    <li class="highlight last"><a href="/" target="_blank">访问前台</a></li>
+  </ul>
+  <!-- end user -->
+  <div id="header-inner">
+    <div id="home">
+      <a href="/admin" title="Home"></a>
+    </div>
+    <!-- quick -->
+    <%#= render "quick"%>
+    <!-- end quick -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+  </div>
+</div>
+<!-- end header -->
+<!-- content -->
+<div id="content">
+  <div id="left">
+    <%= render "left"%>
+  </div>
+  <div id="right">
+    <div class="box">
+      <iframe name="contentfrm" width="100%" style="width:100%;height:100%;" src="" id="contentfrm" frameborder="0" scrolling="auto" marginwidth="0"></iframe>
+    </div>
+    <div style="clear: both;display: block"> </div>
+  </div>
+</div>
+<!-- end content -->
+<!-- footer -->
+<div id="footer">
+  <p>Copyright &copy; 2012-2015 Glodon. All Rights Reserved.</p>
+</div>
+<!-- end footert -->
+</body>
+</html>

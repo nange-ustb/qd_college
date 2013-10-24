@@ -1,0 +1,24 @@
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - %w(code level title created_at ).each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody#banners_list
+    - collection.each do |resource|
+      %tr[resource]
+        - %w(code level title created_at ).each do |attr|
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+          |
+          = link_to '管理奖品', admin_awards_path(:game_id=>resource.id) 
+= paginate collection
+= link_to t("#{resource_class.name.underscore}.new"), new_resource_path, :class => "btn"

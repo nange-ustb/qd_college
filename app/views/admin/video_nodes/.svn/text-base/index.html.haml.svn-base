@@ -1,0 +1,4 @@
+= render "index", :attributes => attributes - %w(video_id position)
+= render 'sortable',:type=>"VideoNode",:id=>:banners_list
+%p
+  = "总记录数：#{@videos.total_count}" + " 总页数:#{@videos.total_pages}"

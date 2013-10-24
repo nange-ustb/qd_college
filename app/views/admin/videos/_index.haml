@@ -1,0 +1,36 @@
+= link_to t("#{resource_class.name.underscore}.new"), new_resource_path,:class => 'btn btn-primary'
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      %th= "排序"
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody#banners_list
+    - collection.each do |resource|
+      %tr(id="setname_#{resource.id}")
+        %td
+          %span.ui-icon.ui-icon-arrowthick-2-n-s
+        - attributes.each do |attr|
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= 是
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= 否
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to "管理章节", admin_video_nodes_path(:video_id=>resource)
+          |          
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
+          |
+          = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
+= paginate collection
+

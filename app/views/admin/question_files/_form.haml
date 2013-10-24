@@ -1,0 +1,15 @@
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+  - attributes = ["question_type", "title", "file_url"] 
+  - attributes.each do |attr|
+    - if attr=="question_type"
+      - if resource.question_type.present?		
+        = f.input attr , :input_html => {:disabled=>true}
+        = f.input attr , :as=> :hidden
+      - else
+        = f.input attr 
+    - elsif attr=="file_url"		
+      = f.input :file_url,as: :file 
+    - else
+      = f.input attr 
+  = f.submit :class => 'btn btn-primary'
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path

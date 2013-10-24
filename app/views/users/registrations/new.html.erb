@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    $(function(){
+        $(".ChinaArea").jChinaArea({
+            s1: '',
+            s2: ''
+        });
+    });
+</script>
+<!--footbox begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="breadcrumb">当前位置：<a href="/">首页</a> > <span>注册</span></div>
+    <div class="register">
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true) do |f| %>
+          <%= f.input :email, :label => '邮箱地址：', :required => true, :autofocus => true, :input_html => { :class => "inp" } %>
+          <%= f.input :password, :label => '登录密码：', :required => true, :input_html => { :class => "inp" } %>
+          <%= f.input :password_confirmation, :label => '确认密码：', :required => true, :input_html => { :class => "inp" } %>
+
+          <div class="control-group">
+            <label class="control-label">所属地区： <span>*</span></label>
+            <div class="controls ChinaArea">
+              <select id="province_input" name="province_id" class="tbslect"></select>
+              <%= f.input_field :zone_id, :as => :select, :class => "tbslect", :collection => [['请选择', '']] %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">&nbsp;</label>
+            <div class="controls">
+              <%= f.button :submit, "立即注册", :class => "zcbetn" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<div class="footbox_border"></div>
+
+<!--Popupbox begin-->
+<!--<div class="Popupbox">-->
+  <!--<dl>-->
+    <!--<dt><a href="#"></a></dt>-->
+    <!--<dd>恭喜您注册成功！</dd>-->
+    <!--<dd><span><a href="#">返回网络学院</a></span></dd>-->
+  <!--</dl>-->
+<!--</div>-->
+<!--Popupbox end-->
+
+<!--footbox begin-->
+
+<%#= render "devise/shared/links" %>
