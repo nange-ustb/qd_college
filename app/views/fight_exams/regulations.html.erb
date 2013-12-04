@@ -1,0 +1,20 @@
+<%= javascript_include_tag 'jquery/jquery.marquee' %>
+<script type="text/javascript">
+    $(function(){
+        $('#fight_stages').marquee({auto: false, type: 'vertical', interval: 3000, showNum: 6, direction:'forward', stepLen: 1, speed: 1000, prevBtnId: 'next', nextBtnId: 'prev'});
+    })
+</script>
+<div class="cggz">
+  <div class="cggztop"> <%= link_to '', start_fight_exams_path %> </div>
+  <div class="cggzcon"> <%= link_to '', start_fight_exams_path %> </div>
+  <div class="cggzfoot"> <%= link_to '', home_ranking_lists_path %> </div>
+</div>
+<div style="width:900px; margin:0px auto;">
+  <div class="gklist">
+    <div class="gklisttop"><a href="#" id="prev"></a></div>
+    <div id="stages">
+      <%= render "stages", :fight_exam => @fight_exam %>
+    </div>
+    <div class="gklistfoot"><a href="#" id="next"></a></div>
+  </div>
+</div>

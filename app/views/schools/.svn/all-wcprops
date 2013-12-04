@@ -1,47 +1,107 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools
 END
-_questions.erb
+index.js.erb
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/GIM/Rails/!svn/ver/21298/network_marketing/qd_college/trunk/app/views/schools/_questions.erb
+V 91
+/GIM/Rails/!svn/ver/22604/network_marketing/qd_college/trunk/app/views/schools/index.js.erb
 END
-failure.html.erb
+_top_three_advanced_f.erb
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/failure.html.erb
-END
-success.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/success.html.erb
-END
-beginner.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/views/schools/beginner.html.erb
-END
-_countdown.erb
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/GIM/Rails/!svn/ver/21298/network_marketing/qd_college/trunk/app/views/schools/_countdown.erb
+V 104
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_advanced_f.erb
 END
 show.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/show.html.erb
+/GIM/Rails/!svn/ver/21651/network_marketing/qd_college/trunk/app/views/schools/show.html.erb
+END
+_top_three_beginner_t.erb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_beginner_t.erb
+END
+_top_three_mediate_f.erb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_mediate_f.erb
+END
+_search_form.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/22584/network_marketing/qd_college/trunk/app/views/schools/_search_form.erb
+END
+_exam_record.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/22618/network_marketing/qd_college/trunk/app/views/schools/_exam_record.erb
+END
+_questions.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21461/network_marketing/qd_college/trunk/app/views/schools/_questions.erb
+END
+failure.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21367/network_marketing/qd_college/trunk/app/views/schools/failure.html.erb
+END
+beginner.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21448/network_marketing/qd_college/trunk/app/views/schools/beginner.html.erb
+END
+_top_three_advanced_t.erb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_advanced_t.erb
+END
+_top_three_mediate_t.erb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_mediate_t.erb
 END
 new.js.erb
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/views/schools/new.js.erb
+END
+_top_three_beginner_f.erb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/22622/network_marketing/qd_college/trunk/app/views/schools/_top_three_beginner_f.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/22606/network_marketing/qd_college/trunk/app/views/schools/index.html.erb
+END
+success.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21697/network_marketing/qd_college/trunk/app/views/schools/success.html.erb
+END
+_countdown.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21298/network_marketing/qd_college/trunk/app/views/schools/_countdown.erb
 END

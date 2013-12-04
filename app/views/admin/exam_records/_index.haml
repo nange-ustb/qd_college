@@ -1,0 +1,69 @@
+%p
+- params[:search] ||= {}
+.well
+  = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
+    分支:
+    = select_tag "search[affiliate_id]" , 
+    options_from_collection_for_select(Affiliate.of_administrator.select("name,code"),"code","name",params[:search][:affiliate_id]), :class => 'span2' ,:prompt => "请选择"
+    所在地区:
+    %span{:class=>"ChinaArea"}
+      =select_tag "search[province_id]",:id=>:province_input
+      =select_tag "search[zone_id]",:id=>:city_input
+    %br
+    姓名：
+    = text_field_tag "search[name]",params[:search][:name] , :class => 'span2'
+    账号：
+    = text_field_tag "search[username]",params[:search][:username] , :class => 'span2'
+    等级:
+    = select_tag "search[level]" , options_for_select(resource_class.level.options,params[:search][:level]), :class => 'span2' ,:prompt => "请选择"
+    排序方式:
+    = select_tag "search[order]" , options_for_select([["闯关次数", "exam_count"], ["正确数", "correct"]],params[:search][:level]), :class => 'span2' 
+
+    = f.submit '搜索', :class => 'btn'
+    = link_to t("#{resource_class.name.underscore}.export"), collection_path( {:format => :xls}.reverse_merge! params )
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      %th= "名次"
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      
+  %tbody#banners_list
+    - collection.each_with_index do |resource,index|
+      %tr[resource]
+        %td
+          - base_num = (collection.current_page - 1)*collection.limit_value + 1
+          = base_num+ index 
+        - attributes.each do |attr|         
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif attr=="zone_id"
+            %td
+              = resource.try(:user).try(:zone).try(:province).try(:name)
+              = "|"
+              = resource.try(:user).try(:zone).try(:name)
+          - elsif respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td
+              = "是"
+              %br
+              = link_to "查看详情" , admin_exams_path(:search=>{:student_id=>resource.student_id})
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td
+              = "否"
+              %br
+              = link_to "查看详情" , admin_exams_path(:search=>{:student_id=>resource.student_id})
+          - else
+            %td= resource.send(attr).to_s.truncate(30)
+= paginate collection
+=javascript_include_tag "glodon_location_all" 
+:javascript
+  $(function(){
+    $(".ChinaArea").jChinaArea({s1: '', s2: ''});
+  });
+

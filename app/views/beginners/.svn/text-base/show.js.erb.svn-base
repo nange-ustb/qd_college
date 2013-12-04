@@ -1,26 +1,32 @@
-$("div#content").html('')
-function close_trees(){$(".cjl.left ul span").hide();}
-function open_tree(obj){
+$("div.cjktborder a.red").removeClass('red').attr('style','')
+$("div#content").empty()
+var current_node
+function close_trees(){$(".cjl2.left ul li").not("li.ultit").hide();}
+function open_trees(obj){
 	close_trees();
 	current_href = "<%= request.url%>"
 	current_url = "li a[href='" + current_href + "']"
 	current_node = $(current_url)
+	ul_root = current_node.parents('ul')
 	if(current_node.parent().attr("class") == "ultit"){
-		current_node.parent().next('span').show();
+		ul_root.children("li.second").show()
 	}
 
 	if(current_node.parent().attr("class") == "second"){
-		current_node.parent().parent().show();
-		current_node.parent().next('span').show()
+		current_node.parent().parent().children("li.second").show()
+		prev_second_node = current_node.parent()
+		prev_second_node_name = prev_second_node.attr('name')
+		prev_second_node.nextAll("li[name^='" + prev_second_node_name + "-']").show()
 	}
 
 	if(current_node.parent().attr("class") == "tree"){
-		first_span = current_node.parent().parent()
-		first_span.show()
-		first_span.parent().show()
+		current_node.parent().parent().children("li.second").show()
+		prev_three_node = current_node.parent().prevAll("li.second")
+		prev_three_node_name = prev_three_node.attr('name')
+		prev_three_node.nextAll("li[name^='" + prev_three_node_name + "-']").show()
 	}
+	current_node.attr('style','color:#C51300').addClass('red')
 }
 
-close_trees();
-open_tree();
+open_trees();
 $("div#content").html(<%= raw render(:partial =>"regulation",:collection=>@regulations).inspect %>)

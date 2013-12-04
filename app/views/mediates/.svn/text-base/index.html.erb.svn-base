@@ -1,0 +1,162 @@
+<%= javascript_include_tag 'jquery/jquery.marquee' %>
+<script type="text/javascript">
+    $(function(){
+        $('#video_lists').marquee({auto: true, interval: 2000, showNum: 6, direction:'forward', stepLen: 1, speed: 1000, prevBtnId: 'prev', nextBtnId: 'next'});
+        $('.video_img_selector').click(function(){
+          $(this).parent('div').addClass('video_small_checked').siblings('div').removeClass('video_small_checked');
+          $("#video_box_index img").attr('src',$(this).attr('bak'));
+          $("#video_box_index a").attr('href',$(this).attr('href'));
+        //  return false;
+        })
+    })
+</script>
+
+<div class="breadcrumb breadcrumb2">当前位置：<a href="/">首页</a> > <span>中级课堂</span></div>
+<div class="clear"></div>
+<!--wrapleft begin-->
+<div class="wl_zxcp left">
+  <div class="rim_main">
+    <div class="bordertop">
+      <div class="video_top" id="video_box_index">
+        <% current_video= @videos.try(:sample) %>
+        <% unless @videos.present? %>
+          <img src="/assets/images/middle_class/video.jpg" width="674" height="381" />
+        <% else %>
+          <a href="<%= video_path(current_video) %>">
+            <img src="<%= current_video.logo.link_url(:large) %>" width="674" height="381" border="0"/>
+          </a>
+        <% end %>
+      </div>
+      <div class="video_down">
+
+        <div class="video_down_left_button left">
+          <a href="javascript:void(0)" id="prev"></a>
+        </div>
+      
+        <div class="left" id="video_lists">
+          <div class="ul">
+
+            <% @videos.present? and @videos.each do |video| %>
+              <div class="video_small left <%= "video_small_checked" if video==current_video %>">
+                <a href="<%= video_path(video) %>" class="video_img_selector" bak="<%= video.logo.link_url(:large) %>">
+                  <img src="<%= video.logo.link_url(:small) %>" width="86" height="49" />
+                </a>
+              </div>
+            <% end  %>
+
+          </div>
+        </div>
+      
+        <div class="video_down_right_button right">
+          <a href="javascript:void(0)" id="next"></a>
+        </div>
+
+      <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="rim_bottom"></div>
+</div>
+<!--wrapleft end-->
+<!--wrapright begin-->
+<div class="wr_zxcp right">
+  <div class="zxcp">
+    <a href="<%=mediate_schools_path %>"></a>
+    (参加人数:<span style="color:#f00"><%= mediate_student_count %></span>)
+  </div>
+</div>
+<!--wrapright end-->
+<div class="clear"></div>
+<!--testbody begin-->
+
+<!--bei-->
+<!--testbody begin-->
+<div class="warpbox2">
+<div class="rim_main">
+<div class="bordertop w_left left">
+<div class="title">
+<div class="title_left left">在线阅读与下载</div>
+</div>
+<% @documents.present? and @documents.each do |document| %>
+<dl class="readbox2">
+<dt><img src="<%= document.logo.link_url(:file_small)  %>" width="123" height="90" /></dt>
+<dd>
+<h2><%= document.title %></h2>
+<ul>
+<li>作者：<span><%= document.author %></span></li> 
+<!-- <li>页数：<span>123456</span> </li> -->
+<li>在线阅读：<strong><%= document.view_count %></strong></li> 
+<li>下载：<strong><%= document.download_count %></strong></li>
+</ul>
+<p><%= document.body %></p>
+<%= link_to_if(document.can_view?, "在线阅读" , reading_path(document),:class=>"read_button" ){
+              link_to "在线阅读","javascript:alert('当前资料不允许阅读,请阅读其他本站资料!')",:class=>"read_button read_button2"
+          } %>
+
+        <%= link_to_if(document.can_download?, "下载" , download_reading_path(document),:disable_with=>"下载中",:class=>"download_button" ){
+              link_to "下载","javascript:alert('当前资料不允许下载,请下载其他本站资料!')",:class=>"download_button download_button2"
+          } %>
+<!-- <span class="dingwa"><a href="#" class="download_button">下载</a><i>已有<strong>234</strong>人下载</i></span>
+<span class="dingwa2"><a href="#" class="read_button">在线阅读</a><i>已有<strong>234</strong>人阅读</i></span> -->
+</dd>
+</dl>
+<% end %>
+
+
+
+
+
+<!--paging begin-->
+<div class=" pagination3 right">
+  <%= paginate @documents %>
+</div>
+<!--paging end-->
+</div>
+<!--right begin-->
+<div class="w_right right">
+
+
+  <!--ranking_list begin-->
+  <div class="ranking_list">
+    <div class="bordertop">
+      <h2 class="tit tit2">
+        <span>排行榜</span>
+        <a href="/schools">查看更多>></a>
+      </h2>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th scope="col">名次</th>
+          <th scope="col">姓名</th>
+          <th scope="col">地区</th>
+          <th scope="col">正确数</th>
+        </tr>
+        <% @rankings.present? and @rankings.each_with_index do |r,index| %>
+        <tr>
+          <td class="<%= index == 0 ? "tdnumber" : "tdnum" %>">
+            <span><%= index+1 %></span>
+          </td>        
+          <td><%= r.user.try(:name) %></td>
+          <td><%= r.user.try(:zone_province_name) %></td>
+          <td><%= r.correct %></td>
+        </tr>
+        <% end  %>
+      </table>
+    </div>
+  </div>
+  <div class="wrborbot"></div>
+  <div class="advertising">
+    <% @ads.present? and @ads.each do |ad| %>
+      <a href="<%= ad.link_url %>" ><img src="<%= ad.image_url_url(:thumb)  %>" border="0" /></a>
+    <% end  %>
+  </div>
+</div>
+<!--right end-->
+</div>
+</div>
+<div class="rim_bottom"></div>
+<!--testbody end-->
+<!--bei-->
+
+</div>
+<div class="footbox_border"></div>
+<!--testbody end-->

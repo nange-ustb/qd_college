@@ -13,6 +13,8 @@
 
 # -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
 class Student < ActiveRecord::Base
   extend Enumerize
   attr_accessible :level, :user_id
@@ -20,12 +22,21 @@ class Student < ActiveRecord::Base
   has_many :exams,dependent: :destroy
   belongs_to :user
   has_many :game_chances, dependent: :destroy
+  has_many :exam_records, dependent: :destroy
 
   after_save :syn_user_level
+  before_create :init_exam_records
+
   def syn_user_level
     self.user.level=self.level
-    self.user.save if self.user.changed?
+    self.user.save 
   end 
+
+  def init_exam_records
+    self.class.level.values.each do |l|
+      exam_records.build(:level=>l,:user_id=>self.user_id)
+    end
+  end
 
   def is_in_accordance_with_the_student_level?(current_level)
   	student_level_index,current_level_index = level_index(self.level),level_index(current_level)
@@ -34,8 +45,8 @@ class Student < ActiveRecord::Base
     current_level_index <= student_level_index 
   end
 
-  def promote_level(exam_level)
-    return if (level_index(exam_level) < level_index(self.level))
+  def promote_level(exam)
+    return if (level_index(exam.level) < level_index(self.level))
     unless last_level?
       self.level = next_level
     else
@@ -76,8 +87,8 @@ class Student < ActiveRecord::Base
 
   def take_the_game_chance
     if game_chance_level
-      game_id = Game.with_level(level).pluck(:id).first
-      game_chances.build(:game_id=>game_id,:level=>game_chance_level)
+      game_id = Game.with_level(game_chance_level).pluck(:id).first
+      game_chances.build(:game_id=>game_id,:level=>game_chance_level,:used=>false)
     end
   end
 
@@ -85,5 +96,13 @@ class Student < ActiveRecord::Base
     @game_chance_level ||= prev_level if level_changed? 
     @game_chance_level ||=  self.level  if pass_changed? 
     @game_chance_level
+  end
+
+  def fill_exam_record(exam)
+    exam_record = exam_records.with_level(exam.level).first
+    exam_record.exam_count += 1
+    exam_record.correct = [exam_record.correct.to_i,exam.correct.to_i].max
+    exam_record.pass = self.level_changed? || self.pass_changed? || exam_record.pass
+    exam_records << exam_record
   end
 end

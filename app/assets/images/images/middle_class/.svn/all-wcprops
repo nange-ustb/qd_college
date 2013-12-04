@@ -1,13 +1,61 @@
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class
+/GIM/Rails/!svn/ver/22226/network_marketing/qd_college/trunk/app/assets/images/images/middle_class
+END
+jt_left.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_left.jpg
+END
+download2.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/GIM/Rails/!svn/ver/21673/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/download2.jpg
+END
+jt_left_hover.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_left_hover.jpg
+END
+read1.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/read1.jpg
+END
+video_small.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/video_small.jpg
+END
+readbox_bj.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/readbox_bj.jpg
+END
+cp.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/cp.jpg
 END
 cp_hover.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 111
 /GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/cp_hover.jpg
+END
+zxcp2.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/22226/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/zxcp2.jpg
 END
 video.jpg
 K 25
@@ -27,17 +75,17 @@ svn:wc:ra_dav:version-url
 V 118
 /GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/readbox_left_bj.jpg
 END
-jt_right.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 111
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_right.jpg
-END
 download_hover.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 117
 /GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/download_hover.jpg
+END
+jt_right.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_right.jpg
 END
 read.jpg
 K 25
@@ -73,41 +121,5 @@ zxcp.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/zxcp.jpg
-END
-jt_left.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_left.jpg
-END
-jt_left_hover.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/jt_left_hover.jpg
-END
-read1.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/read1.jpg
-END
-video_small.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 114
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/video_small.jpg
-END
-readbox_bj.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 113
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/readbox_bj.jpg
-END
-cp.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/GIM/Rails/!svn/ver/21240/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/cp.jpg
+/GIM/Rails/!svn/ver/22226/network_marketing/qd_college/trunk/app/assets/images/images/middle_class/zxcp.jpg
 END

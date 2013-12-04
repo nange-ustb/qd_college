@@ -29,17 +29,17 @@
 .submit_button a:hover{background:url(/assets/images/test/submit_hover.jpg) no-repeat;}
 
 /*middle_class*/
-.readbox{width:970px; background:url(/assets/images/middle_class/readbox_bj.jpg) bottom no-repeat; overflow:hidden; padding-bottom:20px; margin-top:20px;}
+/*.readbox{width:970px; background:url(/assets/images/middle_class/readbox_bj.jpg) bottom no-repeat; overflow:hidden; padding-bottom:20px; margin-top:20px;}*/
 .readbox_left a{width:134px; height:101px; background:url(/assets/images/middle_class/readbox_left_bj.jpg) no-repeat; text-align:center; margin-left:30px; display:block; padding-top:4px;}
 .readbox_left a:hover{background:url(/assets/images/middle_class/readbox_left_bj_hover.jpg) no-repeat; }
 .readbox_left_1{width:134px; height:101px; background:url(/assets/images/middle_class/readbox_left_bj_hover.jpg) no-repeat; text-align:center; margin-left:30px; display:block; padding-top:4px; _margin-left:14px;}
 .readbox_right{width:780px; font-family:"宋体"; font-size:13px; color:#3d3d3d; margin-left:16px;}
 .readbox_title{font-size:18px; color:#3b3b3b;}
 
-.readbox_zz{font-family:"宋体"; font-size:12px; width:640px; font-size:12px; color:#676767;}
+.readbox_zz{font-family:"宋体"; font-size:12px; width:800px; font-size:12px; color:#676767;}
 .readbox_zz_left{width:300px; margin-left:20px;}
 .readbox_zz_right{width:250px;}
-.readbox_author{width:90px;}
+.readbox_author{width:140px;}
 .readbox_read{width:150px; padding-right:20px;}
 .readbox_download{width:80px;}
 .readbox_text{line-height:26px; padding-right:16px; margin-top:10px;}
@@ -54,6 +54,11 @@
 .zxcp a{width:169px; height:47px; background:url(/assets/images/middle_class/cp.jpg) no-repeat; margin:280px auto 0 auto; *margin-top:350px; display:block; text-align:center;}
 .zxcp a:hover{background:url(/assets/images/middle_class/cp_hover.jpg) no-repeat;}
 
+.zxcp2{background:url(/assets/images/middle_class/zxcp2.jpg) no-repeat; text-align:center; height:354px; padding:80px 30px 20px 30px; margin:10px 0 0 0; line-height:24px;}
+.zxcp2 a{width:169px; height:47px; background:url(/assets/images/middle_class/cp.jpg) no-repeat; margin:300px auto 0 auto; *margin-top:350px; display:block; text-align:center;}
+.zxcp2 a:hover{background:url(/assets/images/middle_class/cp_hover.jpg) no-repeat;}
+
+
 .wl_zxcp{width:694px; text-align:center; margin-top:10px;}
 .wr_zxcp{ width:280px; }
 .video_top{width:674px; height:381px; text-align:center; padding:6px;}
@@ -62,7 +67,7 @@
 .video_down_left_button a:hover{background:url(/assets/images/middle_class/jt_left_hover.jpg) left no-repeat;}
 .video_down_right_button a{width:22px; height:34px; background:url(/assets/images/middle_class/jt_right.jpg) no-repeat; text-indent:24px; display:block; margin-right:6px; margin-top:10px;}
 .video_down_right_button a:hover{background:url(/assets/images/middle_class/jt_right_hover.jpg) no-repeat;}
-.video_small{width:86px; height:51px; padding:2px 7px;}
+.video_small{width:86px; height:51px; padding:2px 7px;_padding:2px 6px;}
 .video_small_1{width:86px; height:51px; background:url(/assets/images/middle_class/small_bj.jpg) no-repeat; padding:2px;}
 .video_small_checked img{border: 2px solid #000000;}
 
@@ -71,10 +76,10 @@
 .weibo{margin-left:28px; padding-bottom:20px;}
 .online_title{background:url(/assets/images/reading_online/ppt.jpg) left no-repeat; text-indent:24px;font-size:20px; color:#3b3b3b; margin-left:30px; _margin-left:16px;}
 .reading_online_zz{width:900px; line-height:30px; font-family:"宋体"; font-size:12px; color:#4d4d4d; margin-left:30px;}
-.reading_online_video{width:732px; height:599px; border:#dddddd 1px solid; margin:0 auto;}
-.reading_online_video_title{width:730px; height:29px; background:#f4f4f4; border-bottom:#dddddd 1px solid; margin:0 auto;}
-.reading_online_video_video{ padding-left:8px;}
-.reading_online_video_down{width:730px; height:29px; margin:0 auto; padding-top:4px;}
+.reading_online_video{width:850px; height:auto; border:#dddddd 1px solid; margin:0 auto;}
+.reading_online_video_title{width:850px; height:29px; background:#f4f4f4; border-bottom:#dddddd 1px solid; margin:0 auto;}
+/*.reading_online_video_video{ padding-left:8px;}*/
+.reading_online_video_down{width:850px; height:29px; margin:0 auto; padding-top:4px;}
 .reading_online_download{ line-height:29px; background:url(/assets/images/reading_online/down.jpg) left no-repeat; text-indent:24px; font-family:"宋体"; font-size:12px; color:#7b7b7b; padding-right:20px;}
 /*pagination*/
 .pagination3{ height:30px; margin:20px;color:#676767;}
@@ -87,3 +92,19 @@
 .pagination3 li.first b,.pagination li.last b{background-image:url(/assets/images/sm.png);background-repeat: no-repeat;height:12px; display:inline-block;width: 5px;overflow: hidden; position: absolute;}
 .pagination3 li.first b{ background-position:-168px -23px; left:10px; top:6px;}
 .pagination3 li.last b{background-position:-175px -23px; right:10px; top:6px;}
+
+.readbox{ _height:150px; padding:30px; color:#676767;background:url(/assets/images/middle_class/readbox_bj.jpg) bottom no-repeat; overflow:hidden;}
+.readbox dt{ float:left;width:134px; height:97px; background:url(/assets/images/middle_class/readbox_left_bj.jpg) no-repeat; text-align:center;padding-top:4px;}
+.readbox dd{ float:right;width: 750px;}
+.readbox dd h2{ font-weight:normal; color: #3B3B3B;font-size: 18px;}
+.readbox dd ul{ overflow:hidden; height:35px; line-height:35px;}
+.readbox dd ul li{ float:left; width:170px; font-size:12px;font-family:"宋体";}
+.readbox dd ul li strong{ font-weight:normal;color:#9B9B9B}
+.readbox dd ul li span{color:#0095BA}
+.read_button{width:135px; height:38px; line-height:38px; text-indent:46px; background:url(/assets/images/middle_class/read.jpg) no-repeat; display:block; font-size:18px; color:#f6f6f6; margin-right:10px; float:right;}
+.read_button:hover{ background:url(/assets/images/middle_class/read_hover.jpg) no-repeat; }
+.download_button{margin-right:15px;width:90px; height:38px; float:right; line-height:38px; text-indent:36px; background:url(/assets/images/middle_class/download.jpg) no-repeat; display:block;  font-size:18px; color:#f6f6f6;}
+.download_button:hover{ background:url(/assets/images/middle_class/download_hover.jpg) no-repeat; }
+
+.download_button2,.download_button2:hover{  background:url(/assets/images/middle_class/download2.jpg) no-repeat; color:#fff;}
+.read_button2,.read_button2:hover{ background-position: 0 -141px; background-image: url("/assets/images/btnbj.png");background-repeat: no-repeat;color:#fff;}

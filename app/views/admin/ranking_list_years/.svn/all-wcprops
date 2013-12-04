@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/22016/network_marketing/qd_college/trunk/app/views/admin/ranking_list_years
+END
+_index.haml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/GIM/Rails/!svn/ver/22016/network_marketing/qd_college/trunk/app/views/admin/ranking_list_years/_index.haml
+END
+show.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21400/network_marketing/qd_college/trunk/app/views/admin/ranking_list_years/show.html.haml
+END

@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/assets
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T08:19:31.696182Z
-21344
+2013-12-03T08:56:13.162698Z
+22585
 wanggc
 
 
@@ -26,12 +26,12 @@ wanggc
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
+images
+dir
+
 javascripts
 dir
 
 stylesheets
-dir
-
-images
 dir
 

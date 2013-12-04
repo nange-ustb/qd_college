@@ -1,0 +1,34 @@
+%p
+- params[:search] ||= {}
+.well
+  = Student.find_by_id(params[:search][:student_id]).try(:user).try(:name)
+  = "|"
+  = Student.find_by_id(params[:search][:student_id]).try(:user).try(:username)
+  = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
+    = hidden_field_tag "search[student_id]",params[:search][:student_id] 
+    等级:
+    = select_tag "search[level]" , options_for_select(resource_class.level.options,params[:search][:level]), :class => 'span2' ,:prompt => "请选择"
+    = f.submit '搜索', :class => 'btn'
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+  %tbody#banners_list
+    - collection.each do |resource|
+      %tr[resource]
+        - attributes.each do |attr|
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= "是"
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= "否"
+          - else
+            %td= resource.send(attr).to_s.truncate(30)

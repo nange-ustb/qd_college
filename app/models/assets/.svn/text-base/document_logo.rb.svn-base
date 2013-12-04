@@ -18,6 +18,6 @@
 
 # -*- encoding : utf-8 -*-
 class DocumentLogo < Asset
-	attr_accessible :link, :position, :type, :viewable_id, :viewable_type
+  attr_accessible :link, :position, :type, :viewable_id, :viewable_type
   mount_uploader :link, DocumentLogoUploader
 end

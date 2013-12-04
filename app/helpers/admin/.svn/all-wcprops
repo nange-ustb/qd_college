@@ -1,11 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/GIM/Rails/!svn/ver/21130/network_marketing/qd_college/trunk/app/helpers/admin
+/GIM/Rails/!svn/ver/22376/network_marketing/qd_college/trunk/app/helpers/admin
 END
 question_onlines_helper.rb
 K 25
 svn:wc:ra_dav:version-url
 V 105
 /GIM/Rails/!svn/ver/21130/network_marketing/qd_college/trunk/app/helpers/admin/question_onlines_helper.rb
+END
+exam_records_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/GIM/Rails/!svn/ver/22363/network_marketing/qd_college/trunk/app/helpers/admin/exam_records_helper.rb
+END
+advertisements_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/22329/network_marketing/qd_college/trunk/app/helpers/admin/advertisements_helper.rb
+END
+exams_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/GIM/Rails/!svn/ver/22376/network_marketing/qd_college/trunk/app/helpers/admin/exams_helper.rb
 END

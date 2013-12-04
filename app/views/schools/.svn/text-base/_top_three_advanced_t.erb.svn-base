@@ -1,0 +1,31 @@
+<%
+  first,second,three = tops
+%>
+<dl class="q3box left">
+  <dt class="gjtit2">
+        <%=  second.try(:user_header_img)  %>
+        <span><%= second.try(:name) %></span>
+  </dt>
+  <dd>
+    <span><%= second.try(:user).try(:zone).try(:province).try(:name) %></span>
+    正确：<i><%= second.try(:correct) %></i> 闯关:<i><%= second.try(:exam_count) %></i>
+  </dd>
+</dl>
+<dl class="q3box q3box_f left">
+  <dt class="gjtit1">
+    <%=  first.try(:user_header_img)  %>
+    <span><%= first.try(:name) %></span>    
+  </dt>
+  <dd>
+    <span><%= first.try(:user).try(:zone).try(:province).try(:name) %></span>
+    正确：<i><%= first.try(:correct) %></i> 闯关:<i><%= first.try(:exam_count) %></i></dd>
+</dl>
+<dl class="q3box left">
+  <dt class="gjtit3">
+    <%=  three.try(:user_header_img)  %>
+    <span><%= three.try(:name) %></span>    
+  </dt>
+  <dd>
+    <span><%= three.try(:user).try(:zone).try(:province).try(:name) %></span>
+    正确：<i><%= three.try(:correct) %></i> 闯关:<i><%= three.try(:exam_count) %></i></dd>
+</dl>

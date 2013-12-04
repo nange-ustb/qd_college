@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/tmp
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T10:05:04.306032Z
-21354
+2013-11-28T09:31:55.798398Z
+22362
 duhw
 has-props
 
@@ -26,9 +26,6 @@ has-props
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
-pids
-dir
-
 cache
 dir
 
@@ -36,5 +33,8 @@ sessions
 dir
 
 sockets
+dir
+
+pids
 dir
 

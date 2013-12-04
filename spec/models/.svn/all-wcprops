@@ -1,31 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models
-END
-exam_spec.rb
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models/exam_spec.rb
-END
-game_chance_spec.rb
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models/game_chance_spec.rb
-END
-video_node_spec.rb
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/spec/models/video_node_spec.rb
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/spec/models
 END
 award_record_spec.rb
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models/award_record_spec.rb
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/spec/models/award_record_spec.rb
 END
 document_spec.rb
 K 25
@@ -37,7 +19,7 @@ user_spec.rb
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models/user_spec.rb
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/spec/models/user_spec.rb
 END
 award_spec.rb
 K 25
@@ -67,7 +49,7 @@ student_spec.rb
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/spec/models/student_spec.rb
+/GIM/Rails/!svn/ver/22328/network_marketing/qd_college/trunk/spec/models/student_spec.rb
 END
 paper_spec.rb
 K 25
@@ -75,9 +57,33 @@ svn:wc:ra_dav:version-url
 V 86
 /GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/spec/models/paper_spec.rb
 END
+exam_record_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/spec/models/exam_record_spec.rb
+END
 game_spec.rb
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /GIM/Rails/!svn/ver/21332/network_marketing/qd_college/trunk/spec/models/game_spec.rb
+END
+exam_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21410/network_marketing/qd_college/trunk/spec/models/exam_spec.rb
+END
+game_chance_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/spec/models/game_chance_spec.rb
+END
+video_node_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/spec/models/video_node_spec.rb
 END

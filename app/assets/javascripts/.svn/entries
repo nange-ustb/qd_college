@@ -1,15 +1,15 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/assets/javascripts
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T07:13:51.494147Z
-21338
-wanggc
+2013-11-28T09:31:55.798398Z
+22362
+duhw
 
 
 
@@ -25,74 +25,6 @@ wanggc
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
-
-YlChinaArea.js
-file
-
-
-
-
-2013-10-22T00:30:19.465526Z
-a21f4d528e56741ed0d2c5ce095fa8ec
-2013-10-21T11:54:20.252013Z
-21304
-qiwl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6829
-
-beginners.js.coffee
-file
-
-
-
-
-2013-10-17T01:21:20.780685Z
-efe5c0cd6df81434517a466433aaa853
-2013-10-18T02:21:36.274567Z
-21254
-wanggc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-229
 
 games.js.coffee
 file
@@ -128,16 +60,16 @@ wanggc
 
 229
 
-application.js
+rails.validations.simple_form.addon.js
 file
 
 
 
 
-2013-10-23T02:41:49.734415Z
-3c367a389f2ef35dd947e7a91044acdb
-2013-10-23T07:13:51.494147Z
-21338
+2013-10-25T03:05:11.342890Z
+6c76399f96945f83acd5efb1678d3ccc
+2013-10-25T03:18:42.212020Z
+21407
 wanggc
 
 
@@ -160,44 +92,7 @@ wanggc
 
 
 
-972
-
-jquery
-dir
-
-rails.validations.simple_form.addon.js
-file
-
-
-
-
-2013-10-22T00:30:19.465526Z
-4f503ef1b6b1d67725086578d2250bfe
-2013-10-21T11:54:20.252013Z
-21304
-qiwl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3795
+3857
 
 backend.js
 file
@@ -205,11 +100,11 @@ file
 
 
 
-2013-10-18T10:04:51.186115Z
-57893fce82db801e75e575bf8e2c92e5
-2013-10-18T09:30:07.186509Z
-21275
-qiwl
+2013-11-29T01:00:37.195703Z
+539dd7c2bf1d6c96318eac244b7833db
+2013-11-28T09:31:55.798398Z
+22362
+duhw
 
 
 
@@ -231,7 +126,41 @@ qiwl
 
 
 
-2887
+2911
+
+users.js.coffee
+file
+
+
+
+
+2013-10-24T09:33:05.378294Z
+efe5c0cd6df81434517a466433aaa853
+2013-10-25T03:18:42.212020Z
+21407
+wanggc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+229
 
 admin.js
 file
@@ -267,16 +196,84 @@ duhw
 
 831
 
-glodon_location.js
+jquery.countdown.js
 file
 
 
 
 
-2013-10-22T00:30:19.465526Z
-790e9952e822e7ddd1cda9ecbb5101c8
-2013-10-21T11:54:20.252013Z
-21304
+2013-10-15T05:42:33.568152Z
+51240db7f30ce4bc31721893f5dd807a
+2013-10-12T06:07:00.062045Z
+21064
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5578
+
+beginners.js.coffee
+file
+
+
+
+
+2013-10-17T01:21:20.780685Z
+efe5c0cd6df81434517a466433aaa853
+2013-10-18T02:21:36.274567Z
+21254
+wanggc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+229
+
+glodon_location_all.js
+file
+
+
+
+
+2013-10-31T06:13:07.031965Z
+c81151c03285d3b5535d779068c219ad
+2013-10-30T14:55:26.950758Z
+21582
 qiwl
 
 
@@ -299,7 +296,112 @@ qiwl
 
 
 
-72996
+73293
+
+application.js
+file
+
+
+
+
+2013-10-25T05:07:40.150959Z
+7ae28058f342c5eb32163464cf6831a8
+2013-10-27T13:48:18.203974Z
+21416
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1115
+
+jquery
+dir
+
+glodon_location.js
+file
+
+
+
+
+2013-10-31T06:13:07.015965Z
+500fdbd9c9cdff38ce6092f04dc6e23c
+2013-10-30T14:55:26.950758Z
+21582
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+73163
+
+rails.validations.simple_form.v2.addon.js
+file
+
+
+
+
+2013-11-01T11:11:32.111133Z
+5b5dfa5971dc112092c5ddb17d359c6e
+2013-11-01T08:17:57.745278Z
+21689
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3893
 
 admin
 dir
@@ -338,17 +440,17 @@ duhw
 
 229
 
-jquery.countdown.js
+YlChinaArea.js
 file
 
 
 
 
-2013-10-15T05:42:33.568152Z
-51240db7f30ce4bc31721893f5dd807a
-2013-10-12T06:07:00.062045Z
-21064
-duhw
+2013-10-22T00:30:19.465526Z
+a21f4d528e56741ed0d2c5ce095fa8ec
+2013-10-21T11:54:20.252013Z
+21304
+qiwl
 
 
 
@@ -370,5 +472,5 @@ duhw
 
 
 
-5578
+6829
 

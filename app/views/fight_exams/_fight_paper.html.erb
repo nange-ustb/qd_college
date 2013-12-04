@@ -1,0 +1,45 @@
+<script type="text/javascript">
+  $(function(){
+      $("#next_button").click(function(){
+          if(is_blank($("input[name='answer']:checked").val())){alert('答案不能为空！');return false;}
+          $("#answer_form").submit();return false;
+      });
+     $("#pause_button").click(function(){
+         $.get('<%= pause_fight_exams_path %>');
+     });
+  })
+</script>
+<div class="gkbox">
+  <div class="gktop">
+    <div class="zimg left"><img src="/assets/images/yzdd/zimg1.jpg" /><p><%= fight_exam.current_stage %></p><img src="/assets/images/yzdd/zimg2.jpg" /></div>
+    <div class="gkjinb left"> <img src="/assets/images/yzdd/jinbi.jpg" />您已获得<span><%= fight_exam.gold_count %></span>个金币</div>
+    <div class="gktime right"> <img src="/assets/images/yzdd/time.jpg" /><p>离结束时间：<span id='remainTime'></span> </p></div>
+    <%= render "countdown" ,:spare_time=> fight_paper.expire_time %>
+  </div>
+  <div class="gkbottom">
+    <%= form_tag next_stage_fight_exams_path, :id => "answer_form", :remote => true do |f| %>
+        <%= hidden_field_tag "id", fight_paper.id %>
+        <h2><%= fight_exam.current_stage %>、<%= fight_paper.question_stand_title %></h2>
+        <ul>
+          <% if fight_paper.question_stand_a.present? %>
+              <li style="min-height: 35px; height: auto;"><label><input name="answer" type="radio" value="a" /> A、<%= fight_paper.question_stand_a %></label></li>
+          <% end %>
+          <% if fight_paper.question_stand_b.present? %>
+              <li style="min-height: 35px; height: auto;"><label><input name="answer" type="radio" value="b" /> B、<%= fight_paper.question_stand_b %></label>  </li>
+          <% end %>
+          <% if fight_paper.question_stand_c.present? %>
+              <li style="min-height: 35px; height: auto;"><label><input name="answer" type="radio" value="c" /> C 、<%= fight_paper.question_stand_c %></label> </li>
+          <% end %>
+          <% if fight_paper.question_stand_d.present? %>
+              <li style="min-height: 35px; height: auto;"><label><input name="answer" type="radio" value="d" /> D 、<%= fight_paper.question_stand_d %></label> </li>
+          <% end %>
+        </ul>
+        <div class="gkbtn">
+          <%= submit_tag "", :class => "gkbtn1", :id => "next_button", :disable_with => "" %>
+          <!--<input name="" type="submit" value="" class="gkbtn1" id="next_button" />-->
+          <input name="" type="button" class="gkbtn2" id="pause_button"/></div>
+        <div class="phba"> <%= link_to '', home_ranking_lists_path, :target => "_blank" %></div>
+    <% end %>
+  </div>
+</div>
+<!--gk end-->

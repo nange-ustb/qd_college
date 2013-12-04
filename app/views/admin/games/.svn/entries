@@ -1,15 +1,15 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/views/admin/games
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T01:29:51.830456Z
-21331
-wanggc
+2013-11-15T07:50:27.823850Z
+22016
+qiwl
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2013-10-22T09:07:48.437819Z
-e8b5154eaa75679311a76cf4fc543dbc
-2013-10-23T01:29:51.830456Z
-21331
-wanggc
+2013-11-25T01:41:52.301014Z
+249d8c5747e761fa1449d357db7873de
+2013-11-15T07:50:27.823850Z
+22016
+qiwl
 
 
 
@@ -58,7 +58,7 @@ wanggc
 
 
 
-1098
+1172
 
 edit.html.haml
 file

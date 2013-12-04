@@ -1,5 +1,47 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/GIM/Rails/!svn/ver/21323/network_marketing/qd_college/trunk/app/views/users
+/GIM/Rails/!svn/ver/22610/network_marketing/qd_college/trunk/app/views/users
+END
+fight.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/22356/network_marketing/qd_college/trunk/app/views/users/fight.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/GIM/Rails/!svn/ver/21580/network_marketing/qd_college/trunk/app/views/users/edit.html.erb
+END
+level.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21563/network_marketing/qd_college/trunk/app/views/users/level.html.erb
+END
+success.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21445/network_marketing/qd_college/trunk/app/views/users/success.html.erb
+END
+exam.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/GIM/Rails/!svn/ver/21572/network_marketing/qd_college/trunk/app/views/users/exam.html.erb
+END
+_left_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21644/network_marketing/qd_college/trunk/app/views/users/_left_menu.html.erb
+END
+_award.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21603/network_marketing/qd_college/trunk/app/views/users/_award.html.erb
 END

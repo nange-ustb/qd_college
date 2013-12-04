@@ -1,15 +1,15 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/db
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T10:05:48.039007Z
-21355
-duhw
+2013-12-03T10:11:17.689375Z
+22607
+qiwl
 has-props
 
 
@@ -35,9 +35,6 @@ c74a76da-cd3e-5145-a8d1-4a383b865423
 
 ()
 
-migrate
-dir
-
 schema.rb
 file
 
@@ -45,9 +42,9 @@ file
 
 
 
-59e2c0c4f0316a5ce5343242e045cd13
-2013-10-23T10:05:48.039007Z
-21355
+69410cb7359b228a221f35a33436e0b0
+2013-11-28T09:31:55.798398Z
+22362
 duhw
 
 seeds.rb
@@ -56,9 +53,34 @@ file
 
 
 
-
-097ad0ead3c3fc4eccf5a2aaad8e966b
-2013-10-23T10:05:04.306032Z
-21354
+2013-12-04T01:56:01.780042Z
+7691c315cddc24ac8d2b36a2b5e51133
+2013-12-03T09:31:30.844930Z
+22595
 duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7432
+
+migrate
+dir
 

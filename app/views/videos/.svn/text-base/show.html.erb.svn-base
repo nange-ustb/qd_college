@@ -1,11 +1,30 @@
 <!--footbox begin-->
 <div class="breadcrumb breadcrumb2">
-  当前位置：<a href="/">首页</a> > <span>中级课堂视频</span>
+  <% cur_path= case @video.level 
+  when "mediate" then "/mediates"
+  when  "advanced" then "/advanceds" 
+    end %>
+  当前位置：<a href="/">首页</a> > <a href="<%=  cur_path %>"><%= @video.level_text %>课堂</a> > <span><%= @video.level_text %>课堂视频</span>
 </div>
+<script type="text/javascript">
+  $(function(){
+    <%if cur_path=="/mediates"%>
+      $('.nav3').addClass('ah3');
+    <% elsif cur_path=="/advanceds"%>
+      $('.nav4').addClass('ah4');
+    <% end  %>
+  })
+</script>
 <div class="warpbox">
   <div class="bordertop">
     <div class="zj_video">
-      <h2><%= @video.title.truncate(25) %><span>作者：<%= @video.author.truncate(25) %></span></h2>
+      <h2><%= @video.title %><span>作者：<%= @video.author.truncate(25) %></span>
+        <span>
+        已有
+        <strong><%= @video.view_count %></strong>
+        人观看
+        </span>
+      </h2>
       <div class="zjvl left" id="video_box">
         <!-- <img src="/assets/images/video.jpg" width="655" height="371" /> -->
         <%= render("video_box",:video_box=>@video_nodes.first) %>

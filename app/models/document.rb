@@ -29,7 +29,7 @@ class Document < ActiveRecord::Base
   has_one  :file, as: :viewable,class_name: DocumentFile,dependent: :destroy
   has_one  :logo, as: :viewable,class_name: DocumentLogo,dependent: :destroy
 
-  enumerize :level, :in=>[:mediate,:advanced],default: :mediate
+  enumerize :level, :in=>[:mediate,:advanced],default: :mediate,:scope=>true
 
   accepts_nested_attributes_for :logo , :allow_destroy => true
   accepts_nested_attributes_for :file , :allow_destroy => true
@@ -66,9 +66,9 @@ class Document < ActiveRecord::Base
       swf_name= base_path.split('.').first.to_s+".swf"
       final_swf_name= base_path.split('.').first.to_s+"_rfx"+".swf"
 
-      system "python ~/DocumentConverter.py #{file_name} #{pdf_name}"
+      system "python #{Rails.root+"lib"}/DocumentConverter.py #{file_name} #{pdf_name}"
       system "pdf2swf -o #{swf_name} #{pdf_name} -s poly2bitmap"
-      system "swfcombine -o #{final_swf_name} ~/rfxview.swf viewport=#{swf_name}"
+      system "swfcombine -o #{final_swf_name} #{Rails.root+"lib"}/rfxview.swf viewport=#{swf_name}"
     end
 =begin
   python DocumentConverter.py shop.pptx shop.swf
@@ -80,6 +80,13 @@ class Document < ActiveRecord::Base
   def swf_link
     final_swf_name= self.file.link.url.split('.').first.to_s+"_rfx"+".swf"
     final_swf_name
+  end
+
+  @queue = :document_file
+
+  def self.perform(document_id)
+    doc = Document.find_by_id(document_id)
+    doc.ppt_2_swf if doc
   end
 
 end

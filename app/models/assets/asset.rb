@@ -20,5 +20,5 @@
 class Asset < ActiveRecord::Base
   include UpdatePosition
   belongs_to :viewable, polymorphic: true
-  validates :link, :presence => true , :allow_blank => false
+  validates :link, :presence => true , :allow_blank => false,:on=>:create
 end

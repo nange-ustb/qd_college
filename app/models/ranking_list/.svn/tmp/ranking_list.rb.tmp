@@ -1,0 +1,115 @@
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: ranking_lists
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  type       :string(255)
+#  stage      :integer          default(0)
+#  gold_count :integer          default(0)
+#  position   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: ranking_lists
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  fight_exam_id :integer
+#  type          :string(255)
+#  stage         :integer          default(0)
+#  gold_count    :integer          default(0)
+#  position      :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: ranking_lists
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  fight_exam_id :integer
+#  type          :string(255)
+#  stage         :integer          default(0)
+#  gold_count    :integer          default(0)
+#  position      :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+class RankingList < ActiveRecord::Base
+  attr_accessible :user_id
+
+  belongs_to :user
+  belongs_to :fight_exam
+
+  attr_accessible :user_id,:type,:stage,:gold_count,:position
+
+  delegate :name,:username,:mobile,:address,:company,:level_text, to: :user, allow_nil:  true
+
+  scope :search , lambda{|params|
+    includes(:user=>:zone).where{
+      conds = []
+      conds << ( stage.eq params[:stage] ) if params[:stage].present?
+      conds << ( user.name =~ ("%" + params[:name] +"%") ) if params[:name].present?
+      conds << ( user.username =~ ("%" + params[:username] +"%") ) if params[:username].present?
+      conds << ( user.zone.affiliate_id.eq params[:affiliate_id] ) if params[:affiliate_id].present?
+      conds << ( user.zone_id.eq params[:zone_id] ) if params[:zone_id].present?
+      conds << ( user.zone_id.in Zone.where(:parent_id => params[:province_id]).pluck(:code) ) if params[:zone_id].blank? and params[:province_id].present?
+      conds.inject{| conds_total , con |  conds_total &= con }
+    }.order(" ranking_lists.gold_count desc, updated_at asc ")
+  }
+
+  default_scope lambda{
+    unless Administrator.current.blank? or Administrator.current.has_role?('superman')
+      includes(:user=>:zone).where{
+      	conds = []
+      	conds << ( user.zone.affiliate_id.in Affiliate.of_administrator.pluck(:code) ) 
+          conds.inject{| conds_total , con |  conds_total &= con }
+      }.readonly(false)
+    end
+  }
+
+  def zh_week
+  	 RankingList.weeks_option[self.stage]
+  end 
+
+  def self.current_week_no
+  	  cw= Date.today.cweek - Setting.qd_start_at.to_date.prev_week.cweek
+     cw <= 0 ? 1 : cw
+  end
+
+
+  def self.weeks_option
+	  	hash={}
+	  	start_date= Setting.qd_start_at.to_date
+	  	base_week= start_date.cweek-1
+	  	start_week,current_week= start_date.cweek-base_week,RankingList.current_week_no
+	  	loop do 
+	  		break if start_week > current_week
+        if hash.blank?
+          hash[start_week]="#{Setting.qd_start_at.to_date.to_s}-#{start_date.end_of_week.to_date.to_s}" 
+        else  
+	  		   hash[start_week]="#{start_date.beginning_of_week.to_date.to_s}-#{start_date.end_of_week.to_date.to_s}"
+        end  
+	  		start_date=start_date.next_week
+	  		start_week+=1
+	  	end 
+	  	hash
+  end
+
+  def self.refresh_high_scores
+    #$redis.zrevrange("high_scores", 0, 20).map{|id| [id, :user.find(id).rank, User.find(id).ranking_list_year.gold_count, User.find(id).ranking_list_year.updated_at.to_s, User.find(id).ranking_list_year.created_at.to_s]}
+    #$redis.zrevrange("week_2_high_scores", 0, 20).map{|id| [id, :user.find(id).rank, User.find(id).ranking_list_year.gold_count, User.find(id).ranking_list_year.updated_at.to_s, User.find(id).ranking_list_year.created_at.to_s]}
+    $redis.keys.grep(/high/).each{ |hs| $redis.del(hs) }
+    ::RankingListWeek.where(" gold_count > 0 ").reorder(' gold_count desc, ranking_lists.updated_at asc ').map(&:scored)
+    ::RankingListYear.where(" gold_count > 0 ").reorder(' gold_count desc, ranking_lists.updated_at asc ').map(&:scored)
+  end
+end

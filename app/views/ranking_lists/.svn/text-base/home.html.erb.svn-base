@@ -1,0 +1,56 @@
+<%= javascript_include_tag "glodon_location_all" %>
+<style>
+    .gkpgbbox_left table.table_main td{ font-size:14px; text-align:center; line-height:35px; height:35px;}
+    .gkpgbbox_left table.table_main th{ font-size:14px; text-align:center}
+    /*.gkpgbbox_left table.table_main td.tb_las{width:25%}*/
+    /*.gkpgbbox_left table.table_main td.tb_mc{width:5%}*/
+    .gkpgbbox_left table.table_main td{text-overflow:ellipsis;}
+</style>
+<script type="text/javascript">
+    $(function(){
+        $(".ChinaArea1").jChinaArea({s1: '', s2: ''});
+        $(".ChinaArea2").jChinaArea({s1: '', s2: ''});
+    });
+</script>
+<!--gkpgb begin-->
+<div class="gkpgb">
+  <div class="gkpgbtop"> </div>
+  <div class="gkpgbbox">
+    <div class="gkpgbbox_left left">
+      <%= form_tag ranking_list_weeks_ranking_lists_path, :method => :get, :remote => true do |f| %>
+          <p>
+            <font>所属地区：</font>
+            <span class="controls ChinaArea1">
+              <select id="week_province_input" name="ranking_list_weeks[province_id]"></select>
+              <select id="week_zone_input" name="ranking_list_weeks[zone_id]"></select>
+            </span>
+            <font>姓名：</font><input name="ranking_list_weeks[name]" type="text" class="phbso_inp" />
+            <input name="" type="submit" value="" class="phbso_btn" style="padding:0px;" />
+          </p>
+      <% end %>
+      <div id="ranking_list_weeks">
+        <%= render "ranking_lists", :ranking_lists => @ranking_list_weeks, :ranking_lists_type => "ranking_list_weeks" %>
+      </div>
+    </div>
+    <div class="gkpgbbox_left right">
+      <%= form_tag ranking_list_years_ranking_lists_path, :method => :get, :remote => true do |f| %>
+          <p>
+            <font>所属地区：</font>
+            <span class="controls ChinaArea2">
+              <select id="year_province_input" name="ranking_list_years[province_id]"></select>
+              <select id="year_zone_input" name="ranking_list_years[zone_id]"></select>
+            </span>
+            <font>姓名：</font><input name="ranking_list_years[name]" type="text" class="phbso_inp" />
+            <input name="" type="submit" value="" class="phbso_btn"  style="padding:0px;" />
+          </p>
+      <% end %>
+      <div id="ranking_list_years">
+        <%= render "ranking_lists", :ranking_lists => @ranking_list_years, :ranking_lists_type => "ranking_list_years" %>
+      </div>
+    </div>
+
+  </div>
+  <div class="gkpgbfoot"><a href="/fight_exams/home"> </a></div>
+
+</div>
+<!--gkpgb end-->

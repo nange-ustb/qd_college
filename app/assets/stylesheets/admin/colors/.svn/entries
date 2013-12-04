@@ -1,7 +1,7 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/assets/stylesheets/admin/colors
 http://server-code.grandsoft.com.cn/GIM/Rails
 
@@ -25,6 +25,40 @@ duhw
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
+
+red.css
+file
+
+
+
+
+2013-10-15T05:42:33.588152Z
+3085b6b89f50999ffeadad553f56eb26
+2013-10-12T09:39:39.403733Z
+21083
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7991
 
 greyblue.css
 file
@@ -195,38 +229,4 @@ duhw
 
 
 8080
-
-red.css
-file
-
-
-
-
-2013-10-15T05:42:33.588152Z
-3085b6b89f50999ffeadad553f56eb26
-2013-10-12T09:39:39.403733Z
-21083
-duhw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7991
 

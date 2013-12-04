@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/config/locales
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T10:05:04.306032Z
-21354
+2013-11-29T02:57:03.603478Z
+22374
 duhw
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2013-10-23T10:20:11.966675Z
-e559b98eefe6445ae8fcec8030586bb9
-2013-10-23T10:05:04.306032Z
-21354
+2013-11-29T07:22:02.587919Z
+35ae795b271f79ffd210da7dc9226ff7
+2013-11-29T02:57:03.603478Z
+22374
 duhw
 
 
@@ -92,7 +92,7 @@ duhw
 
 
 
-4933
+7142
 
 en.yml
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2013-10-15T05:42:36.480152Z
-9d67e62d1ef8a9aef41f9d5cc67a81d6
-2013-10-12T09:23:28.762920Z
-21079
-duhw
+2013-10-31T06:13:06.607965Z
+f957f372ba2030339a13f4f084e321ba
+2013-10-31T01:24:16.399450Z
+21592
+qiwl
 
 
 
@@ -160,5 +160,5 @@ duhw
 
 
 
-5503
+5498
 

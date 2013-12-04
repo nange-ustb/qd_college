@@ -1,0 +1,10 @@
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>修改成功</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right">
+  <div class="tuihtitle tuihtitle2">找回密码</div>
+  <div class="findpassword">
+    <dl class="password_xgcg">
+      <dd>恭喜您，密码修改成功！</dd>
+    </dl>
+  </div>
+</div>

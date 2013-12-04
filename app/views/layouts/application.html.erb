@@ -1,17 +1,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=7" />
+  <meta name="keywords" content="广联达清单学院,清单学院,一战到底,清单知识进阶,造价法规,清单计价规范" />
+  <meta name="description" content="广联达清单学院,清单学院,一战到底,清单知识进阶,造价法规,清单计价规范"/>
   <title>清单学院</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script>
+      <% if flash[:notice].present? %>
+      alert('<%= flash[:notice] %>');
+      <% end %>
+  </script>
 </head>
 <%= resource.errors.messages.to_s if Rails.env.development? and  resource ||= resource and resource.present? and resource.errors.present? %>
-<body class="testbj">
+<style>
+    .fixbox
+    {
+        position: fixed;
+        _position: absolute;
+        right: 0px;
+        top: 220px;
+        z-index: 100;
+    }
+    * html .fixbox /* IE6 */
+    {
+        position: absolute;
+        bottom: auto;
+        top: expression(eval(document.documentElement.scrollTop+280));
+    }
+</style>
+
+<div class="fixbox" style="width:170px;height:187px;">
+  <a href="http://shop.glodon.com" target="_blank"><img src="/assets/images/shop_ads.jpg" width="100%" height="100%"/></a>
+</div>
+<body class="<%= params[:controller] == "home" ? '' : 'testbj' %>">
 <div class="top">
   <% if current_user %>
-      <span><strong><%=link_to current_user.username, "#" %></strong> ,欢迎来带新清单学院!</span>
+      <span><strong><%=link_to current_user.username, edit_user_registration_path,:style=>'color:#0f84f0' %></strong> ,欢迎来到新清单学院!</span>
       <%= link_to '退出', '/users/sign_out' %>
   <% else %>
       <%= link_to '登录', "/users/sign_in" %> | <%= link_to '注册', new_user_registration_path %>
@@ -38,27 +66,22 @@
   <!--nav begin-->
   <ul class="nav">
     <li><a href="/" class="nav1 <%= params[:controller] == "home" ? "ah1" : "" %>"><span>首页</span></a></li>
-    <li><a href="/beginners" class="nav2  <%= params[:controller] == "beginners" ? "ah3" : "" %>"><span>初级课堂</span></a></li>
-    <li><a href="/intermediates" class="nav3 <%= params[:controller] == "intermediates" ? "ah3" : "" %>"><span>中级课堂</span></a></li>
+    <li><a href="/beginners" class="nav2  <%= params[:controller] == "beginners" ? "ah2" : "" %>"><span>初级课堂</span></a></li>
+    <li><a href="/mediates" class="nav3 <%= params[:controller] == "mediates" ? "ah3" : "" %>"><span>中级课堂</span></a></li>
     <li><a href="/advanceds" class="nav4 <%= params[:controller] == "advanceds" ? "ah4" : "" %>"><span>高级课堂</span></a></li>
-    <li><a href="#" class="nav5"><span>一战到底</span></a></li>
-    <li class="nobj"><a href="#" class="nav6"><span>获奖名单</span></a></li>
+    <li><a href="<%= home_fight_exams_path %>" class="nav5" target="_blank"><span>一战到底</span></a></li>
+    <li><a href="/lecturers" class="nav7 <%= params[:controller] == "lecturers" ? "ah7" : "" %>"><span>讲师介绍</span></a></li>
+    <li><a href="/games" class="nav6 <%= params[:controller] == "games" ? "ah6" : "" %>"><span>获奖名单</span></a></li>
+    <li class="nobj"><a href="/schools" class="nav8 <%= params[:controller] == "schools" ? "ah8" : "" %>"><span>测评排名</span></a></li>
+    <!--<a href="http://webscan.360.cn/index/checkwebsite/url/qdxy-pre.glodon.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/be35f5ce82f1b9c632484de47fd0533d"/></a>-->
   </ul>
-  <!--nav end-->
-
   <%= yield %>
 
 </div>
 <!--wrap end-->
 <div class="clear"></div>
 <!--footer begin-->
-<div class="footer">
-  <p><span><a href="#">帮助中心</a> |  <a href="#">意见反馈</a> |  <a href="#">联系我们</a> |  <a href="#">免责申明</a> | <a href="#">服务条款</a> |  <a href="#">加入收藏</a></span>
-    Glodon  1998-2013 　　　广联达软件股份有限公司 京ICP证010052号 京ICP备10021606号-2 京公网安备110108401214号<br />
-    北京市海淀区东北旺西路8号院中关村软件园甲18号楼广联达大厦　　 邮编 ：100193<br />
-    电话： 86-10-62978993 　　　电子邮件： webmaster@fwxgx.com
-  </p>
-</div>
+<%= render "footer" %>
 <!--footer end-->
 </body>
 </html>

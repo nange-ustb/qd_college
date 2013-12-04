@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023092953) do
+ActiveRecord::Schema.define(:version => 20131203100647) do
 
   create_table "administrator_affiliates", :force => true do |t|
     t.integer  "administrator_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
     t.string   "encrypted_password"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "advertisements", :force => true do |t|
+    t.string   "image_url"
+    t.string   "title"
+    t.string   "link_url"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "affiliates", :id => false, :force => true do |t|
@@ -68,6 +77,21 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
   end
 
   add_index "assets", ["viewable_type", "viewable_id", "type"], :name => "index_assets_on_viewable_type_and_viewable_id_and_type", :unique => true
+
+  create_table "award_records", :force => true do |t|
+    t.string   "title"
+    t.string   "code"
+    t.string   "level"
+    t.integer  "user_id"
+    t.integer  "game_chance_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "user_name"
+    t.string   "username"
+    t.integer  "affiliate_id"
+    t.integer  "zone_id"
+    t.string   "zone_name"
+  end
 
   create_table "awards", :force => true do |t|
     t.string   "code",        :null => false
@@ -108,6 +132,17 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
     t.string   "model_name"
   end
 
+  create_table "exam_records", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "user_id"
+    t.integer  "correct",    :default => 0
+    t.string   "level"
+    t.integer  "exam_count", :default => 0
+    t.boolean  "pass",       :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "exams", :force => true do |t|
     t.string   "level"
     t.integer  "student_id"
@@ -122,15 +157,34 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
   add_index "exams", ["student_id", "level"], :name => "index_exams_on_student_id_and_level"
   add_index "exams", ["student_id"], :name => "index_exams_on_student_id"
 
-  create_table "game_chances", :force => true do |t|
-    t.integer  "student_id",                    :null => false
-    t.integer  "game_id",                       :null => false
-    t.boolean  "used",       :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+  create_table "fight_exams", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "gold_count",    :default => 0
+    t.integer  "current_stage", :default => 1
+    t.text     "stage_order"
+    t.string   "status",        :default => "new"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
-  add_index "game_chances", ["student_id"], :name => "index_game_chances_on_student_id"
+  create_table "fight_papers", :force => true do |t|
+    t.integer  "fight_exam_id"
+    t.integer  "question_id"
+    t.string   "answer"
+    t.string   "result",        :default => "none"
+    t.integer  "stage"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  create_table "game_chances", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "game_id"
+    t.boolean  "used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "level"
+  end
 
   create_table "games", :force => true do |t|
     t.string   "code",       :null => false
@@ -192,6 +246,16 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
     t.integer  "question_file_id"
   end
 
+  create_table "ranking_lists", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.integer  "stage",      :default => 0
+    t.integer  "gold_count", :default => 0
+    t.integer  "position"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
   create_table "regulations", :force => true do |t|
     t.integer  "taxon_id"
     t.text     "description"
@@ -216,6 +280,15 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "students", :force => true do |t|
     t.integer  "user_id"
@@ -285,6 +358,14 @@ ActiveRecord::Schema.define(:version => 20131023092953) do
     t.datetime "created_at",                                             :null => false
     t.datetime "updated_at",                                             :null => false
     t.string   "status",                               :default => "on"
+    t.string   "old_fight_rank"
+    t.string   "old_beginner_rank"
+    t.string   "old_mediate_rank"
+    t.string   "old_advanced_rank"
+    t.string   "new_fight_rank"
+    t.string   "new_beginner_rank"
+    t.string   "new_mediate_rank"
+    t.string   "new_advanced_rank"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

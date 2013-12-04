@@ -1,7 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/GIM/Rails/!svn/ver/21263/network_marketing/qd_college/trunk/app/views/admin/videos
+/GIM/Rails/!svn/ver/21500/network_marketing/qd_college/trunk/app/views/admin/videos
+END
+index.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21500/network_marketing/qd_college/trunk/app/views/admin/videos/index.html.haml
+END
+new.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/videos/new.html.haml
 END
 show.html.haml
 K 25
@@ -20,16 +32,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 98
 /GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/videos/edit.html.haml
-END
-index.html.haml
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/GIM/Rails/!svn/ver/21263/network_marketing/qd_college/trunk/app/views/admin/videos/index.html.haml
-END
-new.html.haml
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/videos/new.html.haml
 END

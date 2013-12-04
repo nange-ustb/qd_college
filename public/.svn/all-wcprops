@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/public
-END
-favicon.ico
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/public/favicon.ico
+/GIM/Rails/!svn/ver/22291/network_marketing/qd_college/trunk/public
 END
 robots.txt
 K 25
@@ -32,4 +26,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 76
 /GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/public/422.html
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/22291/network_marketing/qd_college/trunk/public/favicon.ico
 END

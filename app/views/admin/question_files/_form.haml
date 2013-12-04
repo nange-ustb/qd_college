@@ -12,4 +12,4 @@
     - else
       = f.input attr 
   = f.submit :class => 'btn btn-primary'
-=link_to t("#{resource_class.name.underscore}.back_list") , collection_path
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path(:search => {:question_type=> resource.question_type } )

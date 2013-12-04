@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/GIM/Rails/!svn/ver/21715/network_marketing/qd_college/trunk/app/views/fight_exams
+END
+_stages.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/21711/network_marketing/qd_college/trunk/app/views/fight_exams/_stages.html.erb
+END
+pause.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/21508/network_marketing/qd_college/trunk/app/views/fight_exams/pause.js.erb
+END
+_failure.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21425/network_marketing/qd_college/trunk/app/views/fight_exams/_failure.html.erb
+END
+_fight_paper.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/GIM/Rails/!svn/ver/21715/network_marketing/qd_college/trunk/app/views/fight_exams/_fight_paper.html.erb
+END
+_success.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21425/network_marketing/qd_college/trunk/app/views/fight_exams/_success.html.erb
+END
+home.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/GIM/Rails/!svn/ver/21569/network_marketing/qd_college/trunk/app/views/fight_exams/home.html.erb
+END
+next_stage.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21598/network_marketing/qd_college/trunk/app/views/fight_exams/next_stage.js.erb
+END
+_countdown.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/app/views/fight_exams/_countdown.erb
+END
+regulations.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21475/network_marketing/qd_college/trunk/app/views/fight_exams/regulations.html.erb
+END
+start.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/GIM/Rails/!svn/ver/21475/network_marketing/qd_college/trunk/app/views/fight_exams/start.html.erb
+END

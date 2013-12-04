@@ -1,37 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/GIM/Rails/!svn/ver/21357/network_marketing/qd_college/trunk/app/controllers/admin
-END
-permissions_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/controllers/admin/permissions_controller.rb
-END
-taxons_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/GIM/Rails/!svn/ver/21260/network_marketing/qd_college/trunk/app/controllers/admin/taxons_controller.rb
-END
-awards_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/controllers/admin/awards_controller.rb
-END
-question_stands_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 112
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/app/controllers/admin/question_stands_controller.rb
-END
-roles_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/controllers/admin/roles_controller.rb
+/GIM/Rails/!svn/ver/22378/network_marketing/qd_college/trunk/app/controllers/admin
 END
 resource_controller.rb
 K 25
@@ -39,11 +9,17 @@ svn:wc:ra_dav:version-url
 V 105
 /GIM/Rails/!svn/ver/21223/network_marketing/qd_college/trunk/app/controllers/admin/resource_controller.rb
 END
+ranking_list_years_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/GIM/Rails/!svn/ver/21468/network_marketing/qd_college/trunk/app/controllers/admin/ranking_list_years_controller.rb
+END
 question_files_controller.rb
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/GIM/Rails/!svn/ver/21336/network_marketing/qd_college/trunk/app/controllers/admin/question_files_controller.rb
+/GIM/Rails/!svn/ver/21712/network_marketing/qd_college/trunk/app/controllers/admin/question_files_controller.rb
 END
 videos_controller.rb
 K 25
@@ -51,17 +27,29 @@ svn:wc:ra_dav:version-url
 V 103
 /GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/controllers/admin/videos_controller.rb
 END
+games_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/controllers/admin/games_controller.rb
+END
 regulations_controller.rb
 K 25
 svn:wc:ra_dav:version-url
 V 108
 /GIM/Rails/!svn/ver/21223/network_marketing/qd_college/trunk/app/controllers/admin/regulations_controller.rb
 END
-games_controller.rb
+advertisements_controller.rb
 K 25
 svn:wc:ra_dav:version-url
-V 102
-/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/controllers/admin/games_controller.rb
+V 111
+/GIM/Rails/!svn/ver/22329/network_marketing/qd_college/trunk/app/controllers/admin/advertisements_controller.rb
+END
+video_nodes_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21448/network_marketing/qd_college/trunk/app/controllers/admin/video_nodes_controller.rb
 END
 question_onlines_controller.rb
 K 25
@@ -69,27 +57,75 @@ svn:wc:ra_dav:version-url
 V 113
 /GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/app/controllers/admin/question_onlines_controller.rb
 END
-video_nodes_controller.rb
+users_controller.rb
 K 25
 svn:wc:ra_dav:version-url
-V 108
-/GIM/Rails/!svn/ver/21254/network_marketing/qd_college/trunk/app/controllers/admin/video_nodes_controller.rb
+V 102
+/GIM/Rails/!svn/ver/21423/network_marketing/qd_college/trunk/app/controllers/admin/users_controller.rb
 END
 documents_controller.rb
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/GIM/Rails/!svn/ver/21318/network_marketing/qd_college/trunk/app/controllers/admin/documents_controller.rb
-END
-users_controller.rb
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/GIM/Rails/!svn/ver/21357/network_marketing/qd_college/trunk/app/controllers/admin/users_controller.rb
+/GIM/Rails/!svn/ver/21662/network_marketing/qd_college/trunk/app/controllers/admin/documents_controller.rb
 END
 administrators_controller.rb
 K 25
 svn:wc:ra_dav:version-url
 V 111
 /GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/controllers/admin/administrators_controller.rb
+END
+permissions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/controllers/admin/permissions_controller.rb
+END
+exam_records_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/GIM/Rails/!svn/ver/22363/network_marketing/qd_college/trunk/app/controllers/admin/exam_records_controller.rb
+END
+taxons_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21260/network_marketing/qd_college/trunk/app/controllers/admin/taxons_controller.rb
+END
+exams_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/22378/network_marketing/qd_college/trunk/app/controllers/admin/exams_controller.rb
+END
+award_records_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21359/network_marketing/qd_college/trunk/app/controllers/admin/award_records_controller.rb
+END
+awards_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/controllers/admin/awards_controller.rb
+END
+ranking_list_weeks_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/GIM/Rails/!svn/ver/21400/network_marketing/qd_college/trunk/app/controllers/admin/ranking_list_weeks_controller.rb
+END
+question_stands_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/GIM/Rails/!svn/ver/21506/network_marketing/qd_college/trunk/app/controllers/admin/question_stands_controller.rb
+END
+roles_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/controllers/admin/roles_controller.rb
 END

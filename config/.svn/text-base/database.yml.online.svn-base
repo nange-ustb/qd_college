@@ -9,10 +9,17 @@ production:
   host: 192.168.10.14
   port: 5432
   encoding: unicode
-  database: list_school
-  username: newshop
-  password: www.newshop.CoN
+  database: qdxy
+  username: qdxy
+  password: www.qdxy.CoN
   pool: 5
   timeout: 5000
 
-
+fwxgx_production:
+  adapter: sqlserver
+  mode: dblib
+  host: 192.168.10.108
+  database: gim
+  username: gim
+  password: nuo#ji!ya)8
+  encoding: UTF-8

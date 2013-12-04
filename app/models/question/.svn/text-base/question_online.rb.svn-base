@@ -24,4 +24,5 @@
 class QuestionOnline < Question 
 	enumerize :category, in:[:beginner,:mediate,:advanced], default: :beginner, :scope => true
 	has_many :exams,:through => :papers
+	validates  :category, presence: true
 end

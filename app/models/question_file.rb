@@ -44,16 +44,20 @@ class QuestionFile < ActiveRecord::Base
           
           (1 .. sheet.last_row_index).each do |i|
               cur_row= sheet.row(i)
-              cur_row[0]= Hash["#{self.question_type}".constantize.category.options]["#{cur_row[0].strip}"]
+              if self.question_type=="QuestionOnline"
+                cur_row[0]= Hash["#{self.question_type}".constantize.category.options]["#{cur_row[0].strip}"]
+              else
+                cur_row[0]= cur_row[0].try(:strip)
+              end   
               question_file_id= self.id 
               c_type= self.question_type  
               values= cur_row + [c_type,question_file_id ]
-              values= values.map!(&:to_s).map!(&:strip)
+             # values= values.map!(&:to_s).map!(&:strip)
 
               row = Hash[[header, values].transpose]
               attributes = row.to_hash.slice(*Question.accessible_attributes)
               a=Question.create(attributes)
-              #logger.info a.errors.inspect
+              logger.info a.errors.inspect
           end
       end
     end

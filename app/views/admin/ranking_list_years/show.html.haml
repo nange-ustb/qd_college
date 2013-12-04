@@ -1,0 +1,23 @@
+%dl
+  - attributes.each do |attr|
+    %dt= resource_class.human_attribute_name(attr)
+    - if resource.respond_to?( "#{attr}_text".to_sym )
+      %td= resource.send( "#{attr}_text".to_sym )
+    - elsif attr=="zone_id"
+      %td
+        = resource.try(:user).try(:zone).try(:province).try(:name)
+        = "|"
+        = resource.try(:user).try(:zone).try(:name)
+    - elsif attr=="stage"
+      %td= RankingList.weeks_option[resource.stage]
+    - elsif resource.send(attr).is_a? Time
+      %td= l resource.send(attr)
+    - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+      %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+    - else
+      %td= resource.send(attr).to_s.truncate(20)
+=link_to t("#{resource_class.name.underscore}.back_list") , collection_path
+
+
+
+

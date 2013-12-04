@@ -1,0 +1,21 @@
+<div style="height:370px;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_main" style="table-layout:fixed;word-break:break-all;">
+    <tr>
+      <th width=30>名次</th>
+      <th width=111>姓名</th>
+      <th width=111>地区</th>
+      <th width=45>金币数</th>
+      <th width=60>闯关次数</th>
+    </tr>
+    <% ranking_lists.each_with_index do |rl, index| %>
+        <tr>
+          <td><%= 10 * ((params[:page] || 1).to_i - 1) + index + 1 %> </td>
+          <td width=115 title="<%= (rl.user.name || rl.user.username || '') %>"><%= (rl.user.name || rl.user.name || '').truncate(10) %>&nbsp;</td>
+          <td width=115 title="<%= rl.user.zone_full_name %>"><%= (rl.user.zone_full_name || '').truncate(6, :omission => '') %>&nbsp;</td>
+          <td><%= rl.gold_count %></td>
+          <td><%= rl.fight_times %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+<%= paginate ranking_lists, :remote => true, :params => {:controller => 'ranking_lists', :action => ranking_lists_type} %>

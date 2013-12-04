@@ -1,0 +1,53 @@
+<%= javascript_include_tag "jquery/jquery.validate.min" %>
+<script type="text/javascript">
+    $(function(){
+        $("form").validate({
+            errorElement: "span",
+            errorClass: "error",
+            validClass: "valid",
+            rules: {
+                "captcha": { required: true },
+                "user[password]": { required: true,minlength: 6,maxlength: 20 },
+                "user[password_confirmation]": { required: true, equalTo: '#user_password' }
+            },
+            messages: {
+                "user[password_confirmation]": {
+                    required: "请输入确认密码",equalTo: "两次输入密码不一致"
+                } ,
+                "user[password]": {
+                    required: "请输入新密码",minlength: "最小长度是 6", maxlength: "最大长度是 20"
+                },
+                "captcha": {
+                    required: "请输入验证码"
+                }
+            },
+            success: function (label) {
+                label.removeClass("error").addClass("valid");
+            },
+            errorPlacement: function(error, element){
+                element.parent().find("span").remove();
+                error.appendTo(element.parent());
+            }
+        });
+    })
+</script>
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>修改密码</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right">
+  <div class="tuihtitle tuihtitle2">修改密码</div>
+  <div class="findpassword">
+    <%= simple_form_for(current_user, :html => { :method => :put }, :validate => false) do |f| %>
+          <%= f.input :password, :label => "新密码：", :placeholder => "", :input_html => {:class => "inp"} %>
+          <%= f.input :password_confirmation, :label => "确认密码：", :placeholder => "", :input_html => {:class => "inp"} %>
+          <div class="control-group">
+            <label class="control-label" for="inputWarning">输入验证码 :</label>
+            <div class="controls">
+              <%= text_field_tag :captcha %>
+              <%= show_simple_captcha %>
+              <%= link_to_function '看不清？','location.reload()'%>
+            </div>
+          </div>
+          <div class="cgo_but"><input name="" type="submit" value="修改密码" /></div>
+      <% end %>
+  </div>
+</div>

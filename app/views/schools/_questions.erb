@@ -1,6 +1,8 @@
 <% index = 0 %>
 <%= simple_form_for @exam,:url=>schools_path,:html=>{:method => :post,:id=>"answer_form"} do |f| %>
   <%= f.fields_for :questions,@questions do |q| %>
+    <%#= q.input :answer, :as => :radio_buttons, :label => "#{index += 1}.#{q.object.title}", :collection => %w(a b c d e f).collect{|_| [q.object.send(_.to_sym), _] if q.object.send(_.to_sym).present? }.compact! %>
+    <%#= q.object.answer %>
     <div class="control-group">
       <label class="control-label"><%= index += 1 %>.<%= q.object.title %></label>
       <div class="controls">

@@ -104,6 +104,10 @@ class Zone < ActiveRecord::Base
     self if level == 3
   end
 
+  def province_name
+    province.try(:name)
+  end
+
   def full_name
     "#{province.try(:name)}#{city.try(:name)}#{district.try(:name)}"
   end
@@ -114,7 +118,9 @@ class Zone < ActiveRecord::Base
     Zone.delete_all
     Affiliate.delete_all
     Area.delete_all
+    
     book.worksheets.each do |sheet|
+      check_zone= %w(县 市辖区 自治区直辖县级行政区划 省直辖县级行政区划)
       header = sheet.row(0)
       (1 .. sheet.last_row_index).each do |i|
         arr_tmp = sheet.row(i).compact#.collect{|i|i.strip}
@@ -129,12 +135,15 @@ class Zone < ActiveRecord::Base
         elsif code > 0 and code % 100 != 0
           parent_id = code/100*100
           parent_id = code/10000*10000  if  [31,11,12,50].include? code/10000
+          parent_id= code/10000*10000  if Zone.find_by_code( parent_id).blank?
         end
-        parent_id = nil if name == "县" or name == "市辖区" or name == "自治区直辖县级行政区划" or name == "省直辖县级行政区划"
+        parent_id = nil if check_zone.include? name
+        next if check_zone.include? name
 
         if affiliate_code.to_i != 0
           affiliate = Affiliate.find_or_create_by_name_and_code(:name => affiliate_name , :code => affiliate_code )
         end
+
         zone = Zone.create(:code => code , :name => name , :parent_id => parent_id ,:affiliate_id => affiliate.try(:id) )
         affiliate = nil
       end

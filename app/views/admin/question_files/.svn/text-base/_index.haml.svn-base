@@ -1,3 +1,8 @@
+- params[:search]||={}
+.well
+  = link_to t("#{QuestionStand.name.underscore}.inport"), 
+    new_admin_question_file_path(:q=> "#{params[:search][:question_type]}" ),
+    :class => 'btn btn-primary'
 %table{:class => "table table-bordered"}
   %thead
     %tr

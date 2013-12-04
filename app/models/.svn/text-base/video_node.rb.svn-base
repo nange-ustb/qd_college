@@ -15,12 +15,13 @@
 # -*- encoding : utf-8 -*-
 class VideoNode < ActiveRecord::Base
   include UpdatePosition
-  attr_accessible :link, :title, :video_id,:position
+  attr_accessible :link, :title, :video_id,:position,:logo_attributes
 
   validates :title ,uniqueness: true, :presence => true , :allow_blank => false
   validates :link, :format => { :with => /[a-zA-z]+:\/\/[^\s]*/  , :message => "请填写正确的url地址！"}
   validates :link , :presence => true
   belongs_to :video
-
+  has_one  :logo, as: :viewable,class_name: VideoNodeLogo,dependent: :destroy
+  accepts_nested_attributes_for :logo , :allow_destroy => true
   scope :order_position , lambda{where{}}
 end

@@ -21,6 +21,7 @@
 //= require jquery/jquery.ui.datepicker-zh-CN
 //= require jquery/jquery-ui-timepicker-zh-CN
 //= require kindeditor
+//= require YlChinaArea
 
 
 $.timepicker.setDefaults( {hourGrid: 4, minuteGrid: 10} )

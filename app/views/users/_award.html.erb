@@ -1,0 +1,11 @@
+<div class="hjmd_1_middle_content_list1">
+  <table width="250" border="0">
+    <tr>
+      <td width="66">
+        <%= award.try(:user).try(:user_header_img) %>
+      </td>
+      <td width="103"><%= award.username %></td>
+      <td width="67"><%= award.try(:user).try(:zone_full_name) %></td>
+    </tr>
+  </table>
+</div>

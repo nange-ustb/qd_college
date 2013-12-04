@@ -1,17 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/GIM/Rails/!svn/ver/21334/network_marketing/qd_college/trunk/app/views/layouts
-END
-application.html.erb
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/GIM/Rails/!svn/ver/21334/network_marketing/qd_college/trunk/app/views/layouts/application.html.erb
+/GIM/Rails/!svn/ver/22335/network_marketing/qd_college/trunk/app/views/layouts
 END
 admin.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/views/layouts/admin.html.erb
+END
+fight.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21650/network_marketing/qd_college/trunk/app/views/layouts/fight.html.erb
+END
+application.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/GIM/Rails/!svn/ver/22335/network_marketing/qd_college/trunk/app/views/layouts/application.html.erb
 END

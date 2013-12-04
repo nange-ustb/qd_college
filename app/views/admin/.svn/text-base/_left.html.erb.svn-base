@@ -12,6 +12,9 @@
   </h6>
   <ul id="menu-games" class="closed">
     <% if can? :read , Game %><li><%= link_to("抽奖管理", admin_games_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , AwardRecord %><li><%= link_to("获奖信息", admin_award_records_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , RankingListWeek %><li><%= link_to("周排名", admin_ranking_list_weeks_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , RankingListYear %><li><%= link_to("总排名", admin_ranking_list_years_path, :target => 'contentfrm') -%></li><% end %>
   </ul>
 
   <h6 id="h-menu-videos">
@@ -40,21 +43,28 @@
   </h6>
   <ul id="menu-question_onlines" class="closed">
     <% if can? :read , QuestionOnline %><li><%= link_to("新建试题", admin_question_onlines_path, :target => 'contentfrm') -%></li><% end %>
-    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", new_admin_question_file_path(:q=> "QuestionOnline" ), :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", admin_question_files_path( :search => {:question_type=> 'QuestionOnline' } ), :target => 'contentfrm') -%></li><% end %>
   </ul>
 
   <h6 id="h-menu-question_stands">
     <a href="#question_stands"><span>一战到底题库</span></a>
   </h6>
   <ul id="menu-question_stands" class="closed">
-    <% if can? :read , QuestionStand %><li><%= link_to("新建试题", admin_question_onlines_path, :target => 'contentfrm') -%></li><% end %>
-    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", new_admin_question_file_path(:q=> "QuestionStand" ), :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , QuestionStand %><li><%= link_to("新建试题", admin_question_stands_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , QuestionFile %><li><%= link_to("一键导入", admin_question_files_path( :search => {:question_type=> 'QuestionStand' } ), :target => 'contentfrm') -%></li><% end %>
   </ul>
   <h6 id="h-menu-users">
     <a href="#users"><span>用户管理</span></a>
   </h6>
   <ul id="menu-users" class="closed">
     <% if can? :read , User %><li><%= link_to("用户管理", admin_users_path, :target => 'contentfrm') -%></li><% end %>
+    <% if can? :read , ExamRecord %><li><%= link_to("评测统计", admin_exam_records_path, :target => 'contentfrm') -%></li><% end %>
+  </ul>
+  <h6 id="h-menu-ads">
+    <a href="#ads"><span>广告管理</span></a>
+  </h6>
+  <ul id="menu-ads" class="closed">
+    <% if can? :read , Advertisement %><li><%= link_to("广告管理", admin_advertisements_path, :target => 'contentfrm') -%></li><% end %>
   </ul>
 </div>
 <!--<div id="date-picker"></div>-->

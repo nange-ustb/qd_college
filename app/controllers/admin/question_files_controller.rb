@@ -21,6 +21,7 @@ class Admin::QuestionFilesController < Admin::ResourceController
 	def inport
 		@question_file= QuestionFile.find params[:id]
 		@question_file.inport_question
+		#symtem "rm #{@question_file.file_url.current_path}"
 		@question_file.is_inport=true
 		if @question_file.save
 			# flash[:notice] = "导入成功!!"

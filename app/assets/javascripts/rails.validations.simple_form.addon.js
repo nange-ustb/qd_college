@@ -75,6 +75,8 @@
 }).call(this);
 
 window.ClientSideValidations.callbacks.element.pass = function(element, callback) {
-    element.parent().find('span').remove();
-    element.parent().append('<span class="helper-inline valid"></span>');
+    if(element.attr("show_valid")==undefined ){
+        element.parent().find('span').remove();
+        element.parent().append('<span class="helper-inline valid"></span>');
+    }
 }

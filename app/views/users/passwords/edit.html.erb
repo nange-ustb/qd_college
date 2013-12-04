@@ -1,13 +1,42 @@
+<%= javascript_include_tag "jquery/jquery.validate.min" %>
+<script type="text/javascript">
+  $(function(){
+      $("form#new_user").validate({
+          errorElement: "span",
+          errorClass: "error",
+          validClass: "valid",
+          rules: {
+              "user[password]": {required: true,minlength: 6,maxlength: 20 },
+              "user[password_confirmation]": { required: true, equalTo: '#user_password' }
+          },
+          messages: {
+              "user[password_confirmation]": {
+                  required: "请输入确认密码",equalTo: "两次输入密码不一致"
+              } ,
+              "user[password]": {
+                  minlength: "最小长度是 6", maxlength: "最大长度是 20"
+              }
+          },
+          success: function (label) {
+              label.removeClass("error").addClass("valid");
+          },
+          errorPlacement: function(error, element){
+              element.parent().find("span").remove();
+              error.appendTo(element.parent());
+          }
+      });
+  })
+</script>
 <!--footbox begin-->
 <div class="warpbox">
   <div class="bordertop">
     <div class="breadcrumb">当前位置：<a href="/">首页</a> > <span>修改密码</span></div>
     <div class="register">
-      <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }, :validate => true) do |f| %>
+      <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }, :validate => false) do |f| %>
           <%= f.input :reset_password_token, :as => :hidden %>
           <%= f.full_error :reset_password_token %>
-          <%= f.input :password, :label => "新密码：", :placeholder => "请输入新密码", :input_html => {:class => "inp"} %>
-          <%= f.input :password_confirmation, :label => "确认密码：", :placeholder => "请输入确认密码", :input_html => {:class => "inp"} %>
+          <%= f.input :password, :label => "新密码：", :input_html => {:class => "inp"} %>
+          <%= f.input :password_confirmation, :label => "确认密码：", :input_html => {:class => "inp"} %>
           <div class="control-group">
             <label class="control-label">&nbsp;</label>
             <div class="controls">
@@ -16,29 +45,7 @@
           </div>
       <% end %>
     </div>
-
   </div>
 </div>
 <div class="footbox_border"></div>
 <!--footbox begin-->
-
-
-<h2>Change your password</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :reset_password_token, :as => :hidden %>
-  <%= f.full_error :reset_password_token %>
-
-  <div class="form-inputs">
-    <%= f.input :password, :label => "New password", :required => true %>
-    <%= f.input :password_confirmation, :label => "Confirm your new password", :required => true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

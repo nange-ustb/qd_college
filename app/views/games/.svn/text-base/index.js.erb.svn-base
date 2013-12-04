@@ -1,0 +1,3 @@
+<% level = params[:search] ? params[:search][:level] : params[:level] %>
+$("span#<%= level %>_content").html('<%= escape_javascript render :partial => 'award' , :collection => @awards %>');
+$("span#<%= level %>_paginate").html('<%= escape_javascript(paginate(@awards, :remote => true, :params => {:level => level}).to_s) %>');

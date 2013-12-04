@@ -18,10 +18,12 @@
 
 # -*- encoding : utf-8 -*-
 class DocumentFile < Asset
-	attr_accessible :body, :desc, :link, :position, :title, :type, :viewable_id, :viewable_type
+  attr_accessible :body, :desc, :link, :position, :title, :type, :viewable_id, :viewable_type
   mount_uploader :link, DocumentFileUploader
-  after_save :deal_with_ppt
+  before_update :deal_with_ppt
   def deal_with_ppt
-  	self.viewable.ppt_2_swf
+  #	self.viewable.ppt_2_swf
+  	DocumentWorker.perform_at(30.seconds,self.viewable.id, 1)
+  #	Resque.enqueue(Document, self.viewable.id)
   end 
 end

@@ -18,6 +18,10 @@ defaults: &defaults
   sina_weibo: "http://api.fwxgx.com/sinaapi/sinaapi.asmx?wsdl"
   qq_weibo: "http://api.fwxgx.com/qqapi/api.asmx?wsdl"
   action_mailer_defaulf_host: '192.168.130.56'
+  qd_start_at: '2013-11-04'
+  redis_host: '127.0.0.1'
+  redis_port: 6379
+  sync_fwxgx_user_info: "off"
   exam_time_limits:
     beginner: 30
     mediate: 20
@@ -27,11 +31,13 @@ defaults: &defaults
     mediate: 20
     advanced: 20
   exam_correct_limits:
-    beginner: 40
-    mediate: 20
-    advanced: 20
+    beginner: 30
+    mediate: 16
+    advanced: 16
+  fight_stage: 3000
 development:
   <<: *defaults
+  sync_fwxgx_user_info: 'on'
 staging:
   <<: *defaults
 production:

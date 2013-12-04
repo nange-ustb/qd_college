@@ -38,13 +38,13 @@ module QdCollege
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    %w(app/models/assets app/models/concern).each do |path|
+    %w(app/models/assets app/models/concern app/workers app/service).each do |path|
         config.autoload_paths += %W(#{config.root}/#{path})
     end
     
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/app/models/question)
-    config.autoload_paths += %W(#{config.root}/app/service)
+    config.autoload_paths += %W(#{config.root}/app/models/ranking_list)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -56,6 +56,9 @@ module QdCollege
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Beijing'
+    config.i18n.default_locale = :zh
+    config.i18n.locale = :zh
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]

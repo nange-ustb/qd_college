@@ -1,0 +1,54 @@
+<%= stylesheet_link_tag "jquery-ui-mini" %>
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>一站到底</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right" style="height: 634px;">
+  <div class="tuihtitle tuihtitle2">一战到底</div>
+  <div class="user_yzdd">
+    <ul>
+      <li>周排名：<span><%= current_user.week_rank %></span> </li>
+      <li>总排名：<span><%= current_user.fight_rank %></span> <img src="/assets/images/two/<%= current_user.fight_rank_change %>.jpg" /> </li>
+
+    </ul>
+    <ol>
+      <li>本周最高通关数：<span><%= current_user.week_high_score/100 %></span> </li>
+      <li>本周最高金币数：<span><%= current_user.week_high_score %></span> </li>
+      <li> 总金币：<font><%= current_user.high_score %></font> </li>
+    </ol>
+    <br />
+    <div class="tuihtitle tuihtitle2">通关详细记录</div>
+    <div class="yzdd_so">
+      <% params[:search] ||= {} %>
+      <%= form_tag fight_users_path, :method => :get do |f| %>
+          <input name="" type="submit" value="搜 索" class="yzdd_sobtn" />
+          <%= datepicker_input :search, :created_at, :value => params[:search][:created_at], :dateFormat => "yy-mm-dd", :class => "yzdd_soinp" %>
+          <span>闯关时间：</span>
+      <% end %>
+    </div>
+    <div class="user_yzdd_tab">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th scope="col">闯关时间</th>
+          <th scope="col">关 卡</th>
+          <th scope="col">最高金币数</th>
+          <th scope="col">通关状态</th>
+        </tr>
+        <% @fight_exams = current_user.fight_exams.search(params[:search] || {}).finished.reorder(" created_at desc ").page(params[:page] || 1).per(10) %>
+        <% @fight_exams.each do |fe| %>
+            <tr>
+              <td><%= fe.created_at.strftime("%Y-%m-%d %H:%M:%S") %>  </td>
+              <td>第<%= fe.success_stage %>关</td>
+              <td class="cpzq"><%= fe.gold_count %> </td>
+              <td class="ggcg"><%= fe.status_text %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <!--pagination begin-->
+  <div class="pag_w">
+    <%= paginate @fight_exams %>
+  </div>
+  <!--pagination end-->
+</div>
+
+  

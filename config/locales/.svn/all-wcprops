@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/config/locales
+/GIM/Rails/!svn/ver/22374/network_marketing/qd_college/trunk/config/locales
 END
 devise.zh.yml
 K 25
@@ -13,7 +13,7 @@ zh.yml
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/config/locales/zh.yml
+/GIM/Rails/!svn/ver/22374/network_marketing/qd_college/trunk/config/locales/zh.yml
 END
 en.yml
 K 25
@@ -25,5 +25,5 @@ zh_default.yml
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/locales/zh_default.yml
+/GIM/Rails/!svn/ver/21592/network_marketing/qd_college/trunk/config/locales/zh_default.yml
 END

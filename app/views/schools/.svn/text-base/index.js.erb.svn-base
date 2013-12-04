@@ -1,0 +1,5 @@
+<% suffix = params[:search][:level] + "_" + params[:search][:pass]%>
+$("#top_three_<%= suffix %>").empty().html(<%= raw render("top_three_" + suffix,:tops=>@top_three).inspect %>)
+$("#list_<%= suffix %> tbody").empty().html(<%= raw render(:partial =>"exam_record",:collection=>@exam_records).inspect %>)
+$("#paginate_<%= suffix %>").empty().html(<%= raw paginate(@exam_records,:remote => true,:params=>params).inspect %>)
+

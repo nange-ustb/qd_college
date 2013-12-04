@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
 # == Schema Information
 #
-# Table name: [UserBrief]
+# Table name: UserBrief
 #
-#  UIN              :integer          not null, primary key
+#  UIN              :integer          default(0), not null, primary key
 #  UserName         :string(30)       not null
 #  bAuth            :boolean          default(TRUE), not null
 #  AuthGroup        :integer          default(1), not null
@@ -35,7 +35,7 @@
 #  IsMatchUser      :integer          default(0)
 #  ClientLoginTimes :integer          default(0)
 #  IsExpert         :integer          default(0)
-#  MobileIsChecked  :integer          default(0)
+#  MobileIsChecked  :integer
 #  LastLogon        :datetime
 #  FilialeID        :integer          default(0)
 #  ContributePoint  :integer          default(0)
@@ -54,9 +54,10 @@
 #  folkteamrank     :integer          default(0)
 #
 
-# class FwxgxUserBrief < ActiveRecord::Base
-#   self.establish_connection "fwxgx_#{Rails.env}"
-#   self.table_name = "[UserBrief]"
-#   self.primary_key = "UIN"
-#   belongs_to :user, :foreign_key => "UIN" , :primary_key => "UserID"
-# end
+class FwxgxUserBrief < ActiveRecord::Base
+  establish_connection "fwxgx_#{Rails.env}".to_sym
+  self.table_name = "UserBrief"
+  self.primary_key= "UIN"
+  belongs_to :user, :class_name => FwxgxUser, :foreign_key => 'UIN'
+
+end

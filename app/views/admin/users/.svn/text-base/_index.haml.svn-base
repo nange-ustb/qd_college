@@ -4,7 +4,7 @@
   = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
     所在分支:
     = select_tag "search[affiliate_id]" , 
-    options_from_collection_for_select(Affiliate.select("name,code"),"code","name",params[:search][:affiliate_id]), :class => 'span2' ,:prompt => "请选择"
+    options_from_collection_for_select(Affiliate.of_administrator.select("name,code"),"code","name",params[:search][:affiliate_id]), :class => 'span2' ,:prompt => "请选择"
     等级:
     = select_tag "search[level]" , options_for_select(resource_class.level.options,params[:search][:level]), :class => 'span2' ,:prompt => "请选择"
     = f.submit '搜索', :class => 'btn'
@@ -48,3 +48,5 @@
           -elsif resource.off?
             = link_to t("#{resource_class.name.underscore}.turn_on"), enable_admin_user_path(resource,:status=> "on")
 = paginate collection
+%p{:style => 'float:left'}
+  = "总记录数：#{collection.total_count}"

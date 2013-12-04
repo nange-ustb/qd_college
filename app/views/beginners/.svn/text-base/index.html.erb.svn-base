@@ -1,5 +1,10 @@
-<div class="cjkt">
-  <dl class="cjkttop">
+<%#= link_to 'sdfsdf',url_for(root_path,only_path: false)  %>
+<style type="text/css">
+  .red{color:#C51300}
+</style>
+<div class="breadcrumb breadcrumb2">当前位置：<a href="/">首页</a> > <span>初级课堂</span></div>
+<div class="cjkt2">
+  <dl class="cjkttop2">
     <dt>课堂列表</dt>
     <dd>
         <%= form_tag(beginner_path(1), method: :get,remote: true,:id=>:search) do |f| %>
@@ -8,39 +13,80 @@
             <%= button_to_function "", "$('#search').submit()", class: "ktbtn" %>
           </p>
         <% end %>
+        <% if false %>
       <%=link_to "初级在线评测",beginner_schools_path%>
+      <p class="cjrs">已有<span><%= beginner_student_count %></span>人参加</p>
+        <% end  %>
     </dd>
   </dl>
-  <div class="cjktborder">
-    <!--cjkt left begin-->
-    <div class="cjl left">
-   	  <% @taxons[nil].each do |first| %>
-      <ul>
-   	  	 <li class="ultit">
-   	  	 	<%= link_to first.name, beginner_url(first),:remote=>true %>
+  <div class="cjktborder2">
+    <div class="cjl2 left">
+   	  <% (@taxons[nil] || []).each do |first| %>
+      <% menu_id = "l-" + first.id.to_s %>
+       <ul>
+   	  	 <li class="ultit" name='<%= menu_id %>'>
+   	  	 	<%= link_to first.name, beginner_url(1,taxon_id: first),:remote=>true %>
    	  	 </li>
-   	  	 <span style='display:none'>
    	  	 <%(@taxons[first.id] || []).each do |second| %>
-   	  	 	<li class='second'>
-   	  	 		<%= link_to second.name,beginner_url(second),:remote=>true %>
-   	  	 	</li>
-   	  	 	<span style='display:none'>
-   	  	 	<% (@taxons[second.id] ||[]).each do |third| %>
-   	  	 		<li  class="tree">
-   	  	 			<%= link_to third.name,beginner_url(third),:remote=>true %>
-   	  	 		</li>
-   	  	 	<% end %>
-   	  	 </span>
-   	  	 <% end %>
-   	  	 <span>
+            <% menu_id1 = menu_id + '-' + second.id.to_s %>
+     	  	 	<li class='second' style='display:none' name="<%= menu_id1 %>">
+     	  	 		<%= link_to second.name,beginner_url(1,taxon_id: second),:remote=>true %>
+     	  	 	</li>
+     	  	 	<% (@taxons[second.id] ||[]).each do |third| %>
+              <% menu_id2 = menu_id1 + "-" + third.id.to_s %>
+     	  	 		<li class='tree' style='display:none' name="<%= menu_id2 %>">
+     	  	 			<%= link_to third.name,beginner_url(1,taxon_id: third),:remote=>true %>
+     	  	 		</li>
+     	  	 	<% end %>
+ 	  	   <% end %>
         </ul>
    	  <% end %>
     </div>
-    <div class="cjr right" id='content'>
+    <div class="cjr2 right" id='content'>
     </div>
   </div>
 </div>
 
+<!--season2-->
+<div class="w_right right">
+  <div class="zxcp_cp mtop20">
+    <%=link_to "",beginner_schools_path%>
+    已有<span style="color:#f00"><%= beginner_student_count %></span>人参加
+  </div>
 
+<!--ranking_list begin-->
+<div class="ranking_list">
+<div class="bordertop">
+<h2 class="tit tit2"><span>排行榜</span><a href="/schools">查看更多>></a></h2>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th scope="col">名次</th>
+    <th scope="col">姓名</th>
+    <th scope="col">地区</th>
+    <th scope="col">正确数</th>
+  </tr>
+  <% @rankings.present? and @rankings.each_with_index do |r,index| %>
+    <tr>
+      <td class="<%= index == 0 ? "tdnumber" : "tdnum" %>">
+        <span><%= index+1 %></span>
+      </td>        
+      <td><%= r.user.try(:name) %></td>
+      <td><%= r.user.try(:zone_province_name) %></td>
+      <td><%= r.correct %></td>
+    </tr>
+    <% end  %>
+</table>
 
+</div>
+
+</div>
+<div class="wrborbot"></div>
+</div>
+<!--season2-->
+
+<script type="text/javascript">
+  $(function(){
+    $("li.second").first().children('a').trigger('click')
+  })
+</script>
 

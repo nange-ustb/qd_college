@@ -1,13 +1,211 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models
+/GIM/Rails/!svn/ver/22624/network_marketing/qd_college/trunk/app/models
+END
+question_file.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21547/network_marketing/qd_college/trunk/app/models/question_file.rb
+END
+video.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21254/network_marketing/qd_college/trunk/app/models/video.rb
+END
+area.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/app/models/area.rb
+END
+regulation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21495/network_marketing/qd_college/trunk/app/models/regulation.rb
+END
+role_permission.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/role_permission.rb
+END
+advertisement.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/22397/network_marketing/qd_college/trunk/app/models/advertisement.rb
+END
+zone.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/22328/network_marketing/qd_college/trunk/app/models/zone.rb
+END
+fight_exam.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/22335/network_marketing/qd_college/trunk/app/models/fight_exam.rb
+END
+video_node.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21448/network_marketing/qd_college/trunk/app/models/video_node.rb
+END
+taxonomy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/app/models/taxonomy.rb
+END
+document.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/GIM/Rails/!svn/ver/21673/network_marketing/qd_college/trunk/app/models/document.rb
+END
+affiliate.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/app/models/affiliate.rb
+END
+administrator_affiliate.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/administrator_affiliate.rb
+END
+permission.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/permission.rb
+END
+permission_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/permission_event.rb
+END
+exam.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/22517/network_marketing/qd_college/trunk/app/models/exam.rb
+END
+award.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/models/award.rb
 END
 fwxgx_user.rb
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/GIM/Rails/!svn/ver/21266/network_marketing/qd_college/trunk/app/models/fwxgx_user.rb
+/GIM/Rails/!svn/ver/21548/network_marketing/qd_college/trunk/app/models/fwxgx_user.rb
+END
+user_brother.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/models/user_brother.rb
+END
+paper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21400/network_marketing/qd_college/trunk/app/models/paper.rb
+END
+fwxgx_user_brief.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/GIM/Rails/!svn/ver/21545/network_marketing/qd_college/trunk/app/models/fwxgx_user_brief.rb
+END
+game.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/models/game.rb
+END
+game_chance.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/models/game_chance.rb
+END
+setting.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/GIM/Rails/!svn/ver/21103/network_marketing/qd_college/trunk/app/models/setting.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/22624/network_marketing/qd_college/trunk/app/models/user.rb
+END
+administrator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/models/administrator.rb
+END
+event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/22328/network_marketing/qd_college/trunk/app/models/event.rb
+END
+student.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/GIM/Rails/!svn/ver/22552/network_marketing/qd_college/trunk/app/models/student.rb
+END
+fwxgx_service_region.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/GIM/Rails/!svn/ver/22328/network_marketing/qd_college/trunk/app/models/fwxgx_service_region.rb
+END
+exam_record.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/GIM/Rails/!svn/ver/22583/network_marketing/qd_college/trunk/app/models/exam_record.rb
+END
+fight_paper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/GIM/Rails/!svn/ver/21567/network_marketing/qd_college/trunk/app/models/fight_paper.rb
+END
+taxon.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/GIM/Rails/!svn/ver/21260/network_marketing/qd_college/trunk/app/models/taxon.rb
+END
+award_record.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/models/award_record.rb
+END
+ability.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/ability.rb
 END
 administrator_role.rb
 K 25
@@ -26,160 +224,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 80
 /GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/app/models/.gitkeep
-END
-video.rb
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/GIM/Rails/!svn/ver/21254/network_marketing/qd_college/trunk/app/models/video.rb
-END
-question_file.rb
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/GIM/Rails/!svn/ver/21318/network_marketing/qd_college/trunk/app/models/question_file.rb
-END
-paper.rb
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/paper.rb
-END
-fwxgx_user_brief.rb
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/GIM/Rails/!svn/ver/21266/network_marketing/qd_college/trunk/app/models/fwxgx_user_brief.rb
-END
-area.rb
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/app/models/area.rb
-END
-role_permission.rb
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/role_permission.rb
-END
-regulation.rb
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/GIM/Rails/!svn/ver/21234/network_marketing/qd_college/trunk/app/models/regulation.rb
-END
-game.rb
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/models/game.rb
-END
-game_chance.rb
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/game_chance.rb
-END
-zone.rb
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/app/models/zone.rb
-END
-video_node.rb
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/GIM/Rails/!svn/ver/21349/network_marketing/qd_college/trunk/app/models/video_node.rb
-END
-setting.rb
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/GIM/Rails/!svn/ver/21103/network_marketing/qd_college/trunk/app/models/setting.rb
-END
-user.rb
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/user.rb
-END
-taxonomy.rb
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/app/models/taxonomy.rb
-END
-document.rb
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/GIM/Rails/!svn/ver/21349/network_marketing/qd_college/trunk/app/models/document.rb
-END
-administrator.rb
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/models/administrator.rb
-END
-affiliate.rb
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/app/models/affiliate.rb
-END
-administrator_affiliate.rb
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/administrator_affiliate.rb
-END
-student.rb
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/student.rb
-END
-permission.rb
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/permission.rb
-END
-taxon.rb
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/GIM/Rails/!svn/ver/21260/network_marketing/qd_college/trunk/app/models/taxon.rb
-END
-permission_event.rb
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/permission_event.rb
-END
-exam.rb
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/exam.rb
-END
-award_record.rb
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/GIM/Rails/!svn/ver/21355/network_marketing/qd_college/trunk/app/models/award_record.rb
-END
-ability.rb
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/models/ability.rb
-END
-award.rb
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/models/award.rb
 END

@@ -9,8 +9,13 @@
 #  used       :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  level      :string(255)
 #
 
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
 require 'spec_helper'

@@ -1,17 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/lib/tasks
-END
-.gitkeep
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/lib/tasks/.gitkeep
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/lib/tasks
 END
 init_zone_data.rake
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/lib/tasks/init_zone_data.rake
+END
+do_something_every_minute.rake
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/lib/tasks/do_something_every_minute.rake
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/lib/tasks/.gitkeep
 END

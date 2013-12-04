@@ -1,0 +1,32 @@
+2013-10-31T08:18:44Z 6488 TID-15j028 INFO: Booting Sidekiq 2.15.2 using redis://127.0.0.1:6379/12 with options {:namespace=>"qd_college_sidekiq"}
+2013-10-31T08:18:45Z 6488 TID-15j028 INFO: Running in ruby 1.9.3p448 (2013-06-27 revision 41675) [i686-linux]
+2013-10-31T08:18:45Z 6488 TID-15j028 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2013-10-31T08:18:45Z 6488 TID-15j028 INFO: Starting processing, hit Ctrl-C to stop
+2013-10-31T08:21:58Z 6488 TID-1igjag ExamWorker JID-baa1226b6d40153c8342a16b INFO: start
+2013-10-31T08:21:58Z 6488 TID-1igjag ExamWorker JID-baa1226b6d40153c8342a16b INFO: fail: 0.002 sec
+2013-10-31T08:21:58Z 6488 TID-1igjag WARN: {"retry"=>true, "queue"=>"default", "class"=>"ExamWorker", "args"=>[87, 1], "jid"=>"baa1226b6d40153c8342a16b", "enqueued_at"=>1383207574.0973618, "error_message"=>"undefined method `perform' for #<ExamWorker:0xb0cbfd8 @jid=\"baa1226b6d40153c8342a16b\">", "error_class"=>"NoMethodError", "failed_at"=>"2013-10-31T08:20:37Z", "retry_count"=>2, "retried_at"=>2013-10-31 08:21:58 UTC}
+2013-10-31T08:21:58Z 6488 TID-1igjag WARN: undefined method `perform' for #<ExamWorker:0xb0cbfd8 @jid="baa1226b6d40153c8342a16b">
+2013-10-31T08:21:58Z 6488 TID-1igjag WARN: /home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/processor.rb:48:in `block (3 levels) in process'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:115:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:115:in `block in invoke'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:117:in `block in invoke'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/server/retry_jobs.rb:62:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:117:in `block in invoke'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/logging.rb:22:in `with_context'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:117:in `block in invoke'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:120:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/middleware/chain.rb:120:in `invoke'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/processor.rb:47:in `block (2 levels) in process'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/processor.rb:102:in `stats'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/sidekiq-2.15.2/lib/sidekiq/processor.rb:46:in `block in process'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/calls.rb:25:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/calls.rb:25:in `public_send'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/calls.rb:25:in `dispatch'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/calls.rb:67:in `dispatch'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/future.rb:14:in `block in new'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/thread_handle.rb:13:in `block in initialize'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/internal_pool.rb:100:in `call'
+/home/sa/.rvm/gems/ruby-1.9.3-p448@qd_college/gems/celluloid-0.15.2/lib/celluloid/internal_pool.rb:100:in `block in create'

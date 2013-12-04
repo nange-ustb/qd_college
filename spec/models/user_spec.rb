@@ -38,8 +38,17 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  status                 :string(255)      default("on")
+#  old_fight_rank         :string(255)
+#  old_beginner_rank      :string(255)
+#  old_mediate_rank       :string(255)
+#  old_advanced_rank      :string(255)
 #
 
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
 require 'spec_helper'

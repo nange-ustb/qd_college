@@ -21,4 +21,6 @@
           |
           = link_to '管理奖品', admin_awards_path(:game_id=>resource.id) 
 = paginate collection
+%p{:style => 'float:left'}
+  = "总记录数：#{collection.total_count}"
 = link_to t("#{resource_class.name.underscore}.new"), new_resource_path, :class => "btn"

@@ -1,0 +1,15 @@
+<%= simple_form_for( "search",:url=>"",:html=>{ :method => :get},:remote=>true ) do |f| %>
+  <%= f.hidden_field :level,:value=>level %>
+  <%= f.hidden_field :pass,:value=>pass %>
+  <%= f.hidden_field :order_str,:value=>'correct_desc' %>
+  <dt> 
+  	<%= f.input_field :name, :class=>"sotext",:placeholder=>"请输入姓名" %>
+  	<%= f.submit "搜 索",:class=>'sobtn' %>
+  </dt>
+  <dd>
+    <span>名次</span><span>姓名</span>
+    <span> <%= f.select :affiliate_id, @zones,:prompt => '请选择',:onchange=>"submit_search()",:style=>'width:65px' %></span>
+    <span><input name="" type="button" value="正确数" data-ordervalue='correct_desc' class='desc_button' /></span>
+    <span><input name="" type="button" value="闯关次数" data-ordervalue='exam_desc' class='desc_button'/></span>
+  </dd>
+<% end %>

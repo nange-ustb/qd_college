@@ -1,11 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/decorators
+/GIM/Rails/!svn/ver/22488/network_marketing/qd_college/trunk/app/decorators
 END
 student_decorator.rb
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/decorators/student_decorator.rb
+END
+exam_record_decorator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/22488/network_marketing/qd_college/trunk/app/decorators/exam_record_decorator.rb
+END
+user_decorator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/GIM/Rails/!svn/ver/21533/network_marketing/qd_college/trunk/app/decorators/user_decorator.rb
 END

@@ -32,7 +32,7 @@ QdCollege::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -74,7 +74,7 @@ QdCollege::Application.configure do
 
   config.middleware.use ExceptionNotification::Rack,
                         :email => {
-                            :email_prefix => "[shop] ",
+                            :email_prefix => "[qdxy] ",
                             :sender_address => %{"notifier" <lib@fwxgx.com>},
                             :exception_recipients => %w{shop_logs@163.com}
                         }

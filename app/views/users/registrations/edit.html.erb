@@ -1,22 +1,66 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+<style>
+    .information .control-group{ overflow: inherit; }
+    .information .user_address{ height: 65px; z-index: 9999; }
+</style>
+<%= javascript_include_tag 'rails.validations.simple_form.v2.addon' %>
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>修改信息</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right">
+  <div class="tuihtitle tuihtitle2">基本信息</div>
+  <!--information begin-->
+  <div class="information left">
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),:validate => true, :html => { :method => :put }) do |f| %>
+        <%= f.input :username, :label => "用户名：", :input_html=>{class: "addinput2"}, disabled: true, :required => false %>
+        <%= f.input :name, :label => "真实姓名：",:input_html=>{class: "addinput2"}, :required => true%>
+        <%= f.input :email, :label => "邮箱：", :required => true,:input_html=>{class: "addinput2"} %>
+        <%= f.input :mobile, :label => "手机：",:input_html=>{class: "addinput2"} %>
+        <%= f.input :address, :label => "详细地址：", :style => "overflow:none;", :hint => "确保您中奖时能及时收到奖品，请您务必准确的填写详细地址。", :input_html=>{class: "addinput2"}, :required => true %>
+        <div class="control-group string optional user_real_name">
+        <span class="label-inline">
+        <label for="user_real_name" class="string optional control-label">
+          <span title="required">*</span>所在地区：
+        </label>
+          </span>
+          <p class='ChinaArea'>
+            <select id="province_input" name="province_id" style="width: 75px;" prompt = '请选择' ></select>
+            <select id="city_input" name="user[zone_id]" style="width: 75px;" prompt = '请选择'></select>
+            <% if resource.errors[:zone_id].present? %>
+              <span class="error">不能为空字符</span>
+            <% end %>
+          </p>
+        </div>
+        <%= link_to_function "更多...", "$('#more_info').show()",:style=>'color:blue' %>
+        <span style='display:none' id="more_info">
+          <%= f.fields_for :user_header do |image| %>
+              <%= image.input :link,:input_html=>{class: "addinput2",:show_valid=>true},:as=>:file,:label=>"头像：",:required => false %>
+              <% if resource.errors[:user_header_link] %>
+              <span style='color:red'>
+                <%= resource.errors[:user_header_link].join(' ')%>
+              </span>
+              <% end %>
+          <% end %>
+          <%= f.input :gender, :label => "性别：", as: :radio_buttons, :validate => false %>
+          <%= f.input :qq, :label => "QQ：",:input_html=>{class: "addinput2",:show_valid=>true} %>
+          <%= f.input :company, :label => "公司：",:input_html=>{class: "addinput2",:show_valid=>true} %>
+          <%= f.input :seniority, :label => "从业年限：",:input_html=>{class: "addinput2",:show_valid=>true} %>
+          <%= f.input :id_card, :label => "身份证：",:input_html=>{class: "addinput2",:show_valid=>true} %>
+        </span>
+        <div class="cgo_but"><input name="" type="submit" value="保 存" /></div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="headscu left">
+    <%= current_user.user_header_img %>
   </div>
-<% end %>
+  <!--head sculpture end-->
+</div>
+<% province,city = current_user.province_and_city %>
+<script type="text/javascript">
+    $(function(){
+        $(".ChinaArea").jChinaArea({
+            s1: <%= raw province.try(:name).to_s.inspect  %>,
+            s2: <%= raw city.try(:name).to_s.inspect  %>
+        });
+    })
+</script>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>

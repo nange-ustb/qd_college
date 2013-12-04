@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/GIM/Rails/!svn/ver/21228/network_marketing/qd_college/trunk/app/views/admin/documents
-END
-_index.haml
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/documents/_index.haml
+/GIM/Rails/!svn/ver/21644/network_marketing/qd_college/trunk/app/views/admin/documents
 END
 edit.html.haml
 K 25
@@ -19,7 +13,7 @@ index.html.haml
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/GIM/Rails/!svn/ver/21228/network_marketing/qd_college/trunk/app/views/admin/documents/index.html.haml
+/GIM/Rails/!svn/ver/21500/network_marketing/qd_college/trunk/app/views/admin/documents/index.html.haml
 END
 new.html.haml
 K 25
@@ -31,11 +25,17 @@ _form.haml
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/GIM/Rails/!svn/ver/21123/network_marketing/qd_college/trunk/app/views/admin/documents/_form.haml
+/GIM/Rails/!svn/ver/21644/network_marketing/qd_college/trunk/app/views/admin/documents/_form.haml
 END
 show.html.haml
 K 25
 svn:wc:ra_dav:version-url
 V 101
 /GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/documents/show.html.haml
+END
+_index.haml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/GIM/Rails/!svn/ver/21142/network_marketing/qd_college/trunk/app/views/admin/documents/_index.haml
 END

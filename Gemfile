@@ -16,6 +16,9 @@ gem 'rails', '3.2.13'
 
 gem 'therubyracer'
 gem 'pg'
+gem 'ruby-odbc'
+gem 'tiny_tds'
+gem "activerecord-sqlserver-adapter"
 
 
 gem 'json'
@@ -29,7 +32,9 @@ group :development do
   gem 'quiet_assets'
   gem 'yajl-ruby'
   gem "better_errors"
-  gem "thin"
+  gem "binding_of_caller"
+  gem 'meta_request'
+  # gem "thin"
   gem 'rspec-rails'
   gem 'annotate'
   gem "magic_encoding"
@@ -37,6 +42,7 @@ end
 
 group :production , :staging do
   gem "pg"
+  gem 'exception_notification', '~> 4.0.1'
 end
 
 group :test do  
@@ -102,3 +108,8 @@ gem 'redis-objects'
 gem 'redis-namespace'
 gem 'active_decorator'
 gem 'sidekiq'
+#gem 'sidetiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem "galetahub-simple_captcha", :require => "simple_captcha"
+
+# gem 'resque'

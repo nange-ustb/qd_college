@@ -1,12 +1,13 @@
+- params[:search] ||= {}
 %p
 - params[:search] ||= {}
 = simple_form_for( "search",:html=>{ :method => :get, :class => 'form-search' } ) do |f|
   级别：
-  = f.select :level, Document.level.options,:input_html=>{:name=>"search[level]" }
+  = select_tag 'search[level]', options_for_select(Document.level.options, params[:search][:level] ), :include_blank => true
   资料名称：
-  = text_field_tag "search[title]" , params[:search][:title], :class => 'span2'
+  = text_field_tag "search[title]" , params[:search][:title]
   作者：
-  = text_field_tag "search[author]" , params[:search][:author], :class => 'span2'
+  = text_field_tag "search[author]" , params[:search][:author]
   = f.submit '搜索',:class => 'btn btn-primary'
 = render "index", :attributes => attributes - %w(position can_download can_view type)
 %p

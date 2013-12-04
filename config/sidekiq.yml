@@ -1,0 +1,12 @@
+# Options here can still be overridden by cmd line args.
+# sidekiq -C sidekiq.yml
+---
+:verbose: false
+:concurrency: 5
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+development:
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 25

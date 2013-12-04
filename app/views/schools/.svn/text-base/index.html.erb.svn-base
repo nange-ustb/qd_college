@@ -1,0 +1,152 @@
+<div class="breadcrumb breadcrumb2">当前位置：<a href="#">首页</a> > <span>中级课堂视频</span></div>
+<!--pcpm begin-->
+<div class="pcpmbor">
+  <div class="pcpm">
+    <div class="cpbox cj_l left">
+      <% exam_records = @exam_records[:beginner_pass] %>
+      <div class="cjtit"><img src="/assets/images/two/cjtiti.jpg" /></div>
+      <dl class="cpso cjso" >
+        <%= render 'search_form',:level=>:beginner,:pass=>:t %>
+      </dl>
+      <div class="clear"></div>
+      <!--qian3m begin-->
+      <div class="q3" id='top_three_beginner_t'>
+        <%= render "top_three_beginner_t",:tops=>exam_records[0..2] %>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_beginner_t' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_beginner_t'>
+        <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:beginner,:pass=>:t}} %>
+      </div>
+    </div>
+    <div class="cpbox cpbox_r left">
+      <% exam_records = @exam_records[:beginner_nopass] %>
+      <dl class="cpso cjso_right">
+        <%= render 'search_form',:level=>:beginner,:pass=>:f %>
+      </dl>
+      <div class="clear"></div>
+      <!--qian3m begin-->
+      <div class="q3" id='top_three_beginner_f'>
+        <%= render "top_three_beginner_f",:tops=>exam_records[0..2] %>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_beginner_f' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_beginner_f'>
+          <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:beginner,:pass=>:f}} %>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="cpbox cj_l left">
+      <% exam_records = @exam_records[:mediate_pass] %>
+      <div class="cjtit"><img src="/assets/images/two/zjtit.jpg" /></div>
+      <dl class="cpso zjso">
+        <%= render 'search_form',:level=>:mediate,:pass=>:t %>
+      </dl>
+      <div class="clear"></div>
+      <div class="q3" id='top_three_mediate_t'>
+        <%= render "top_three_mediate_t" ,:tops=>exam_records[0..2]%>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_mediate_t' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_mediate_t'>
+        <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:mediate,:pass=>:t}} %>
+      </div>
+    </div>
+    <div class="cpbox cpbox_r left">
+      <% exam_records = @exam_records[:mediate_nopass] %>
+      <dl class="cpso cjso_right">
+        <%= render 'search_form',:level=>:mediate,:pass=>:f %>
+      </dl>
+      <div class="clear"></div>
+      <!--qian3m begin-->
+      <div class="q3" id='top_three_mediate_f'>
+        <%= render "top_three_mediate_f",:tops=>exam_records[0..2] %>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_mediate_f' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_mediate_f'>
+        <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:mediate,:pass=>:f}} %>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="cpbox cj_l left">
+      <% exam_records = @exam_records[:advanced_pass] %>
+      <div class="cjtit"><img src="/assets/images/two/gjtit.jpg" /></div>
+      <dl class="cpso gjso">
+        <%= render 'search_form',:level=>:advanced,:pass=>:t %>
+      </dl>
+      <div class="clear"></div>
+      <!--qian3m begin-->
+      <div class="q3" id='top_three_advanced_t'>
+        <%= render "top_three_advanced_t",:tops=>exam_records[0..2] %>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_advanced_t' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_advanced_t'>
+          <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:advanced,:pass=>:t}} %>
+      </div>
+    </div>
+    <div class="cpbox cpbox_r left">
+      <% exam_records = @exam_records[:advanced_nopass] %>
+      <dl class="cpso cjso_right">
+        <%= render 'search_form',:level=>:advanced,:pass=>:f %>
+      </dl>
+      <div class="clear"></div>
+      <!--qian3m begin-->
+      <div class="q3" id='top_three_advanced_f'>
+        <%= render "top_three_advanced_f",:tops=>exam_records[0..2] %>
+      </div>
+      <!--qian3m end-->
+      <div class="phblist" style='height:260px'>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id ='list_advanced_f' >
+          <%= render :partial=>"exam_record",:collection=>exam_records[3..exam_records.size] %>
+        </table>
+      </div>
+      <div class="cp_gopage" id='paginate_advanced_f'>
+          <%= paginate exam_records, :remote => true,:params=>{:search=>{:level=>:advanced,:pass=>:f}} %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footbox_border"></div>
+<script type="text/javascript">
+  function submit_search(obj){
+    if(obj.type!='select-one'){
+      name_and_value = $(obj).data("ordervalue").split("_")
+      
+      if(name_and_value[1]=='asc'){
+        $(obj).data("ordervalue",name_and_value[0] + "_" + "desc")
+      } else {
+        $(obj).data("ordervalue",name_and_value[0] + "_" + "asc")
+      }
+      new_name_and_value = $(obj).data("ordervalue")
+      $(obj).removeClass().addClass(new_name_and_value.split("_")[1] + "_button")
+      $(obj).parents('form').find("input:hidden[name='search[order_str]']").val(new_name_and_value)
+    }
+    $(obj).parents("form").submit()
+  }
+  $(function(){
+    $("form.search input:button").click(function(){submit_search(this)})
+    $("select[name='search[affiliate_id]']").change(function(){submit_search(this)})
+  })
+</script>

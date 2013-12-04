@@ -1,7 +1,7 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/assets/stylesheets/jquery
 http://server-code.grandsoft.com.cn/GIM/Rails
 
@@ -25,9 +25,6 @@ qiwl
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
-
-themes
-dir
 
 jquery.alerts.css.erb
 file
@@ -62,4 +59,7 @@ has-props
 
 
 1361
+
+themes
+dir
 

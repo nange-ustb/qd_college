@@ -1,5 +1,42 @@
+<%= javascript_include_tag "jquery/jquery.validate.min" %>
 <script type="text/javascript">
     $(function(){
+        $("form#new_user").validate({
+            errorElement: "span",
+            errorClass: "error",
+            validClass: "valid",
+            rules: {
+                "user[email]": {
+                    required: true,email: true,
+                    remote:{ url:'<%= users_check_uniq_path  %>', type:"post",dataType:"json" }
+                },
+                "user[password]": {required: true,minlength: 6,maxlength: 20 },
+                "user[password_confirmation]": { required: true, equalTo: '#user_password' },
+                "user[zone_id]": { required: true }
+            },
+            messages: {
+                "user[password_confirmation]": {
+                    required: "请输入确认密码",equalTo: "两次输入密码不一致"
+                } ,
+                "user[password]": {
+                    minlength: "最小长度是 6", maxlength: "最大长度是 20"
+                },
+                "user[email]":{
+                    remote:jQuery.format("该账号已被注册")
+                },
+                "user[zone_id]":{
+                    required: "请选择您的所属地区"
+                }
+
+            },
+            success: function (label) {
+                label.removeClass("error").addClass("valid");
+            },
+            errorPlacement: function(error, element){
+                element.parent().find("span").remove();
+                error.appendTo(element.parent());
+            }
+        });
         $(".ChinaArea").jChinaArea({
             s1: '',
             s2: ''
@@ -11,11 +48,10 @@
   <div class="bordertop">
     <div class="breadcrumb">当前位置：<a href="/">首页</a> > <span>注册</span></div>
     <div class="register">
-      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true) do |f| %>
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => false) do |f| %>
           <%= f.input :email, :label => '邮箱地址：', :required => true, :autofocus => true, :input_html => { :class => "inp" } %>
           <%= f.input :password, :label => '登录密码：', :required => true, :input_html => { :class => "inp" } %>
           <%= f.input :password_confirmation, :label => '确认密码：', :required => true, :input_html => { :class => "inp" } %>
-
           <div class="control-group">
             <label class="control-label">所属地区： <span>*</span></label>
             <div class="controls ChinaArea">
@@ -38,11 +74,11 @@
 
 <!--Popupbox begin-->
 <!--<div class="Popupbox">-->
-  <!--<dl>-->
-    <!--<dt><a href="#"></a></dt>-->
-    <!--<dd>恭喜您注册成功！</dd>-->
-    <!--<dd><span><a href="#">返回网络学院</a></span></dd>-->
-  <!--</dl>-->
+<!--<dl>-->
+<!--<dt><a href="#"></a></dt>-->
+<!--<dd>恭喜您注册成功！</dd>-->
+<!--<dd><span><a href="#">返回网络学院</a></span></dd>-->
+<!--</dl>-->
 <!--</div>-->
 <!--Popupbox end-->
 

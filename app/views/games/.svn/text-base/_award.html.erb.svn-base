@@ -1,8 +1,16 @@
-<% if award_record %>
-"恭喜您获得'<%= award_record.title %>'!!,礼品将于10天内按照您填写的邮寄地址及联系方式发送到您手上!"<br>
-<%= link_to "查看获奖名单",'/'%><br>
-<% else %>
-	<%= flash[:notice] %><br>
-<% end %>
-<%= link_to "更多获奖机会请单击",'http://2013ds.fwxgx.com/instructions',:target=>'_blank'%>
-
+<div class="hjmd_1_middle_content_list1">
+  <table width="250" border="0">
+    <tr>
+      <td width="66">
+        <% user_header = award.try(:user).try(:user_header) %>
+        <% if user_header and user_header.try(:link).present? %>
+        	<%= image_tag user_header.link_url(:mini),:size=>"50x50", :width => 50, :height => 50 %>
+     	<% else %>
+     		<%= image_tag asset_path("images/user/sculpture.jpg",:size=>"50x50"), :width => 50, :height => 50 %>
+        <% end %> 
+      </td>
+      <td width="103" title="<%= award.username %>"><%= award.username.truncate(10, :omission => '') %></td>
+      <td width="67"><%= award.try(:user).try(:zone_full_name) %></td>
+    </tr>
+  </table>
+</div>

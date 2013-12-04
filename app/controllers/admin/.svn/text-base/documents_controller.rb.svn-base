@@ -12,7 +12,8 @@ class Admin::DocumentsController < Admin::ResourceController
     object = build_resource
     build_associations
     if create_resource(object)
-      resource.ppt_2_swf
+      DocumentWorker.perform_at(30.seconds,resource.id, 1)
+    #  Resque.enqueue(Document, resource.id)
       redirect_to  resource_path(resource)
     else
       render :new

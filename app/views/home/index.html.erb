@@ -35,27 +35,56 @@
       <dl class="cj">
         <dt><img src="/assets/images/jz_13.jpg" width="142" height="37" />掌握清单初级基础知识</dt>
         <dd>
-          <p>本课堂主要内容为《GB50500-2013建设工程工程量清单计价规范》中条款的自我学习。</p>
-          <p> 通过【在线测评】栏目对清单规范的掌握进行测评考核，考核内容将从初级题库中随机抽取50道形成试卷，在30分钟内完成答题且通过率为80%者可顺利进入中级课堂学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会（仅限首次通过）！</p></dd>
-        <dd><a href="#" class="kta1">进入初级课堂</a> <a href="#" class="kta2">初级在线评测</a></dd>
+          <p>本课堂主要内容为《GB50500-2013建设工程工程量清单计价规范》中条款的自我学习，</p>
+          <p> 通过【在线测评】栏目对清单规范的掌握进行测试考核，考核内容将从初级题库中随机抽取50道形成试卷，在30分钟内完成答题且<span style="color:red;">通过率为60%</span>者可顺利进入中级课堂学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <a href="/beginners" class="kta1">进入初级课堂</a> <a href="/schools/beginner" class="kta2">初级在线评测</a>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入初级课堂</a> <a href="javascript:alert('请您先登录!');location.href='/users/sign_in';" class="kta2">初级在线评测</a>
+          <% end %>
+          <p class="cjrs">已有<span><%= beginner_student_count %></span>人参加</p>
+        </dd>
       </dl>
 
       <dl class="zj">
         <dt><img src="/assets/images/jz_42.jpg" width="142" height="37" />掌握清单中级基础知识</dt>
         <dd>
-          <p>本课堂主要内容为马楠教授讲解《2013新清单十大亮点》，主要对新清单背景、十大变化、实战案例、应用展望做了详细解析；</p>
+          <p>本课堂主要内容为马楠教授讲解【2013版《清单计价规范》十大亮点解读与关键应用操作】，主要对新清单背景、十大变化、实战案例、应用展望做了详细解析；</p>
           <p>提供在线浏览、课件下载等功能方便用户随时随地学习；</p>
-          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从中级题库中随机抽取20道形成考卷，在20分钟内完成答题且通过率为100%者则顺利进入高级课堂继续学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会（仅限首次通过）！</p></dd>
-        <dd><a href="#" class="kta22">进入中级课堂</a> <a href="#" class="kta12">中级在线评测</a></dd>
+          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从中级题库中随机抽取20道形成考卷，在20分钟内完成答题且<span style="color:red;">通过率为80%</span>者则顺利进入高级课堂继续学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <% if ["mediate", "advanced"].include? current_user.try(:student).try(:level) %>
+                  <a href="/mediates" class="kta1">进入中级课堂</a> <a href="/schools/mediate" class="kta2">中级在线评测</a>
+              <% else %>
+                  <a href="javascript:alert('您的等级还不够！，不能进入中级课堂');" class="kta22">进入中级课堂</a> <a href="javascript:alert('您的等级还不够！，不能进行中级评测');" class="kta12">中级在线评测</a>
+              <% end %>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入中级课堂</a> <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta2">中级在线评测</a>
+          <% end %>
+          <p class="cjrs2">已有<span><%= mediate_student_count %></span>人参加</p>
+        </dd>
       </dl>
 
       <dl class="gj">
         <dt><img src="/assets/images/jz_61.jpg" width="142" height="37" />掌握清单高级基础知识</dt>
         <dd>
-          <p>本课堂主要内容为马楠教授结合实际案例讲解《2013新清单十大难点》。</p>
-          <p>提供在线浏览、课件下载等功能方便用户随时随地学习。</p>
-          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从高级题库中随机抽取20道形成考卷，在20分钟内答题完成且通过率为100%者则顺利完成本学院现阶段所有课程学习，可进入【一战到底】大通关中进一步验证自己的学习成果，通过同时还将获得一次幸运抽奖机会（仅限首次通过）！</p></dd>
-        <dd><a href="#" class="kta22">进入高级课堂</a> <a href="#" class="kta12">高级在线评测</a></dd>
+          <p>本课堂主要内容为马楠教授结合实际案例讲解【2013《清单计价规范》实施中亟需解决的 十大难点热点问题解决策略】</p>
+          <p>提供在线浏览、课件下载等功能方便用户随时随地学习；</p>
+          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从高级题库中随机抽取20道形成考卷，在20分钟内答题完成且<span style="color:red;">通过率为80%</span>者则顺利完成本学院现阶段所有课程学习，可进入【一战到底】大通关中进一步验证自己的学习成果，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <% if ["advanced"].include? current_user.try(:student).try(:level) %>
+                  <a href="/advanceds" class="kta1">进入高级课堂</a> <a href="/schools/advanced" class="kta2">高级在线评测</a>
+              <% else %>
+                  <a href="javascript:alert('您的等级还不够！，不能进入高级课堂');" class="kta22">进入高级课堂</a> <a href="javascript:alert('您的等级还不够！，不能进行高级评测');" class="kta12">高级在线评测</a>
+              <% end %>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入高级课堂</a> <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta2">高级在线评测</a>
+          <% end %>
+          <p class="cjrs">已有<span><%= advanced_student_count %></span>人参加</p>
+        </dd>
       </dl>
 
     </div>
@@ -65,23 +94,32 @@
 <!--wrapleft end-->
 <!--wrapleft begin-->
 <div class="wr right">
-  <div class="login">
+  <div class="login" style="height: <%= current_user ? 290 : 227 %>px;">
     <div class="bordertop" style="height: 227px;">
       <% if current_user %>
           <ul class="landing">
-            <li>帐号：<%= current_user.username %></li>
+            <li title="<%= current_user.username %>">帐号：<%= current_user.username.try(:truncate, 20) %></li>
             <li>姓名：<%= current_user.name || '未填写' %></li>
             <li>级别：<%= current_user.level_text %></li>
             <li>所属地区：<%= current_user.zone_full_name || '未填写' %> </li>
           </ul>
-          <div class="logina"><input name="" type="button" class="loginbtn" value="进入用户中心" /></div>
+          <!--jintpm begin-->
+          <ol class="jintpm">
+            <li>今天的排名：</li>
+            <li>一战到底：<%= current_user.home_fight_rank %><img src="/assets/images/two/<%= current_user.fight_rank_change %>.jpg" /></li>
+            <li>初<i>级：</i><%= current_user.home_beginner_rank %><img src="/assets/images/two/<%= current_user.beginner_rank_change %>.jpg" /></li>
+            <li>中<i>级：</i><%= current_user.home_mediate_rank %><img src="/assets/images/two/<%= current_user.mediate_rank_change %>.jpg" /></li>
+            <li>高<i>级：</i><%= current_user.home_advanced_rank %><img src="/assets/images/two/<%= current_user.advanced_rank_change %>.jpg" /></li>
+          </ol>
+          <!--jintpm end-->
+          <div class="logina"><input name="" type="button" class="loginbtn" value="进入用户中心" onclick="javascript: location.href = '/users/edit'"/></div>
       <% else %>
           <%= form_tag Setting.frontend_cas_login_request_url, :name => "fm" do |f| %>
               <h2 class="tit tit2"><span>我的用户中心</span></h2>
               <input name="service" type="hidden" value="http://<%=request.host_with_port%>/users/service" class="passwordbj" />
               <span id="login_error_message" class="tip" style="display:none; font-size: 12px;color: red; margin-left:25px; margin-top: 5px;">用户名或密码不正确</span>
               <input name="loginname" type="text" placeholder="登录帐号或邮箱" class="ueserbj" />
-              <input name="password" type="password" placeholder="请输入密码" class="passwordbj" />
+              <input name="password" type="password" value="" placeholder="" class="passwordbj" />
               <div class="logina"><input name="" type="submit" class="loginbtn" value="登录" />
                 <%= link_to "忘记密码?", new_password_path(:user) %>
               </div>
@@ -94,70 +132,67 @@
 
   <div class="yzdd">
     一战到底栏目，是通过闯关答题、积分排行的模式，让选手达到对清单及软件知识的全面掌握。在收获知识的同时看看身边的朋友谁会比你更厉害。一战到底前10名选手还有礼品获得。
-    <a href="#"></a>
+    <%= link_to '', home_fight_exams_path %>
   </div>
-  <!--ranking_list begin-->
-  <div class="ranking_list">
-    <div class="bordertop">
-      <h2 class="tit tit2"><span>排行榜</span><a href="#">查看更多>></a></h2>
 
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <script type="text/javascript">
+      $(function(){
+          $(".paihb > a").click(function(){
+              $(this).addClass("paihbhover").siblings().removeClass("paihbhover");
+              $("table."+$(this).attr("id")).show().siblings("table").hide();
+              $("#rank_href").attr("href", $(this).attr("href"));
+              return false;
+          })
+      })
+  </script>
+
+  <!--ranking_list begin-->
+  <div class="ranking_list" style="height: <%= current_user ? 386 : 449 %>px;">
+    <div class="bordertop">
+      <h2 class="tit tit2"><span>排行榜</span><a href="/ranking_lists/home" target="_blank" id="rank_href">查看更多>></a></h2>
+      <div class="paihb"><a href="/ranking_lists/home" class="paihbhover" id="fight_rank">一战到底</a>
+        <a href="/schools" id="beginner_rank">初级</a>
+        <a href="/schools" id="mediate_rank">中级</a>
+        <a href="/schools" class="paihbgj" id="advanced_rank">高级</a>
+      </div>
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;word-break:break-all;" class="fight_rank">
         <tr>
           <th scope="col">名次</th>
           <th scope="col">姓名</th>
           <th scope="col">地区</th>
           <th scope="col">金币</th>
         </tr>
-        <tr>
-          <td class="tdnumber"><span>1</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>2</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>3</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>4</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>5</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>6</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>7</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <td class="tdnum"><span>8</span></td>
-          <td>司马昭仪</td>
-          <td>齐齐哈尔</td>
-          <td>123456789</td>
-        </tr>
+        <% @ranking_list_years = RankingListYear.where(" gold_count > 0 ").reorder(' gold_count desc, ranking_lists.created_at asc ').limit(6) %>
+        <% @ranking_list_years.each_with_index do |rly, index| %>
+            <tr>
+              <td class="<%= index == 0 ? 'tdnumber' : 'tdnum' %>"><span><%= index + 1 %></span></td>
+              <td title="<%= (rly.name || rly.username || '') %>"><%= (rly.name || rly.username || '').truncate(5, :omission => '') %></td>
+              <td><%= rly.user.zone_province_name %></td>
+              <td><%= rly.gold_count %></td>
+            </tr>
+        <% end %>
       </table>
 
+      <% User.level.values.each do |lv| %>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;word-break:break-all;display: none;" class="<%= lv %>_rank">
+            <tr>
+              <th scope="col">名次</th>
+              <th scope="col">姓名</th>
+              <th scope="col">地区</th>
+              <th scope="col">正确数</th>
+            </tr>
+            <% @exam_records = ExamRecord.where(" level = ? and correct > 0 ", lv).reorder(' correct desc, exam_records.created_at asc ').limit(6) %>
+            <% @exam_records.each_with_index do |rly, index| %>
+                <tr>
+                  <td class="<%= index == 0 ? 'tdnumber' : 'tdnum' %>"><span><%= index + 1 %></span></td>
+                  <td title="<%= (rly.name || rly.username || '') %>"><%= (rly.name || rly.username || '').truncate(5, :omission => '') %></td>
+                  <td><%= rly.user.zone_province_name %></td>
+                  <td><%= rly.correct %></td>
+                </tr>
+            <% end %>
+          </table>
+      <% end %>
     </div>
   </div>
   <div class="wrborbot"></div>

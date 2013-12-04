@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ReadingsController < ApplicationController
-  before_filter :authenticate_user!,:only=>[:download]
+  before_filter :authenticate_user!
+  before_filter :check_user_level
   def show
   	@document= Document.find_by_id params[:id]
   	if @document.blank? or @document.type!="Document" or !@document.can_view
@@ -19,5 +20,24 @@ class ReadingsController < ApplicationController
   		redirect_to :back and return
   	end 
   end
+  
+  private 
+    def check_user_level
+      @document= Document.find_by_id params[:id]
+      user_level= current_user.try(:student).try(:level) 
+      able= case user_level
+      when "mediate"
+        ['mediate'].include? @document.level  
+      when "advanced"
+        ['mediate', 'advanced'].include? @document.level  
+      else
+        false
+      end 
+
+      unless able
+        flash[:notice] = "您当前的级别不可以操作资料!"
+        redirect_to(root_path)  and return
+      end
+    end
 
 end

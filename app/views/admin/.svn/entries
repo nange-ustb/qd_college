@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/views/admin
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T10:05:04.306032Z
-21354
+2013-12-03T08:42:51.125864Z
+22579
 duhw
 
 
@@ -26,10 +26,59 @@ duhw
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
+administrators
+dir
+
+_left.html.erb
+file
+
+
+
+
+2013-11-29T00:36:47.243690Z
+6b28f67036af9fbc1d3c250ac4ae77f0
+2013-11-28T09:35:07.245397Z
+22363
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3872
+
+exam_records
+dir
+
 permissions
 dir
 
 taxons
+dir
+
+exams
+dir
+
+award_records
+dir
+
+awards
 dir
 
 index.html.erb
@@ -66,7 +115,7 @@ duhw
 
 29
 
-awards
+ranking_list_weeks
 dir
 
 question_stands
@@ -109,7 +158,16 @@ duhw
 
 1242
 
+ranking_list_years
+dir
+
 resource
+dir
+
+question_files
+dir
+
+videos
 dir
 
 _error_messages.html.erb
@@ -145,12 +203,6 @@ duhw
 
 
 575
-
-videos
-dir
-
-question_files
-dir
 
 games
 dir
@@ -192,52 +244,18 @@ duhw
 
 681
 
+advertisements
+dir
+
 question_onlines
 dir
 
 video_nodes
 dir
 
-users
-dir
-
 documents
 dir
 
-administrators
+users
 dir
-
-_left.html.erb
-file
-
-
-
-
-2013-10-23T10:19:25.234674Z
-8d5b625ce72d6f0085e51edadd4149c8
-2013-10-23T10:05:04.306032Z
-21354
-duhw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2998
 

@@ -1,0 +1,16 @@
+<% if flash[:notice].present? %>
+    alert('<%= flash[:notice] %>');
+    location.href = '<%= home_fight_exams_path %>';
+<% elsif @fight_paper.result == "right" %>
+    <% if @fight_exam.success? %>
+        $('#question_position').html(<%=raw render("success", :fight_exam => @fight_exam, :fight_paper => @fight_exam.current_fight_paper).inspect %>);
+    <% else %>
+        $('#question_position').html(<%=raw render("fight_paper", :fight_exam => @fight_exam, :fight_paper => @fight_exam.current_fight_paper).inspect %>);
+    <% end %>
+    $('#stages').html(<%=raw render("stages", :fight_exam => @fight_exam).inspect %>);
+<% elsif @fight_paper.result == "wrong" %>
+    $('#question_position').html(<%=raw render("failure", :fight_exam => @fight_exam, :fight_paper => @fight_exam.current_fight_paper).inspect %>);
+<% elsif @fight_paper.result == "timeout" %>
+    alert('时间到，系统自动提交!');
+    $('#question_position').html(<%=raw render("failure", :fight_exam => @fight_exam, :fight_paper => @fight_exam.current_fight_paper).inspect %>);
+<% end %>

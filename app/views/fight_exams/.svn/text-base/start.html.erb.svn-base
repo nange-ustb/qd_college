@@ -1,0 +1,16 @@
+<%= javascript_include_tag 'jquery/jquery.marquee' %>
+<div id="question_position">
+  <%= render "fight_paper", :fight_exam => @fight_exam, :fight_paper => @fight_paper %>
+</div>
+<div style="width:900px; margin:0px auto;">
+  <div class="gklist" style="margin-left:59px;_margin-left:82px;">
+    <div class="gklisttop2"><a href="#" id="prev"></a></div>
+    <div id="stages">
+      <%= render "stages", :fight_exam => @fight_exam %>
+    </div>
+    <div class="gklistfoot"><a href="#" id="next"></a></div>
+  </div>
+</div>
+
+
+<!--cggz end-->

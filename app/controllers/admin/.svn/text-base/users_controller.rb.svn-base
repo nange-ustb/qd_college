@@ -27,7 +27,7 @@ class Admin::UsersController < Admin::ResourceController
   def enable
   	@user= User.find params[:id]
   	@user.status= params[:status]
-  	if @user.save
+  	if @user.save(:validate=>false)
   		flash[:notice]="操作成功"
   	end
   	redirect_to :back 	

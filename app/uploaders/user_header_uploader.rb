@@ -23,6 +23,6 @@ class UserHeaderUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    model.remote_url_url.present? ? nil : %w(jpg jpeg gif png)
+    model.remote_link_url.present? ? nil : %w(jpg jpeg gif png)
   end
 end

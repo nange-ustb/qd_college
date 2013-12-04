@@ -12,7 +12,7 @@
   <input type="text" id="text" value="" style="display:block; float:right;" class="form-control" placeholder="输入内容进行查询"/>
 </div>
 
-<div id="demo" class="demo jstree jstree-0 jstree-default jstree-focused" style="height: auto; ">
+<div id="demo" class="demo jstree jstree-0 jstree-default jstree-focused" style="height: auto; padding: 20px 20px; ">
 </div>
 
 <!--<div id="demo1" class="demo jstree jstree-0 jstree-default jstree-focused" style="height: 198px; ">-->
@@ -38,8 +38,10 @@
             dataType: "json",
             url: url.toString(),
             data: ({_method: "put", method: "put", "taxon[parent_id]": parent_id, "taxon[position]": position }),
+            success: function(data,result){
+                location.reload();
+            },
             error: handle_ajax_error
-
         });
         true
     }

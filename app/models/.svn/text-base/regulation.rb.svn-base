@@ -20,9 +20,10 @@ class Regulation < ActiveRecord::Base
   scope :search, lambda{ |params|
     where{
       conds = []
-      if params[:taxon_id].present?
-        conds << ( taxon_id.in Taxon.taxon_ids(params[:taxon_id]))
-      end
+      # if params[:taxon_id].present?
+      #   conds << ( taxon_id.in Taxon.taxon_ids(params[:taxon_id]))
+      # end
+      conds << ( taxon_id.eq params[:taxon_id] ) if params[:taxon_id].present?
       conds << ( description =~  "%#{params[:description].strip}%" ) if params[:description].present?
       conds.inject{| conds_total , con |  conds_total &= con }
     }

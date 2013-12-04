@@ -1,0 +1,46 @@
+<div class="ord_sid left">
+  <dl class="userinfo">
+    <dt>个人信息</dt>
+    <dd>
+      <%= current_user.user_header_img %>
+      <p>账号：<%= current_user.username.truncate(15) %></p>
+      <p>真实姓名：<%= current_user.name %></p>
+      <p>所在地区：<%= current_user.zone_name %></p>
+      <p>我的级别：<%= current_user.try(:student).try(:level_text) %></p>
+    </dd>
+  </dl>
+  <div class="lcon">
+    <div class="MenuBox" id="Menu_0">
+      <div class="titBox">
+        <h3 class="Fst"><a href="#">我的个人信息 </a></h3>
+      </div>
+      <div class="txtBox">
+        <ul>
+          <li><%= link_to '修改信息',edit_user_registration_path  %></li>
+          <li><%= link_to '修改密码',edit_user_path(current_user)  %></li>
+          <li><%= link_to '等级权限',level_users_path  %></li>
+        </ul>
+      </div>
+    </div><!--MenuBox-->
+    <div class="MenuBox" id="Menu_1">
+      <div class="titBox"><h3><a href="#">我的评测中心</a></h3></div>
+      <div class="txtBox">
+        <ul>
+          <li><%= link_to '在线评测',exam_users_path  %></li>
+          <li><%= link_to '一战到底',fight_users_path  %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    current_href = location.pathname
+    current_url = "li a[href='" + current_href + "']"
+    $(current_url).addClass('sid_hover')
+</script>
+
+
+
+

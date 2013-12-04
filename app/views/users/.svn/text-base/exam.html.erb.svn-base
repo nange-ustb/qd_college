@@ -1,0 +1,29 @@
+<% current_user.level = (params[:user]||{})[:level]%>
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>在线评测</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right">
+  <div class="tuihtitle tuihtitle2">在线评测</div>
+  <div class="user_test">
+	  <%= simple_form_for(current_user,:url=>exam_users_path, :html => { :method => :get,:id=>"user_exam" }, :validate => false) do |f| %>
+	      <%= f.input :level,:value=>params[:user][:level],:input_html=>{:onchange=>"$('#user_exam').submit()"} %>
+	  <% end %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+	        <th scope="col">评测时间</th>
+	        <th scope="col">评测类型</th>
+	        <th scope="col">正确</th>
+	        <th scope="col">错误</th>
+	        <th scope="col">是否通关</th>
+      	</tr>
+    	<% @exams and @exams.each do |e| %>
+	        <tr>
+		        <th scope="col"><%= e.created_at.strftime("%Y-%m-%d %H:%M:%S") %></th>
+		        <th scope="col"><%= e.level.text %></th>
+		        <th scope="col"><%= e.correct %></th>
+		        <th scope="col"><%= e.incorrect %></th>
+		        <th scope="col"><%= e.pass.text %></th>
+	      	</tr>
+    	<% end %>
+    </table>
+  </div>
+</div>

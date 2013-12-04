@@ -1,31 +1,51 @@
 <!--reading_onlinebody begin-->
-<div class="breadcrumb breadcrumb2">当前位置：<a href="/">首页</a> > <span>清单学院课堂</span></div>
+<div class="breadcrumb breadcrumb2">
+  <% cur_path= case @document.level 
+  when "mediate" then "/mediates"
+  when  "advanced" then "/advanceds" 
+    end %>
+  当前位置：<a href="/">首页</a> > <a href="<%=  cur_path %>"><%= @document.level_text %>课堂</a> > <span><%= @document.level_text %>课堂资料</span>
+</div>
+<script type="text/javascript">
+  $(function(){
+    <%if cur_path=="/mediates"%>
+      $('.nav3').addClass('ah3');
+    <% elsif cur_path=="/advanceds"%>
+      $('.nav4').addClass('ah4');
+    <% end  %>
+  })
+</script>
 <!--reading_onlinebody begin-->
 <div class="warpbox">
   <div class="bordertop">
     <div class="title">
-      <div class="online_title left"><%= @document.title %></div>
-      <div class="readbox_zz left">
-        <div class="readbox_zz_left left">
-          <div class="readbox_author left">作者：<span style="color:#0095ba;"><%= @document.author %></span></div>
-          <div class="readbox_read left">阅读人数：
-          		<span style="color:#2f93c6;"><%= @document.view_count %></span>
-          	</div>
+      <div class="online_title"><%= @document.title %>
+        <div class="download_button right" style="margin-right:20px;">
+          <%= link_to_if(@document.can_download?, "下载" , download_reading_path(@document),:disable_with=>"下载中" ){
+                 link_to "下载","javascript:alert('当前资料不允许下载,请下载其他本站资料!')"
+            } %>
         </div>
-        <div class="readbox_zz_right right">
-          <div class="readbox_read right">下载次数：
-          	<span style="color:#e13a00;"><%= @document.download_count %></span>
+      </div>
+
+      <div class="readbox_zz">
+        <div class="readbox_zz_left left" style="width:800px;">
+
+          <div class="readbox_author left">
+            作者：<span style="color:#0095ba;"><%= @document.author %></span>
+          </div>
+          <div class="readbox_read left">
+            阅读人数：<span style="color:#2f93c6;"><%= @document.view_count %></span>
+          	</div>
+          <div class="readbox_read right">
+            下载次数：<span style="color:#e13a00;"><%= @document.download_count %></span>
           </div>
         </div>
       </div>
-      <div class="download_button left">
-      	<%= link_to_if(@document.can_download?, "下载" , download_reading_path(@document) ){
-              link_to "下载","javascript:alert('当前资料不允许下载,请下载其他本站资料!')"
-          } %>
-      </div>
+      
     </div>
+    <div style="clear:both;"></div>
     <div class="reading_online_zz">
-    		<%=raw @document.body.truncate(300) %>
+    		<%=raw @document.body %>
     </div>
     <div class="reading_online_video">
       <div class="reading_online_video_title">
@@ -33,13 +53,13 @@
 	    </div>
 	    <div class="reading_online_video_video">
 	      <!-- <img src="/assets/images/reading_online/video_big.jpg" width="714" height="535" /> -->
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"  width="714px" height="535px" codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=8,0,0,0">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"  width="850px" height="600px" codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=8,0,0,0">
           <param name="MOVIE" value="<%= @document.swf_link %>">
           <param name="PLAY" value="true">
           <param name="LOOP" value="true">
           <param name="QUALITY" value="high">
           <param name="FLASHVARS" value="zoomtype=1">
-          <embed src="<%= @document.swf_link %>" width="714px" height="535px" play="true" align="" loop="true" quality="high" type="application/x-shockwave-flash" flashvars="zoomtype=1" pluginspage="http://www.macromedia.com/go/getflashplayer">
+          <embed src="<%= @document.swf_link %>" width="850px" height="600px" play="true" align="" loop="true" quality="high" type="application/x-shockwave-flash" flashvars="zoomtype=1" pluginspage="http://www.macromedia.com/go/getflashplayer">
             
         </object>
 	    </div>
@@ -47,7 +67,7 @@
 	      <img src="/assets/images/reading_online/flash.jpg" width="730" height="30" />
 	    </div> -->
 	  </div>
-	  <br />
+    <div style="clear:both;"></div>
 	</div>
 </div>
 <div class="footbox_border"></div>

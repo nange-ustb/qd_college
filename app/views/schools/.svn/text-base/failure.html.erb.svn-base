@@ -19,4 +19,3 @@
   </div>
 </div>
 <div class="footbox_border"></div>
-<%= link_to'快来抽奖，试试手气！',new_game_path,:remote=>true %>

@@ -1,7 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/assets/javascripts
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/assets/javascripts
+END
+admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/assets/javascripts/admin.js
+END
+glodon_location.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21582/network_marketing/qd_college/trunk/app/assets/javascripts/glodon_location.js
+END
+rails.validations.simple_form.v2.addon.js
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/GIM/Rails/!svn/ver/21689/network_marketing/qd_college/trunk/app/assets/javascripts/rails.validations.simple_form.v2.addon.js
 END
 home.js.coffee
 K 25
@@ -33,33 +51,33 @@ svn:wc:ra_dav:version-url
 V 99
 /GIM/Rails/!svn/ver/21331/network_marketing/qd_college/trunk/app/assets/javascripts/games.js.coffee
 END
+glodon_location_all.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/GIM/Rails/!svn/ver/21582/network_marketing/qd_college/trunk/app/assets/javascripts/glodon_location_all.js
+END
 application.js
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/GIM/Rails/!svn/ver/21338/network_marketing/qd_college/trunk/app/assets/javascripts/application.js
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/app/assets/javascripts/application.js
 END
 rails.validations.simple_form.addon.js
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/assets/javascripts/rails.validations.simple_form.addon.js
+/GIM/Rails/!svn/ver/21407/network_marketing/qd_college/trunk/app/assets/javascripts/rails.validations.simple_form.addon.js
 END
 backend.js
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/GIM/Rails/!svn/ver/21275/network_marketing/qd_college/trunk/app/assets/javascripts/backend.js
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/assets/javascripts/backend.js
 END
-admin.js
+users.js.coffee
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/app/assets/javascripts/admin.js
-END
-glodon_location.js
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/assets/javascripts/glodon_location.js
+V 99
+/GIM/Rails/!svn/ver/21407/network_marketing/qd_college/trunk/app/assets/javascripts/users.js.coffee
 END

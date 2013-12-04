@@ -2,13 +2,8 @@
   - attributes.each do |attr|
     = f.input attr
   = f.association :roles ,
-   :collection => Role.all.each{|r|r.name = r.name+"(#{ Role::BASE_LEVEL.invert[r.level]  })" } , :as => :radio_buttons ,checked: resource.roles.first.try(:id)
-  - affiliates = Affiliate.all
-  - Area.select("name,code").all.each do |a|
-    .alert.alert-info 
-      = "#{a.name}"
-      = check_box_tag "both_chose_#{a.code}" ,true , false
-    = f.association :affiliates ,:collection => affiliates.select{ |af| af.area_id == a.code },:as => :check_boxes , :class => false ,:item_wrapper_class => 'inline' , :label => false
+   :collection => Role.all.each{|r|r.name = r.name+"(#{ Role::BASE_LEVEL.invert[r.level]  })" } , :as => :radio_buttons ,checked: resource.roles.first.try(:id)  
+  = f.association :affiliates ,:as => :check_boxes , :class => false ,:item_wrapper_class => 'inline' , :label => false
   = f.submit :class => 'btn btn-primary'
 =link_to t("#{resource_class.name.underscore}.back_list") , collection_path
 

@@ -1,7 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/lib
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/lib
+END
+ip_location_detector.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/lib/ip_location_detector.rb
+END
+trust_text_validator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/lib/trust_text_validator.rb
+END
+zone_datas.xls
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/lib/zone_datas.xls
+END
+DocumentConverter.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/lib/DocumentConverter.py
 END
 qqwry.rb
 K 25
@@ -32,28 +56,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 74
 /GIM/Rails/!svn/ver/21064/network_marketing/qd_college/trunk/lib/qqwry.dat
-END
-ip_location_detector.rb
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/lib/ip_location_detector.rb
-END
-trust_text_validator.rb
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/lib/trust_text_validator.rb
-END
-zone_datas.xls
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21297/network_marketing/qd_college/trunk/lib/zone_datas.xls
-END
-DocumentConverter.py
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/lib/DocumentConverter.py
 END

@@ -19,7 +19,7 @@
           <% end %>
         </div>
         <div class="controls">
-           正确答案:<%= q.answer.upcase%>
+           <span style= 'color:red'>正确答案:<%= q.answer.upcase %></span>
         </div>
       </div>
     <% end %>

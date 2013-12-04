@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    $(function(){
+        $('#fight_stages').marquee({auto: false, type: 'vertical', interval: 3000, showNum: 6, direction:'forward', stepLen: 1, speed: 1000, prevBtnId: 'next', nextBtnId: 'prev'});
+    })
+</script>
+<div class="gklistcon" style="height: 448px; overflow: hidden;position: relative; ">
+  <div id="fight_stages" style="height: 465px; overflow: hidden;">
+    <div class="ul">
+      <% total_count, per_page = Setting.fight_stage.to_i, 48 %>
+      <% (fight_exam.success_stage/per_page).upto(total_count/per_page) do |p| %>
+          <div class="li">
+            <ul>
+              <% 1.upto(per_page) do |i| %>
+                  <% index = i + per_page * p %>
+                  <% if [1, per_page].include?(i) or fight_exam.current_stage == index %>
+                      <li><a href="<%= start_fight_exams_path %>" class="listlia<%= '2' if index > fight_exam.success_stage %>"><%= index %></a></li>
+                  <% else %>
+                      <li><a href="javascript:void(0);" class="listlia<%= '2' if index > fight_exam.success_stage %>"></a></li>
+                  <% end %>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <% 1.upto(fight_exam.success_stage/per_page - 1) do |p| %>
+          <div class="li">
+            <ul>
+              <% 1.upto(per_page) do |i| %>
+                  <% index = i + per_page * p %>
+                  <li><a href="javascript:void(0);" class="listlia<%= '2' if index > fight_exam.success_stage %>"><%= index if [1, per_page, fight_exam.current_stage].include?(i) %></a></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

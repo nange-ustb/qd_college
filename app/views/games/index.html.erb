@@ -1,4 +1,268 @@
-<% @awards_hash.each do |level,awards|%>
-	<%= level %><br>
-	<%= awards.inspect 	%>
+<div class="breadcrumb breadcrumb2">当前位置：<a href="#">首页</a> > <span>获奖名单</span></div>
+<!--hjmd1 begin-->
+<div class="warpbox">
+  <div class="bordertop">
+    <div class="hjmd_box1">
+      <div class="hjmd_1">
+        <div class="hjmd_1_left"></div>
+        <div class="hjmd_1_middle">
+          <div class="hjmd_1_middle_top">
+            <img src="/assets/images/hjmd/hjmd_top1.jpg" width="296" height="58" />
+          </div>
+          <div class="hjmd_1_middle_down">
+            <div class="hjmd_1_middle_content">
+              <div class="hjmd_1_middle_content_search">
+              	<%= simple_form_for( "search",:url=>"",:html=>{ :method => :get},:remote=>true ) do |f| %>
+              		<%= f.hidden_field :level,:value=>:beginner %>
+	                <table width="250" border="0">
+	                  <tr>
+	                    <td width="65">
+	                    	<%= f.select :province_id, @zones,:prompt => '请选择' %>
+	                    </td>
+	                    <td width="120">
+	                    	<%= f.input_field :username, :style=>"width:114px; height:19px; color:#B6B6B6; line-height:19px; font-size:14px;" %>
+	                    </td>
+	                    <td width="51"><div class="hjmd_btn_search"><input name="" type="submit" value="搜索" /></div></td>
+	                  </tr>
+	                </table>
+                 <% end %>
+              </div>
+              <% beginners = @awards_hash["beginner"] %>
+              <span id = 'beginner_content'>
+              	<%= render(:partial =>"award",:collection=>beginners) %>
+              </span>
+              <span id = 'beginner_paginate'>
+              	<%= beginners and paginate beginners,:remote => true, :params => {:level => :beginner} %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="hjmd_1_right"></div>
+      </div>
+      <div class="hjmd_1">
+        <div class="hjmd_1_left"></div>
+        <div class="hjmd_1_middle">
+          <div class="hjmd_1_middle_top"><img src="/assets/images/hjmd/hjmd_top2.jpg" width="296" height="58" /></div>
+          <div class="hjmd_1_middle_down">
+            <div class="hjmd_1_middle_content">
+              <div class="hjmd_1_middle_content_search">
+              	<%= simple_form_for( "search",:url=>"",:html=>{ :method => :get},:remote=>true  ) do |f| %>
+              		<%= f.hidden_field :level,:value=>:mediate %>
+	                <table width="250" border="0">
+	                  <tr>
+	                    <td width="65">
+	                        <%= f.select :province_id, @zones,:prompt => '请选择' %>
+	                     </td>
+	                    <td width="120">
+	                    	<%= f.input_field :username, :style=>"width:114px; height:19px; color:#B6B6B6; line-height:19px; font-size:14px;" %>
+	                    </td>
+	                    <td width="51">
+	                    	<div class="hjmd_btn_search"><input name="" type="submit" value="搜索" /></div>
+	                    </td>
+	                  </tr>
+	                </table>
+                <% end %>
+              </div>
+              <% mediates = @awards_hash["mediate"] %>
+              <span id = 'mediate_content'>
+              	<%= render(:partial =>"award",:collection=>mediates) %>
+          	  </span>
+          	  <span id = 'mediate_paginate'>
+              	<%= mediates and paginate mediates,:remote => true, :params => {:level => :mediate} %>
+          	  </span>
+            </div>
+          </div>
+        </div>
+        <div class="hjmd_1_right"></div>
+      </div>
+      <div class="hjmd_1">
+        <div class="hjmd_1_left"></div>
+        <div class="hjmd_1_middle">
+          <div class="hjmd_1_middle_top"><img src="/assets/images/hjmd/hjmd_top3.jpg" width="296" height="58" /></div>
+          <div class="hjmd_1_middle_down">
+            <div class="hjmd_1_middle_content">
+              <div class="hjmd_1_middle_content_search">
+              	<%= simple_form_for( "search",:url=>"",:html=>{ :method => :get},:remote=>true  ) do |f| %>
+              		<%= f.hidden_field :level,:value=>:advanced %>
+	                <table width="250" border="0">
+	                  <tr>
+	                    <td width="65">
+	                        <%= f.select :province_id, @zones,:prompt => '请选择' %>
+	                  </td>
+	                    <td width="120">
+	                    	<%= f.input_field :username, :style=>"width:114px; height:19px; color:#B6B6B6; line-height:19px; font-size:14px;" %>
+	                    </td>
+	                    <td width="51"><div class="hjmd_btn_search"><input name="" type="submit" value="搜索" /></div></td>
+	                  </tr>
+	                </table>
+                <% end %>
+              </div>
+              <% advanceds = @awards_hash["advanced"] %>
+              <span id = 'advanced_content'>
+              	<%= render(:partial =>"award",:collection=>advanceds) %>
+              </span>
+              <span id = 'advanced_paginate'>
+              	<%= advanceds and paginate advanceds,:remote => true, :params => {:level => :advanced} %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="hjmd_1_right"></div>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+</div>
+<div class="footbox_border"></div>
+<% if false  %>
+	<div class="warpbox">
+	  <div class="bordertop">
+	    <div class="hjmd_box2">
+	      <div class="hjmd_box2_title">一战到底获奖名单<span>全国前10名获奖名单</span></div>
+	      <div class="hjmd_box2_down">
+	        <div class="hjmd_box2_down_content">
+	          <div class="hjmd_box2_down_content_top">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="253">姓名</td>
+	                <td width="251">地区</td>
+	                <td width="278">金币数</td>
+	                <td width="87">奖品名称</td>
+	              </tr>
+	            </table>
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list1">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+	          <div class="hjmd_box2_down_content_list2">
+	            <table width="887" border="0">
+	              <tr>
+	                <td width="61"><img src="images/hjmd/hjmd_picture.jpg" width="50" height="50" /></td>
+	                <td width="175">司马昭仪</td>
+	                <td width="262">黑龙江大庆</td>
+	                <td width="262">123456789</td>
+	                <td width="105">LED折叠护眼台灯</td>
+	              </tr>
+	            </table>
+
+
+	          </div>
+
+	        </div>
+	        <div style="clear:both"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="footbox_border"></div>
 <% end %>

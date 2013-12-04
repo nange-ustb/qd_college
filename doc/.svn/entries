@@ -1,41 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/doc
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-22T07:56:16.632213Z
-21319
-duhw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-c74a76da-cd3e-5145-a8d1-4a383b865423
-
-changed_db
-file
-
-
-
-
-2013-10-21T06:19:13.732433Z
-f6d9dbc4459657596b9c4722a62fb53d
-2013-10-21T01:59:02.599717Z
-21288
+2013-10-30T07:42:12.095120Z
+21551
 qiwl
 
 
@@ -51,14 +24,7 @@ qiwl
 
 
 
-
-
-
-
-
-
-
-43
+c74a76da-cd3e-5145-a8d1-4a383b865423
 
 README_FOR_APP
 file
@@ -127,4 +93,38 @@ duhw
 
 
 3182
+
+changed_db
+file
+
+
+
+
+2013-10-30T08:07:43.463215Z
+bade88e9b465ec97ea24fb462cf117b5
+2013-10-30T07:42:12.095120Z
+21551
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+88
 

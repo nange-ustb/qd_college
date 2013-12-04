@@ -30,7 +30,7 @@ class Question < ActiveRecord::Base
   belongs_to :question_file
 # enumerize :answer, in:[:a, :b, :c ,:d ,:e ,:f]
 
-  validates :title, :answer, :a, :b, :category, presence: true
+  validates :title, :answer, :a, :b, presence: true
 
   before_validation :underscore_answer
 

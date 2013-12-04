@@ -1,15 +1,15 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T10:32:10.769608Z
-21357
-duhw
+2013-12-04T01:51:26.744474Z
+22624
+qiwl
 
 
 
@@ -25,6 +25,15 @@ duhw
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
+
+mailers
+dir
+
+workers
+dir
+
+views
+dir
 
 uploaders
 dir
@@ -48,14 +57,5 @@ decorators
 dir
 
 controllers
-dir
-
-mailers
-dir
-
-workers
-dir
-
-views
 dir
 

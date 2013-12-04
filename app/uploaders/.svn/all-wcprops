@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/uploaders
+/GIM/Rails/!svn/ver/22329/network_marketing/qd_college/trunk/app/uploaders
+END
+document_logo_uploader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/app/uploaders/document_logo_uploader.rb
 END
 question_file_uploader.rb
 K 25
@@ -13,17 +19,23 @@ user_header_uploader.rb
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/GIM/Rails/!svn/ver/21304/network_marketing/qd_college/trunk/app/uploaders/user_header_uploader.rb
+/GIM/Rails/!svn/ver/21409/network_marketing/qd_college/trunk/app/uploaders/user_header_uploader.rb
+END
+advertisement_uploader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/22329/network_marketing/qd_college/trunk/app/uploaders/advertisement_uploader.rb
+END
+video_node_logo_uploader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/GIM/Rails/!svn/ver/21552/network_marketing/qd_college/trunk/app/uploaders/video_node_logo_uploader.rb
 END
 document_file_uploader.rb
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /GIM/Rails/!svn/ver/21151/network_marketing/qd_college/trunk/app/uploaders/document_file_uploader.rb
-END
-document_logo_uploader.rb
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/GIM/Rails/!svn/ver/21273/network_marketing/qd_college/trunk/app/uploaders/document_logo_uploader.rb
 END

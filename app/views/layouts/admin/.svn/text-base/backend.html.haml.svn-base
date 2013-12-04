@@ -28,9 +28,7 @@
 
       .content
         .row
-          .span9
-            = yield
+          = yield
           =yield :right_slider
           
       %footer
-        %p &copy; Company 2012

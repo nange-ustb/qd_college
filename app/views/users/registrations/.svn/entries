@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/views/users/registrations
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-21T11:54:20.252013Z
-21304
+2013-12-03T10:24:11.492738Z
+22610
 qiwl
 
 
@@ -26,50 +26,16 @@ qiwl
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
-new.html.erb
-file
-
-
-
-
-2013-10-22T00:30:19.197526Z
-e29eeba65190bf631467ce72154f1db7
-2013-10-21T11:54:20.252013Z
-21304
-qiwl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1910
-
 edit.html.erb
 file
 
 
 
 
-2013-10-22T00:30:19.197526Z
-f66a2da26d0f9ada9751aebe38075f90
-2013-10-21T11:54:20.252013Z
-21304
+2013-12-04T01:56:01.392042Z
+91a332cde37dc71000e47c397dcfa304
+2013-12-03T10:24:11.492738Z
+22610
 qiwl
 
 
@@ -92,5 +58,39 @@ qiwl
 
 
 
-926
+3670
+
+new.html.erb
+file
+
+
+
+
+2013-10-30T00:40:32.724397Z
+ccd4e591424c184103d109dcf5327a9c
+2013-10-29T14:27:48.816025Z
+21521
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3422
 

@@ -3,9 +3,12 @@
 
 zh:
   enumerize:
+    pass:
+      "true": "是"
+      "false": "否"
     gender:
-      male: 男
-      female: 女
+      "true": 男
+      'false': 女
     level_lables: &level_lables
       beginner: "初级"
       mediate: "中级"
@@ -21,6 +24,10 @@ zh:
         tuxing: "图形"
         gangjin: "钢筋"
     user:
+      seniority:
+        one: "1~2年"
+        three: "3~5年"
+        more: "5年以上"
       status: 
         off: "禁闭"
         on: "开启"
@@ -28,6 +35,20 @@ zh:
       question_type:
         QuestionOnline: "在线评测题库"
         QuestionStand: "一战到底题库"
+    fight_exam:
+      status:
+        new: 新建
+        start: 开始
+        paused: 下次继续
+        success: 通关成功
+        failure: 通关失败
+    fight_paper:
+      result:
+        none: 无
+        right: 对
+        wrong: 错
+        timeout: 超时
+
   manage_homepage_title: 清单学院后台管理
   action_lables: &action_lables
     new: 新建
@@ -81,6 +102,20 @@ zh:
     inport: 一键导入
   regulation:
     <<: *action_lables
+  award_record:
+    <<: *action_lables
+  ranking_list:
+    <<: *action_lables
+  ranking_list_week:
+    <<: *action_lables
+  ranking_list_year:
+    <<: *action_lables
+  advertisement:
+    <<: *action_lables
+  exam_record:
+    <<: *action_lables
+  exam:
+    <<: *action_lables
   activerecord:
     errors:
       models:
@@ -110,6 +145,12 @@ zh:
       video_node: 视频章节
       regulation: 清单规则
       user: 用户
+      award_record: 获奖
+      ranking_list_week: 周排名
+      ranking_list_year: 总排名
+      advertisement: 广告
+      exam_record: 评测统计
+      exam: 评测详细记录
     attributes:
       administrator:
         user_name: 用户名
@@ -139,6 +180,8 @@ zh:
       document_file: 
         link: 文件
       document_logo: 
+        link: 缩略图
+      video_node_logo: 
         link: 缩略图
       question_stand:
         title: 标题 
@@ -183,12 +226,17 @@ zh:
         email: 邮箱
         password: 密码
         password_confirmation: 确认密码
-        name: 姓名
+        name: 真实姓名
         zone_id: 地区
         mobile: 电话
         company: 公司
         company_address: 公司地址
         level: 等级
+        id_card: 身份证
+        qq: QQ
+        seniority: 从业年限
+        gender: 性别
+        address: 详细地址
       game:
         level: 抽奖类型
         code: 身份编码
@@ -198,4 +246,46 @@ zh:
         title: 名称
         count: 数量
         probability: 几率
-
+      award_record:
+        level: 获奖来源
+        title: 奖品名称
+        name: 真实姓名
+        username: 账号
+        mobile: 手机号
+        zone_id: 所在地区
+        address: 详细地址
+        company: 所在单位
+        created_at: 获奖日期
+      ranking_list: &ranking_list
+        rank: 名次
+        stage: 时间（周）
+        name: 真实姓名
+        username: 账号
+        gold_count: 金币数
+        zone_id: 所在地区
+        mobile: 手机号
+        company: 所在单位
+        level_text: 用户等级
+      ranking_list_year:
+        <<: *ranking_list
+      ranking_list_week:
+        <<: *ranking_list
+      advertisement:
+        title: 名称
+        image_url: 图片
+        link_url: 链接
+        position: 位置 
+        created_at: 创建时间
+      exam_record: 
+        <<: *ranking_list
+        correct: 正确数
+        exam_count: 闯关次数
+        pass: 是否通关
+        level: 等级
+      exam:
+        level: 级别
+        correct: 正确
+        incorrect: 错误
+        pass: 是否通过
+        created_at: 评测时间
+        finished: 是否完成

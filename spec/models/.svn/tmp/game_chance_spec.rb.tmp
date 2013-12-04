@@ -1,0 +1,24 @@
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: game_chances
+#
+#  id         :integer          primary key
+#  student_id :integer
+#  game_id    :integer
+#  used       :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#  level      :string(255)
+#
+
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
+require 'spec_helper'
+
+describe GameChance do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

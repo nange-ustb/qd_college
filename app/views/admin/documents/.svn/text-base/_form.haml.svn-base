@@ -1,9 +1,21 @@
-= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }  do |f|
+= simple_form_for [ :admin, resource ], :html => { :class => 'form-horizontal' }, :validate => false  do |f|
   - attributes.each do |attr|
     = f.input attr , :input_html => { :rows => 3 }
   = f.fields_for :logo do |l|
-    = l.input :link,:as=>:file
+    = l.input :link,:as=>:file,error: false
+  - if resource.logo.errors[:link].present?
+    %div(class='control-group' style='margin-left:100px;color:red')
+      = "缩略图" + resource.logo.errors[:link].join
   = f.fields_for :file do |l|
-    = l.input :link,:as=>:file
-  = f.submit :class => 'btn btn-primary'
+    = l.input :link,:as=>:file,:error=>false
+  - if resource.file and resource.file.errors[:link].present?
+    %div(class='control-group' style='margin-left:100px;color:red')
+      = "文件" + resource.file.errors[:link].join
+  - unless resource.try(:logo).try(:link).blank?
+    = image_tag( resource.logo.send( :link_url ) )
+    %br
+  - unless resource.try(:file).try(:link).blank?
+    = link_to "下载文件",resource.file.send( :link_url )
+    %br
+  = f.submit :class => 'btn btn-primary',:disable_with=>"处理中..."
 =link_to t("#{resource_class.name.underscore}.back_list") , collection_path

@@ -1,0 +1,177 @@
+<script>
+    function is_blank(text){
+        return (text == undefined || text == '' || text == null) ? true : false
+    }
+    $(function(){
+
+        $("form input[name='loginname'], form input[name='password']").blur(function(){
+            $('#login_error_message').hide();
+        });
+        $("form input[type='submit']").click(function(){
+            if(is_blank($("form input[name='loginname']").val())){
+                $('#login_error_message').show().html('用户名不能为空');
+                return false;
+            }
+            if(is_blank($("form input[name='password']").val())){
+                $('#login_error_message').show().html('密码不能为空');
+                return false;
+            }
+            $.post('/home/login_validate', $('form').serialize(), function(msg){
+                if(msg.result){
+                    fm.submit();
+                }else{
+                    $('#login_error_message').show().html('用户名或密码不正确');
+                }
+            }, "json");
+            return false;
+        })
+    })
+</script>
+<!--wrapleft begin-->
+<div class="wl left">
+  <div class="rim_main">
+    <div class="bordertop">
+      <h2 class="tit"><p><span>清单知识进阶攻略</span></p></h2>
+      <dl class="cj">
+        <dt><img src="/assets/images/jz_13.jpg" width="142" height="37" />掌握清单初级基础知识</dt>
+        <dd>
+          <p>本课堂主要内容为《GB50500-2013建设工程工程量清单计价规范》中条款的自我学习，</p>
+          <p> 通过【在线测评】栏目对清单规范的掌握进行测试考核，考核内容将从初级题库中随机抽取50道形成试卷，在30分钟内完成答题且<span style="color:red;">通过率为60%</span>者可顺利进入中级课堂学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <a href="/beginners" class="kta1">进入初级课堂</a> <a href="/schools/beginner" class="kta2">初级在线评测</a>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入初级课堂</a> <a href="javascript:alert('请您先登录!');location.href='/users/sign_in';" class="kta2">初级在线评测</a>
+          <% end %>
+        </dd>
+      </dl>
+
+      <dl class="zj">
+        <dt><img src="/assets/images/jz_42.jpg" width="142" height="37" />掌握清单中级基础知识</dt>
+        <dd>
+          <p>本课堂主要内容为马楠教授讲解【2013版《清单计价规范》十大亮点解读与关键应用操作】，主要对新清单背景、十大变化、实战案例、应用展望做了详细解析；</p>
+          <p>提供在线浏览、课件下载等功能方便用户随时随地学习；</p>
+          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从中级题库中随机抽取20道形成考卷，在20分钟内完成答题且通过率为<span style="color:red;">80%</span>者则顺利进入高级课堂继续学习或进入【一战到底】知识大通关游戏，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <% if ["mediate", "advanced"].include? current_user.level %>
+                  <a href="/mediates" class="kta1">进入中级课堂</a> <a href="/schools/mediate" class="kta2">中级在线评测</a>
+              <% else %>
+                  <a href="javascript:alert('您的等级还不够！，不能进入中级课堂');" class="kta22">进入中级课堂</a> <a href="javascript:alert('您的等级还不够！，不能进行中级评测');" class="kta12">中级在线评测</a>
+              <% end %>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入中级课堂</a> <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta2">中级在线评测</a>
+          <% end %>
+        </dd>
+      </dl>
+
+      <dl class="gj">
+        <dt><img src="/assets/images/jz_61.jpg" width="142" height="37" />掌握清单高级基础知识</dt>
+        <dd>
+          <p>本课堂主要内容为马楠教授结合实际案例讲解【2013《清单计价规范》实施中亟需解决的 十大难点热点问题解决策略】</p>
+          <p>提供在线浏览、课件下载等功能方便用户随时随地学习；</p>
+          <p> 通过【在线测评】栏目对本课堂内容掌握情况进行考核，考核内容将从高级题库中随机抽取20道形成考卷，在20分钟内答题完成且通过率为<span style="color:red;">80%</span>者则顺利完成本学院现阶段所有课程学习，可进入【一战到底】大通关中进一步验证自己的学习成果，通过同时还将获得一次幸运抽奖机会！（仅限首次通过）</p></dd>
+        <dd>
+          <% if user_signed_in? %>
+              <% if ["advanced"].include? current_user.level %>
+                  <a href="/advanceds" class="kta1">进入高级课堂</a> <a href="/schools/advanced" class="kta2">高级在线评测</a>
+              <% else %>
+                  <a href="javascript:alert('您的等级还不够！，不能进入高级课堂');" class="kta22">进入高级课堂</a> <a href="javascript:alert('您的等级还不够！，不能进行高级评测');" class="kta12">高级在线评测</a>
+              <% end %>
+          <% else %>
+              <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta1">进入高级课堂</a> <a href="javascript:alert('请您先登录！');location.href='/users/sign_in';" class="kta2">高级在线评测</a>
+          <% end %>
+        </dd>
+      </dl>
+
+    </div>
+  </div>
+  <div class="rim_bottom"></div>
+</div>
+<!--wrapleft end-->
+<!--wrapleft begin-->
+<div class="wr right">
+  <div class="login">
+    <div class="bordertop" style="height: 227px;">
+      <% if current_user %>
+          <ul class="landing">
+            <li>帐号：<%= current_user.username %></li>
+            <li>姓名：<%= current_user.name || '未填写' %></li>
+            <li>级别：<%= current_user.level_text %></li>
+            <li>所属地区：<%= current_user.zone_full_name || '未填写' %> </li>
+          </ul>
+          <div class="logina"><input name="" type="button" class="loginbtn" value="进入用户中心" onclick="javascript: location.href = '/users/edit'"/></div>
+      <% else %>
+          <%= form_tag Setting.frontend_cas_login_request_url, :name => "fm" do |f| %>
+              <h2 class="tit tit2"><span>我的用户中心</span></h2>
+              <input name="service" type="hidden" value="http://<%=request.host_with_port%>/users/service" class="passwordbj" />
+              <span id="login_error_message" class="tip" style="display:none; font-size: 12px;color: red; margin-left:25px; margin-top: 5px;">用户名或密码不正确</span>
+              <input name="loginname" type="text" placeholder="登录帐号或邮箱" class="ueserbj" />
+              <input name="password" type="password" value="" placeholder="" class="passwordbj" />
+              <div class="logina"><input name="" type="submit" class="loginbtn" value="登录" />
+                <%= link_to "忘记密码?", new_password_path(:user) %>
+              </div>
+              <div class="logina2">还没有账号？<a href="/users/sign_up">立即注册</a>！</div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="wrborbot"></div>
+
+  <div class="yzdd">
+    一战到底栏目，是通过闯关答题、积分排行的模式，让选手达到对清单及软件知识的全面掌握。在收获知识的同时看看身边的朋友谁会比你更厉害。一战到底前10名选手还有礼品获得。
+    <%= link_to '', home_fight_exams_path %>
+  </div>
+  <!--ranking_list begin-->
+  <div class="ranking_list">
+    <div class="bordertop" style="height:431px;">
+      <h2 class="tit tit2"><span>排行榜</span><a href="/ranking_lists/home" target="_blank">查看更多>></a></h2>
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;word-break:break-all;">
+        <tr>
+          <th scope="col">名次</th>
+          <th scope="col">姓名</th>
+          <th scope="col">地区</th>
+          <th scope="col">金币</th>
+        </tr>
+        <% @ranking_list_years = RankingListYear.where(" gold_count > 0 ").reorder(' gold_count desc, ranking_lists.created_at asc ').limit(8) %>
+        <% @ranking_list_years.each_with_index do |rly, index| %>
+            <tr>
+              <td class="<%= index == 0 ? 'tdnumber' : 'tdnum' %>"><span><%= index + 1 %></span></td>
+              <td title="<%= (rly.name || rly.username || '') %>"><%= (rly.name || rly.username || '').truncate(5, :omission => '') %></td>
+              <td><%= rly.user.zone_province_name %></td>
+              <td><%= rly.gold_count %></td>
+            </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+  <div class="wrborbot"></div>
+  <!--ranking_list end-->
+</div>
+<!--wrapleft end-->
+<div class="clear"></div>
+<!--footbox begin-->
+<div class="footbox">
+  <div class="bordertop">
+    <dl>
+      <dt><a href="javascript:void(0);"><img src="/assets/images/jz_81.jpg" width="113" height="94" /></a><a href="javascript:void(0);">各地细则 造价法规</a></dt>
+      <dd><a href="javascript:void(0);">正在建设中</a></dd>
+    </dl>
+    <dl>
+      <dt><a href="javascript:void(0);"><img src="/assets/images/jz_84.jpg" width="113" height="94" /></a><a href="javascript:void(0);">专业课堂</a></dt>
+      <dd><a href="javascript:void(0);">正在建设中</a></dd>
+    </dl>
+    <dl>
+      <dt><a href="javascript:void(0);"><img src="/assets/images/jz_90.jpg" width="142" height="94" /></a><a href="javascript:void(0);">论坛</a></dt>
+      <dd><a href="javascript:void(0);">正在建设中</a></dd>
+    </dl>
+    <dl class="nobj">
+      <dt><a href="javascript:void(0);"><img src="/assets/images/jz_87.jpg" width="142" height="94" /></a><a href="javascript:void(0);">专家活动</a></dt>
+      <dd><a href="javascript:void(0);">正在建设中</a></dd>
+    </dl>
+  </div>
+</div>
+<div class="footbox_border"></div>
+<!--footbox begin-->

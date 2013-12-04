@@ -7,9 +7,6 @@
       <div class="title">
         <div class="title_left left"><%= @exam.level_text %>专业测试<span class="title-text">（本测试共有<span style="color:#F00; font-weight:bold;"><%= @questions.size %></span>道题，选择您认为正确的答案）</span></div>
           <div class="title_right right" style='width:250px'>
-            倒计时：
-            <strong style="color:#2891c6;">
-            <span id='remainTime'></span>
           </strong>
           </div>
       </div>
@@ -21,6 +18,29 @@
 <div id='div99'></div>
 <div class='timeout_info' id='timeout_info' style='text-align:center;padding-top:30px'>
   时间到，系统自动提交
+</div>
+<div id="cart_box" class="car_box">
+  <div class="car_top"></div>
+  <div class="car_middle">
+    <div class="car_middle_box">
+      <div style="display: true; _padding-bottom:0px;" id="cart_box_details" class="car_middle_content">
+        <div style="display: block;" id="empty_cart_div" class="car_middle_content_1_down">
+          <div class="car_empty"> 
+            <div class="car_empty_images"></div>
+            <div class="car_empty_images_text">
+             <span style="color:red;">倒计时：&nbsp;&nbsp;&nbsp;</span>
+            <strong style="color:#2891c6;font-size:20px">
+              <span id='remainTime'></span>
+            </strong>
+            </div>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="car_down">
+  </div>
 </div>
 <%= render "countdown" ,:spare_time=> @exam.spare_exam_time %>
 

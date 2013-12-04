@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/workers
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T01:29:51.830456Z
-21331
+2013-10-31T08:32:38.186342Z
+21623
 wanggc
 
 
@@ -26,16 +26,50 @@ wanggc
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
+document_worker.rb
+file
+
+
+
+
+2013-10-31T08:12:17.228033Z
+a0644a5b5580dfd3ec6643c039ab8aee
+2013-10-31T07:14:53.554365Z
+21612
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+164
+
 exam_worker.rb
 file
 
 
 
 
-2013-10-23T02:19:05.562402Z
-460ff7c87e8dfc99eaa30e4e5b7e5f67
-2013-10-23T01:29:51.830456Z
-21331
+2013-10-31T08:30:40.432043Z
+48a277020833bd1378ac399e9db4487b
+2013-10-31T08:32:38.186342Z
+21623
 wanggc
 
 
@@ -58,5 +92,5 @@ wanggc
 
 
 
-177
+176
 

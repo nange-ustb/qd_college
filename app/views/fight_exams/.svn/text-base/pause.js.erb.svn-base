@@ -1,0 +1,2 @@
+alert('休息一会儿，下次再来！');
+location.href="<%= home_fight_exams_path %>";

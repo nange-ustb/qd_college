@@ -1,7 +1,7 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/views/admin/resource
 http://server-code.grandsoft.com.cn/GIM/Rails
 
@@ -25,6 +25,40 @@ wanggc
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
+
+_info_message.haml
+file
+
+
+
+
+2013-10-15T05:42:36.044152Z
+53a483415654394e8f6d566904c66f5c
+2013-10-12T09:23:28.762920Z
+21079
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+123
 
 _form.haml
 file
@@ -263,38 +297,4 @@ duhw
 
 
 214
-
-_info_message.haml
-file
-
-
-
-
-2013-10-15T05:42:36.044152Z
-53a483415654394e8f6d566904c66f5c
-2013-10-12T09:23:28.762920Z
-21079
-duhw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-123
 

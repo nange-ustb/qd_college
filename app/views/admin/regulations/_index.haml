@@ -41,5 +41,8 @@
           = link_to t("#{resource_class.name.underscore}.edit"), edit_resource_path(resource)
           |
           = link_to t("#{resource_class.name.underscore}.destroy"), resource_path(resource), :method => :delete, :confirm => t("#{resource_class.name.underscore}.are_you_sure")
-= paginate collection
 = link_to t("#{resource_class.name.underscore}.new"), new_resource_path, :class => "btn"
+%br
+= paginate collection
+%p
+  = "总记录数：#{collection.total_count}"

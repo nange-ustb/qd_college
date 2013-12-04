@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'jquery/jquery.marquee' %>
+<script type="text/javascript">
+    $(function(){
+        $('#fight_stages').marquee({auto: false, type: 'vertical', interval: 3000, showNum: 6, direction:'forward', stepLen: 1, speed: 1000, prevBtnId: 'next', nextBtnId: 'prev'});
+    })
+</script>
+<!--biggk begin-->
+<div class="biggk_box">
+  <div class="biggk_lbzs">
+    <div class="btn_kscg"><%= link_to '', regulations_fight_exams_path %></div>
+    <div class="btn_phb"><%= link_to '', home_ranking_lists_path %></div>
+  </div>
+  <div class="biggk_top"><a href="#" id="prev"></a></div>
+  <div class="biggk_middle" style="overflow: hidden; height: 759px;position: relative;">
+    <div id="fight_stages">
+      <div class="ul">
+        <% total_count, per_page, fight_exam = Setting.fight_stage.to_i, 100, @fight_exam %>
+        <% (fight_exam.success_stage/per_page).upto(total_count/per_page - 1) do |p| %>
+            <div class="li">
+              <ul>
+                <% 1.upto(per_page) do |i| %>
+                    <% index = i + per_page * p %>
+                    <% if [1, per_page].include?(i) or fight_exam.current_stage == index %>
+                        <li><a href="<%= start_fight_exams_path %>" class="listlia<%= '2' if index > fight_exam.success_stage %>"><%= index %></a></li>
+                    <% else %>
+                        <li><a href="javascript:void(0);" class="listlia<%= '2' if index > fight_exam.success_stage %>"><%= index if [1, per_page].include?(i) %></a></li>
+                    <% end %>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <% 1.upto(fight_exam.success_stage/per_page - 1) do |p| %>
+            <div class="li">
+              <ul>
+                <% 1.upto(per_page) do |i| %>
+                    <% index = i + per_page * p %>
+                    <li><a href="javascript:void(0);" class="listlia<%= '2' if index > fight_exam.success_stage %>"><%= index if [1, per_page, fight_exam.current_stage].include?(i) %></a></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="biggk_down"><a href="#" id="next"></a></div>
+</div>
+<!--biggk end-->

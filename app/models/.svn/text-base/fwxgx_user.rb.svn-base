@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 # == Schema Information
 #
-# Table name: [User]
+# Table name: user
 #
 #  UserID          :integer          not null, primary key
 #  AreaID          :integer
@@ -20,9 +20,9 @@
 #  IsDeleted       :boolean          default(FALSE), not null
 #
 
-# class User < ActiveRecord::Base
-#   self.establish_connection "fwxgx_#{Rails.env}"
-#   self.table_name = "[User]"
-#   self.primary_key = "UserID"
-#   has_one :user_brief, :foreign_key => "UIN" , :primary_key => "UserID"
-# end
+class FwxgxUser < ActiveRecord::Base
+  establish_connection "fwxgx_#{Rails.env}".to_sym
+  self.table_name = "user"
+
+  has_one :user_brief, :class_name => FwxgxUserBrief, :foreign_key => "UIN"
+end

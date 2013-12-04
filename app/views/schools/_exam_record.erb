@@ -1,0 +1,13 @@
+  <% 
+  	page = (params.try(:[],:page) || 1).to_i - 1
+  	current_order = page*7 + exam_record_counter + 4
+   %>
+  <tr>
+    <td><%= current_order %></td>
+    <td title='<%= exam_record.name %>'><%= exam_record.name.to_s.truncate(10) %></td>
+    <td><%= exam_record.try(:user).try(:zone).try(:province).try(:name) %></td>
+    <td><strong><%= exam_record.correct %></strong></td>
+    <td><%= exam_record.exam_count %></td>
+  </tr>
+
+  

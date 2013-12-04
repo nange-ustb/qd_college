@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/lib/tasks
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-21T08:55:44.829292Z
-21297
+2013-10-27T13:48:18.203974Z
+21416
 qiwl
 
 
@@ -26,16 +26,16 @@ qiwl
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
-init_zone_data.rake
+do_something_every_minute.rake
 file
 
 
 
 
-2013-10-21T09:29:35.145016Z
-f2813a04d3f1fad4334db98434c8b7a3
-2013-10-21T08:55:44.829292Z
-21297
+2013-10-25T05:07:43.698959Z
+cb2057f5b71ec3bbabdae43468acb2fe
+2013-10-27T13:48:18.203974Z
+21416
 qiwl
 
 
@@ -58,7 +58,7 @@ qiwl
 
 
 
-327
+195
 
 .gitkeep
 file
@@ -93,4 +93,38 @@ duhw
 
 
 0
+
+init_zone_data.rake
+file
+
+
+
+
+2013-10-31T03:43:15.283881Z
+f2813a04d3f1fad4334db98434c8b7a3
+2013-10-21T08:55:44.829292Z
+21297
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+327
 

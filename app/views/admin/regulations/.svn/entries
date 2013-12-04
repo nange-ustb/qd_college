@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/app/views/admin/regulations
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-18T01:55:12.419002Z
-21250
+2013-11-15T07:53:17.349675Z
+22017
 qiwl
 
 
@@ -25,40 +25,6 @@ qiwl
 
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
-
-_index.haml
-file
-
-
-
-
-2013-10-18T02:20:05.249852Z
-169c6482615fe1e2ac6e57cdd72947c9
-2013-10-18T01:55:12.419002Z
-21250
-qiwl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2124
 
 _form.haml
 file
@@ -127,4 +93,38 @@ qiwl
 
 
 621
+
+_index.haml
+file
+
+
+
+
+2013-11-25T01:41:52.277014Z
+91604f13941bbf17bcef92addff49622
+2013-11-15T07:53:17.349675Z
+22017
+qiwl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2177
 

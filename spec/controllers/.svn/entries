@@ -1,14 +1,14 @@
 10
 
 dir
-21357
+22624
 http://server-code.grandsoft.com.cn/GIM/Rails/network_marketing/qd_college/trunk/spec/controllers
 http://server-code.grandsoft.com.cn/GIM/Rails
 
 
 
-2013-10-23T01:30:53.291017Z
-21332
+2013-10-25T03:19:50.928571Z
+21410
 wanggc
 
 
@@ -26,13 +26,81 @@ wanggc
 
 c74a76da-cd3e-5145-a8d1-4a383b865423
 
+users_controller_spec.rb
+file
+
+
+
+
+2013-10-30T06:54:47.987174Z
+a3449f3d2b7fc7ec3e238ae4c4453706
+2013-10-25T03:19:50.928571Z
+21410
+wanggc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+210
+
+home_controller_spec.rb
+file
+
+
+
+
+2013-10-30T06:54:47.975174Z
+e1bc2944882199be6e9c7a900faef394
+2013-10-12T09:23:28.762920Z
+21079
+duhw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+209
+
 beginners_controller_spec.rb
 file
 
 
 
 
-2013-10-23T02:19:05.522402Z
+2013-10-30T06:54:47.987174Z
 5fc5e7ee450ff589d127b57dc329c8db
 2013-10-18T09:12:48.688492Z
 21273
@@ -66,7 +134,7 @@ file
 
 
 
-2013-10-23T02:19:05.522402Z
+2013-10-30T06:54:47.967174Z
 6281432ffeafe4c1649c3b1f6387b2a7
 2013-10-23T01:30:53.291017Z
 21332
@@ -93,38 +161,4 @@ wanggc
 
 
 210
-
-home_controller_spec.rb
-file
-
-
-
-
-2013-10-23T02:19:05.522402Z
-e1bc2944882199be6e9c7a900faef394
-2013-10-12T09:23:28.762920Z
-21079
-duhw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-209
 

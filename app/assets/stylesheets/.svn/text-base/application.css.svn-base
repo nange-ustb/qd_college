@@ -12,6 +12,7 @@
  *= require index
  *= require test
  *= require artdialog/black.css
+ *= require user
  *= require_self
  */
 

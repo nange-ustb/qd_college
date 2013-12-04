@@ -1,0 +1,43 @@
+# config/setting.yml
+defaults: &defaults
+  frontend_cas_base_url: 'http://sso.glodon.com/'
+  frontend_cas_login_url: 'http://sso.glodon.com/sessions/new'
+  frontend_cas_logout_url: 'http://sso.glodon.com/sessions/logout'
+  frontend_cas_validate_url: 'http://sso.glodon.com/serviceValidate.xml'
+  frontend_cas_username_column: 'global_id'
+  frontend_cas_login_request_url: 'http://sso.glodon.com/sessions/login'
+  backend_cas_base_url: "http://cas.grandsoft.com.cn"
+  ds2012_image_url: "http://ds.fwxgx.com/project/"
+  ds2012_url: "http://ds.fwxgx.com/"
+  file_service_url: "http://sdown.fwxgx.com.cn/"
+  sharedata_img_url: "http://sdown.fwxgx.com.cn//downfile//sharedata/2013ds/"
+  fwxgx_image_url: "http://img.fwxgx.cn/"
+  dyjh_url: "http://www.fwxgx.com/question/"
+  dyjh_pre_url: "http://www-pre.fwxgx.com/question/"
+  message_url: "http://sms.glodon.com/SMSService.asmx"
+  sina_weibo: "http://api.fwxgx.com/sinaapi/sinaapi.asmx?wsdl"
+  qq_weibo: "http://api.fwxgx.com/qqapi/api.asmx?wsdl"
+  action_mailer_defaulf_host: '192.168.130.56'
+  qd_start_at: '2013-11-04'
+  redis_host: '192.168.10.18'
+  redis_port: 6381
+  sync_fwxgx_user_info: 'on'
+  exam_time_limits:
+    beginner: 30
+    mediate: 20
+    advanced: 20
+  exam_question_limits:
+    beginner: 50
+    mediate: 20
+    advanced: 20
+  exam_correct_limits:
+    beginner: 30
+    mediate: 16
+    advanced: 16
+  fight_stage: 3000
+development:
+  <<: *defaults
+staging:
+  <<: *defaults
+production:
+  <<: *defaults

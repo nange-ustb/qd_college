@@ -2,7 +2,7 @@
   <% @video_nodes and @video_nodes.each do |v_n| %>
   <li class="<%#= "lihover" if v_n==@video_nodes.first %>" sign="<%= v_n.id %>" >
     <a href="<%= broadcast_video_path(v_n) %>" data-remote="true" title="<%= v_n.title %>" class="video_choser">
-      <img src="<%= @video.logo.link_url(:small) %>" />
+      <img src="<%= v_n.logo.try(:link_url,:small) if v_n.logo %>"  />
       <span>
         <!-- <strong>第一讲</strong> -->
         <%= v_n.title.truncate(25) %>
@@ -26,6 +26,10 @@
     $('.video_choser').click(function(){
       $(this).parent('li').addClass('lihover').siblings('li').removeClass('lihover');
     }) 
+    $('.pagination .next_page a').text('>');
+    $('.pagination .last a').text('>>');
+    $('.pagination .first a').text("<<");
+    $('.pagination .prev a').text("<");
   })
   
 </script>

@@ -1,7 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/GIM/Rails/!svn/ver/21339/network_marketing/qd_college/trunk/config/initializers
+/GIM/Rails/!svn/ver/21670/network_marketing/qd_college/trunk/config/initializers
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/initializers/backtrace_silencers.rb
+END
+redis.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/GIM/Rails/!svn/ver/21670/network_marketing/qd_college/trunk/config/initializers/redis.rb
 END
 mime_types.rb
 K 25
@@ -50,16 +62,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 96
 /GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/initializers/secret_token.rb
-END
-backtrace_silencers.rb
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/initializers/backtrace_silencers.rb
-END
-redis.rb
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/GIM/Rails/!svn/ver/21339/network_marketing/qd_college/trunk/config/initializers/redis.rb
 END

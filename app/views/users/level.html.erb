@@ -1,0 +1,54 @@
+<% student = current_user.student %>
+<div class="breadcrumb breadcrumb2">当前位置：<%= link_to "用户中心", edit_user_registration_path %> > <span>等级权限</span></div>
+<%= render "users/left_menu" %>
+<div class="myaddr right">
+  <div class="tuihtitle tuihtitle2">查看等级特权</div>
+  <div class="grade">
+    <ul>
+      <li><img src="/assets/images/user/userdj_06.jpg" />初级用户</li>
+      <% if student.try(:level_index,student.try(:level)).to_i >=1 %>
+        <li><img src="/assets/images/user/userdj_09_color.jpg" />中级用户</li>
+      <% else %>
+        <li><img src="/assets/images/user/userdj_09.jpg" />中级用户</li>
+      <% end %>
+      <% if student.try(:level_index,student.try(:level)).to_i >=2 %>
+        <li><img src="/assets/images/user/userdj_03_color.jpg" />高级用户</li>
+      <% else %>
+        <li><img src="/assets/images/user/userdj_03.jpg" />高级用户</li>
+      <% end %>
+    </ul>
+    <% index = 15 + student.try(:level_index,student.try(:level)).to_i %>
+    <p><img src="/assets/images/user/userdj_<%= index %>.jpg" /></p>
+    <div class="grade_1">
+      <span>
+      	<% if student.try(:level).to_s == 'beginner' %>
+      	   (您当前的等级)
+      	<% end %>
+      </span>
+      <strong>权限说明</strong>
+      获得相应初级资料<br />获得抽奖机会赢取礼品
+    </div>
+    <div class="grade_2">
+      <span>
+      	<% if student.try(:level).to_s == 'mediate' %>
+      	   (您当前的等级)
+      	<% end %>
+      </span>
+      <strong>权限说明</strong>
+      获得资深专家视频资料及课件资料<br />
+      获得抽奖机会赢取礼品<br />
+      获得大通关参与权
+    </div>
+    <div class="grade_3">
+      <span>
+      	<% if student.try(:level).to_s == 'advanced' %>
+      	   (您当前的等级)
+      	<% end %>
+      </span>
+      <strong>权限说明</strong>
+      获得自身专家案例剖析视频资料及课件资料<br/>
+      获得抽奖机会赢取礼品<br />
+      新干线下载权限
+    </div>
+  </div>
+</div>

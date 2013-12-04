@@ -1,0 +1,1 @@
+$('#ranking_list_years').html(<%=raw render("ranking_lists", :ranking_lists => @ranking_list_years, :ranking_lists_type => "ranking_list_years" ).inspect %>);

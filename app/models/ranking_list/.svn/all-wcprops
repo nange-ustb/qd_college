@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/GIM/Rails/!svn/ver/22593/network_marketing/qd_college/trunk/app/models/ranking_list
+END
+ranking_list.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/GIM/Rails/!svn/ver/22362/network_marketing/qd_college/trunk/app/models/ranking_list/ranking_list.rb
+END
+ranking_list_year.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/GIM/Rails/!svn/ver/22593/network_marketing/qd_college/trunk/app/models/ranking_list/ranking_list_year.rb
+END
+ranking_list_week.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/GIM/Rails/!svn/ver/22593/network_marketing/qd_college/trunk/app/models/ranking_list/ranking_list_week.rb
+END

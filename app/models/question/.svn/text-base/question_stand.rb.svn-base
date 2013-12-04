@@ -22,5 +22,7 @@
 
 # -*- encoding : utf-8 -*-
 class QuestionStand < Question 
-	enumerize :category, in:[:zaojia, :tuxing, :gangjin], default: :zaojia, :scope => true 
+	#enumerize :category, in:[:zaojia, :tuxing, :gangjin], default: :zaojia, :scope => true
+
+  has_many :fight_papers
 end

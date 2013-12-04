@@ -1,0 +1,19 @@
+<!--gk begin-->
+<div class="gkbox">
+  <div class="gktop">
+    <div class="zimg left"><img src="/assets/images/yzdd/zimg1.jpg" /><p><%= fight_exam.current_stage %></p><img src="/assets/images/yzdd/zimg2.jpg" /></div>
+    <div class="gkjinb left"> <img src="/assets/images/yzdd/jinbi.jpg" />您已获得<span><%= fight_exam.gold_count %></span>个金币</div>
+    <!--<div class="gktime right"> <img src="/assets/images/yzdd/time.jpg" /><p>离结束时间：<span>20分钟30秒</span> </p></div>-->
+  </div>
+  <div class="gkbottom">
+    <dl class="gkdtsl">
+      <dt><img src="/assets/images/yzdd/cgsl.jpg" /></dt>
+      <dd>哇塞！！你太厉害啦，通关成功！
+        您已获得<span><%= fight_exam.gold_count %></span>金币。
+      </dd>
+      <dd class="gkdtsl_btn"><input name="" type="button" class="gkbtn3"  onclick="javascript:location.href='/fight_exams/home'"/></dd>
+    </dl>
+    <div class="phba"><%= link_to "", home_ranking_lists_path %></div>
+  </div>
+</div>
+<!--gk end-->

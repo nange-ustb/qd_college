@@ -1,0 +1,49 @@
+%p
+- params[:search] ||= {}
+.well
+  = simple_form_for( collection_path, html: { :method => :get, class: 'form-search' } ) do |f|
+    所在分支:
+    = select_tag "search[affiliate_id]" , 
+    options_from_collection_for_select(Affiliate.of_administrator.select("name,code"),"code","name",params[:search][:affiliate_id]), :class => 'span2' ,:prompt => "请选择"
+    获奖来源:
+    = select_tag "search[level]" , options_for_select(resource_class.level.options,params[:search][:level]), :class => 'span2' ,:prompt => "请选择"
+    获奖时间:
+    = datepicker_input("search", "start_at", :style=>'width:85px',:value => params[:search].nil? ? "" : params[:search][:start_at])
+    %--
+    = datepicker_input("search", "end_at", :style=>'width:85px',:value => params[:search].nil? ? "" : params[:search][:end_at])
+    = f.submit '搜索', :class => 'btn'
+    = link_to t("#{resource_class.name.underscore}.export"), collection_path( {:format => :xls}.reverse_merge! params )
+%table{:class => "table table-bordered"}
+  %thead
+    %tr
+      - attributes.each do |attr|
+        %th= resource_class.human_attribute_name(attr)
+      %th= "操作"
+  %tbody#banners_list
+    - collection.each do |resource|
+      %tr[resource]
+        - attributes.each do |attr|
+          - if resource.respond_to?( "#{attr}_text".to_sym )
+            %td= resource.send( "#{attr}_text".to_sym )
+          - elsif attr=="zone_id"
+            %td
+              = resource.try(:user).try(:zone).try(:province).try(:name)
+              = "|"
+              = resource.try(:user).try(:zone).try(:name)
+          - elsif respond_to?( "#{attr}_column".to_sym )
+            %td= self.send( "#{attr}_column".to_sym )
+          - elsif resource.send(attr).is_a? Time
+            %td= l resource.send(attr)
+          - elsif resource.send(attr).is_a? CarrierWave::Uploader::Base
+            %td= image_tag( resource.send( attr + "_url" , :thumb ) )
+          - elsif resource.send(attr).is_a?( TrueClass )
+            %td= "是"
+          - elsif resource.send(attr).is_a?( FalseClass )
+            %td= "否"
+          - else
+            %td= resource.send(attr).to_s.truncate(20)
+        %td
+          = link_to t("#{resource_class.name.underscore}.show"), resource_path(resource)
+= paginate collection
+%p{:style => 'float:left'}
+  = "总记录数：#{collection.total_count}"

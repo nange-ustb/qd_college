@@ -1,25 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/config
+/GIM/Rails/!svn/ver/22374/network_marketing/qd_college/trunk/config
 END
-setting.yml
+setting.yml.online
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/GIM/Rails/!svn/ver/21351/network_marketing/qd_college/trunk/config/setting.yml
-END
-deploy.rb
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/deploy.rb
+V 86
+/GIM/Rails/!svn/ver/22227/network_marketing/qd_college/trunk/config/setting.yml.online
 END
 routes.rb
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/GIM/Rails/!svn/ver/21354/network_marketing/qd_college/trunk/config/routes.rb
+/GIM/Rails/!svn/ver/22374/network_marketing/qd_college/trunk/config/routes.rb
 END
 boot.rb
 K 25
@@ -31,7 +25,7 @@ application.rb
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/GIM/Rails/!svn/ver/21291/network_marketing/qd_college/trunk/config/application.rb
+/GIM/Rails/!svn/ver/21621/network_marketing/qd_college/trunk/config/application.rb
 END
 environment.rb
 K 25
@@ -43,5 +37,23 @@ database.yml.online
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/GIM/Rails/!svn/ver/21225/network_marketing/qd_college/trunk/config/database.yml.online
+/GIM/Rails/!svn/ver/21645/network_marketing/qd_college/trunk/config/database.yml.online
+END
+sidekiq.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/21601/network_marketing/qd_college/trunk/config/sidekiq.yml
+END
+setting.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/GIM/Rails/!svn/ver/22217/network_marketing/qd_college/trunk/config/setting.yml
+END
+deploy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/GIM/Rails/!svn/ver/21079/network_marketing/qd_college/trunk/config/deploy.rb
 END

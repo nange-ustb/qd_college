@@ -18,8 +18,13 @@
 //= require jquery/jquery.artDialog.min
 //= require YlChinaArea
 //= require glodon_location
+//= require jquery/jquery.validate.min
 
 
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require rails.validations.simple_form.addon
+
+function is_blank(text){
+    return (text == undefined || text == '' || text == null) ? true : false
+}

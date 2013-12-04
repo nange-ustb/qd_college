@@ -48,4 +48,3 @@ QdCollege::Application.configure do
       :enable_starttls_auto => true
   }
 end
-#BetterErrors::Middleware.allow_ip! "192.168.64.43"

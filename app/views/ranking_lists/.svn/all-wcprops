@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/GIM/Rails/!svn/ver/22523/network_marketing/qd_college/trunk/app/views/ranking_lists
+END
+ranking_list_years.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/app/views/ranking_lists/ranking_list_years.js.erb
+END
+_ranking_lists.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/GIM/Rails/!svn/ver/22523/network_marketing/qd_college/trunk/app/views/ranking_lists/_ranking_lists.html.erb
+END
+home.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/GIM/Rails/!svn/ver/22516/network_marketing/qd_college/trunk/app/views/ranking_lists/home.html.erb
+END
+ranking_list_weeks.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/GIM/Rails/!svn/ver/21416/network_marketing/qd_college/trunk/app/views/ranking_lists/ranking_list_weeks.js.erb
+END
